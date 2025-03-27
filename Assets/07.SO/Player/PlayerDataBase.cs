@@ -8,5 +8,5 @@ public class PlayerDataBase : ScriptableObject
     public int atkLevel = 1;
     public int critLevel = 1;
     public int critDamageLevel = 1;
-    public double gainGoldLevel = 1;
+    public int gainGoldLevel = 1;
 }

@@ -13,7 +13,7 @@ public class Player : MonoBehaviour
    public int critDamage;
    public int gold;
    public int upgradePoints;
-   public double gainGoldRate;
+   public double goldGainRate;
 
    private void Start()
    {
@@ -22,9 +22,10 @@ public class Player : MonoBehaviour
 
    private void InitPlayerData()
    {
-      atk += playerData.atkLevel * 10;
-      crit += playerData.critLevel * 0.1;
-      critDamage += playerData.critDamageLevel * 10;
+      atk = (playerData.atkLevel-1) * 10 + 10;
+      crit = (playerData.critLevel-1) * 0.1 + 5;
+      critDamage = (playerData.critDamageLevel-1) * 10 + 100;
+      goldGainRate = (playerData.gainGoldLevel-1) * 10 + 100;
    }
    
    
@@ -48,7 +49,7 @@ public class Player : MonoBehaviour
 
    public void UpgradePlayerGoldRate()
    {
-      gainGoldRate += 0.15;
+      playerData.gainGoldLevel++;
       //Update UI Text();
    }
    
