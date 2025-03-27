@@ -1,33 +1,46 @@
-using System.Collections;
+Ôªøusing System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class ClickAttack : MonoBehaviour
 {
-    public GameObject effectPrefab; // ≈¨∏Ø Ω√ ª˝º∫«“ ¿Ã∆Â∆Æ «¡∏Æ∆’
+    public GameObject effectPrefab;
+    public float critChance = 0.3f;
+
+    public Color normalColor = Color.white;
+    public Color critColor = Color.red;
+
+    public float normalScale = 1f;
+    public float critScale = 1.8f;
 
     void Update()
     {
-        
-
-        // ∏∂øÏΩ∫ ≈¨∏Ø √≥∏Æ 
         if (Input.GetMouseButtonDown(0))
         {
-            Vector3 clickPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            clickPosition.z = 0f;
-            AttackAtPosition(clickPosition);
-        }
-    }
+            Vector3 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            pos.z = 0;
 
-    void AttackAtPosition(Vector3 position)
-    {
-        if (effectPrefab != null)
-        {
-            Instantiate(effectPrefab, position, Quaternion.identity);
-        }
+            bool isCritical = Random.value < critChance;
 
-        Debug.Log("∞¯∞›¿ßƒ°: " + position);
-        
+            GameObject effect = Instantiate(effectPrefab, pos, Quaternion.identity);
+
+            // ÌÅ¨Í∏∞ Ï°∞Ï†à
+            float scale = isCritical ? critScale : normalScale;
+            effect.transform.localScale = Vector3.one * scale;
+
+            // ÏÉâÏÉÅ Ï°∞Ï†à
+            SpriteRenderer sr = effect.GetComponent<SpriteRenderer>();
+            if (sr != null)
+            {
+                sr.color = isCritical ? critColor : normalColor;
+            }
+
+            // ÏûêÎèô Ï†úÍ±∞
+            Destroy(effect, 1f);
+
+            Debug.Log(isCritical ? " ÏπòÎ™ÖÌÉÄ Î∞úÏÉù!" : "ÌÉÄÍ≤©");
+        }
     }
 }
+
 
