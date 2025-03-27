@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 236456866}
   - component: {fileID: 236456865}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: ClickEffect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf2fbc6a3bc3bac4e9cabbadbef2d00d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  effectPrefab: {fileID: 8189129260674187189, guid: cf77024ec8d1ee4438411d8a43d56bee, type: 3}
+  effectPrefab: {fileID: 6065675205963864773, guid: 8509b0a8fdb18a341b1f0bf27d026990, type: 3}
 --- !u!4 &236456866
 Transform:
   m_ObjectHideFlags: 0
