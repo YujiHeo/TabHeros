@@ -22,10 +22,14 @@ public class Player : MonoBehaviour
 
    private void InitPlayerData()
    {
-      atk = (playerData.atkLevel-1) * 10 + 10;
-      crit = (playerData.critLevel-1) * 0.1 + 5;
-      critDamage = (playerData.critDamageLevel-1) * 10 + 100;
-      goldGainRate = (playerData.gainGoldLevel-1) * 10 + 100;
+      int atkLevel = playerData.GetStatLevel(PlayerStatType.Atk);
+      int critLevel = playerData.GetStatLevel(PlayerStatType.Crit);
+      int critDamageLevel = playerData.GetStatLevel(PlayerStatType.CritDamage);
+      int goldGainLevel = playerData.GetStatLevel(PlayerStatType.GoldGain);
+ 
+      atk = (atkLevel - 1) * 10 + 10;  
+      crit = (critLevel - 1) * 0.1f + 5;
+      critDamage = (critDamageLevel - 1) * 10 + 100;
+      goldGainRate = (goldGainLevel - 1) * 10 + 100;
    }
-   
 }
