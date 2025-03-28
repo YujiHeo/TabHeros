@@ -1,15 +1,13 @@
 ﻿using UnityEngine;
 using System.IO;
 
-public class GameManager : MonoBehaviour
+public class GameManager : MonoBehaviour 
 {
     public static GameManager instance;  // 싱글톤 사용
 
     public PlayerCoreData playerData;
     public StatCoreData statData;
     public WeaponData weaponData;
-
-    private static string saveFilePath => Application.persistentDataPath + "/saveData.json";
 
     private void Awake()
     {
