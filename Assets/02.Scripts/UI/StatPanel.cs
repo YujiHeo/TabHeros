@@ -42,17 +42,13 @@ public class StatPanel : MonoBehaviour
         { PlayerStatType.CritDamage, p => p.critDamage.ToString() },
         { PlayerStatType.GoldGain, p => p.goldGainRate.ToString() }
     };
-    
-    private void OnEnable()
+
+    public void OnUpgradeButtonClicked()
     {
-        upgradeSystem.onUpgradeButtonClick.AddListener(OnUpgradeCompleted);
+        upgradeSystem.Upgrade(statType);
         UpdateText();
     }
 
-    private void OnDisable()
-    {
-        upgradeSystem.onUpgradeButtonClick.RemoveListener(OnUpgradeCompleted);
-    }
     private void Start()
     {
         UpdateText();

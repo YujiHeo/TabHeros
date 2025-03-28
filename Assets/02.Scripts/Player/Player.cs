@@ -11,7 +11,7 @@ public class Player : MonoBehaviour
    public int atk;
    public double crit;
    public int critDamage;
-   public int gold;
+   public int gold = 3000;
    public int upgradePoints;
    public double goldGainRate;
 

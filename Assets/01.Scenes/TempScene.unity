@@ -158,7 +158,7 @@ MonoBehaviour:
   critDamage: 100
   gold: 1000
   upgradePoints: 0
-  gainGoldRate: 100
+  goldGainRate: 0
 --- !u!4 &256880633
 Transform:
   m_ObjectHideFlags: 0
@@ -966,7 +966,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2095442414}
   m_HandleRect: {fileID: 2095442413}
   m_Direction: 2
-  m_Value: 1.0000012
+  m_Value: 1.0000015
   m_Size: 0.60916084
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -1092,7 +1092,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 853054977}
   m_HandleRect: {fileID: 853054976}
   m_Direction: 0
-  m_Value: 0.99998283
+  m_Value: 1
   m_Size: 0.9979916
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -1283,9 +1283,11 @@ MonoBehaviour:
   statType: 2
   playerData: {fileID: 11400000, guid: 98c545bd91d61420187bc6d0de1d757a, type: 2}
   player: {fileID: 256880632}
+  upgradeSystem: {fileID: 9212235657832515501}
   buttonText: {fileID: 4447241415526955350}
   infoText: {fileID: 9048217785985328868}
   statText: {fileID: 7724103658781165774}
+  upgradeButton: {fileID: 3320801786781486679}
 --- !u!114 &547089576013077191
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1301,9 +1303,11 @@ MonoBehaviour:
   statType: 1
   playerData: {fileID: 11400000, guid: 98c545bd91d61420187bc6d0de1d757a, type: 2}
   player: {fileID: 256880632}
+  upgradeSystem: {fileID: 9212235657930109907}
   buttonText: {fileID: 4447241415691636008}
   infoText: {fileID: 9048217785956684442}
   statText: {fileID: 7724103658876796080}
+  upgradeButton: {fileID: 3320801786817739305}
 --- !u!114 &547089576557624552
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1319,9 +1323,11 @@ MonoBehaviour:
   statType: 3
   playerData: {fileID: 11400000, guid: 98c545bd91d61420187bc6d0de1d757a, type: 2}
   player: {fileID: 256880632}
+  upgradeSystem: {fileID: 0}
   buttonText: {fileID: 4447241416236182279}
   infoText: {fileID: 9048217786518402229}
   statText: {fileID: 7724103659389737631}
+  upgradeButton: {fileID: 3320801786291149830}
 --- !u!114 &608093560356224552
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1661,9 +1667,11 @@ MonoBehaviour:
   statType: 0
   playerData: {fileID: 11400000, guid: 98c545bd91d61420187bc6d0de1d757a, type: 2}
   player: {fileID: 256880632}
+  upgradeSystem: {fileID: 7063838710570680944}
   buttonText: {fileID: 2335225143830314133}
   infoText: {fileID: 6939517366559941415}
   statText: {fileID: 8569825892669394189}
+  upgradeButton: {fileID: 3731935727007861652}
 --- !u!1 &2040339178930883477
 GameObject:
   m_ObjectHideFlags: 0
@@ -1786,8 +1794,9 @@ GameObject:
   - component: {fileID: 7063838710570680943}
   - component: {fileID: 6993663268632479973}
   - component: {fileID: 1893767448695434106}
+  - component: {fileID: 7063838710570680944}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: AtkPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1897,7 +1906,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5665049356933429822}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 547089576557624552}
+        m_TargetAssemblyTypeName: StatPanel, Assembly-CSharp
+        m_MethodName: OnUpgradeButtonClicked
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &3320801786781486679
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1941,7 +1962,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5665049357365831791}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 547089575781281465}
+        m_TargetAssemblyTypeName: StatPanel, Assembly-CSharp
+        m_MethodName: OnUpgradeButtonClicked
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &3320801786817739305
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1985,7 +2018,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5665049357461707793}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 547089576013077191}
+        m_TargetAssemblyTypeName: StatPanel, Assembly-CSharp
+        m_MethodName: OnUpgradeButtonClicked
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!224 &3593566392915814719
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2098,7 +2143,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5999331283160477100}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1893767448695434106}
+        m_TargetAssemblyTypeName: StatPanel, Assembly-CSharp
+        m_MethodName: OnUpgradeButtonClicked
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4120804584658275239
 GameObject:
   m_ObjectHideFlags: 0
@@ -2111,8 +2168,9 @@ GameObject:
   - component: {fileID: 9212235657930109906}
   - component: {fileID: 8994216033697741144}
   - component: {fileID: 547089576013077191}
+  - component: {fileID: 9212235657930109907}
   m_Layer: 5
-  m_Name: Panel (1)
+  m_Name: CritPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2130,8 +2188,9 @@ GameObject:
   - component: {fileID: 9212235657832515500}
   - component: {fileID: 8994216033669221670}
   - component: {fileID: 547089575781281465}
+  - component: {fileID: 9212235657832515501}
   m_Layer: 5
-  m_Name: Panel (2)
+  m_Name: CritDamagePanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2149,8 +2208,9 @@ GameObject:
   - component: {fileID: 9212235657416627709}
   - component: {fileID: 8994216034209636215}
   - component: {fileID: 547089576557624552}
+  - component: {fileID: 9212235657416627710}
   m_Layer: 5
-  m_Name: Panel (3)
+  m_Name: GoldGainPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3330,6 +3390,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2661536720759028250}
   m_CullTransparentMesh: 1
+--- !u!114 &7063838710570680944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2661536720759028250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7defc7533213453782d119ecafa395f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 256880632}
+  playerData: {fileID: 11400000, guid: 98c545bd91d61420187bc6d0de1d757a, type: 2}
 --- !u!222 &7603057377680266321
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4107,6 +4181,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4120804585185389960}
   m_CullTransparentMesh: 1
+--- !u!114 &9212235657416627710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4120804585185389960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7defc7533213453782d119ecafa395f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 256880632}
+  playerData: {fileID: 11400000, guid: 98c545bd91d61420187bc6d0de1d757a, type: 2}
 --- !u!222 &9212235657832515500
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4115,6 +4203,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4120804584887992281}
   m_CullTransparentMesh: 1
+--- !u!114 &9212235657832515501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4120804584887992281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7defc7533213453782d119ecafa395f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 256880632}
+  playerData: {fileID: 11400000, guid: 98c545bd91d61420187bc6d0de1d757a, type: 2}
 --- !u!222 &9212235657930109906
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4123,6 +4225,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4120804584658275239}
   m_CullTransparentMesh: 1
+--- !u!114 &9212235657930109907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4120804584658275239}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7defc7533213453782d119ecafa395f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 256880632}
+  playerData: {fileID: 11400000, guid: 98c545bd91d61420187bc6d0de1d757a, type: 2}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

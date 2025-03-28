@@ -20,12 +20,14 @@ public class PlayerDataBase : ScriptableObject
         new PlayerStat { statType = PlayerStatType.GoldGain, level = 1 }
     };
     
+    // PlayerData.GetStatLevel(스탯) 을 사용해서 스텟 레벨을 받아 올 수 있습니다
     public Func<PlayerStatType, int> GetStatLevel => statType =>
     {
         PlayerStat stat = stats.Find(s => s.statType == statType);
         return stat != null ? stat.level : 0;
     };
     
+    // playerData.UpdateStat(stat, currentLevel + 1); 처럼 스텟 관련 업데이트가 필요할 때, 이런식으로 사용하면됩니다.
     public void UpdateStat(PlayerStatType statType, int newLevel)
     {
         PlayerStat stat = stats.Find(s => s.statType == statType);
