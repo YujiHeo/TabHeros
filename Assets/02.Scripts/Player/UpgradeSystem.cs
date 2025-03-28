@@ -26,5 +26,7 @@ public class UpgradeSystem : MonoBehaviour
             target = playerData.gainGoldLevel;
             break;
         }
+        
     }
+    
 }

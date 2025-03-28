@@ -28,29 +28,4 @@ public class Player : MonoBehaviour
       goldGainRate = (playerData.gainGoldLevel-1) * 10 + 100;
    }
    
-   
-   public void UpgradePlayerAtk()
-   {
-      playerData.atkLevel++;
-      //Update UIText();
-   }
-   
-   public void UpgradePlayerCrit()
-   {
-      playerData.critLevel++;
-      //Update UIText();
-   } 
-   
-   public void UpgradePlayerCritDamage()
-   {
-      playerData.critDamageLevel++;
-      //Update UIText();
-   }
-
-   public void UpgradePlayerGoldRate()
-   {
-      playerData.gainGoldLevel++;
-      //Update UI Text();
-   }
-   
 }
