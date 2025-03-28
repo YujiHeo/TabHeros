@@ -11,6 +11,7 @@ public class ClickAttack : MonoBehaviour
     public EnemyController enemyController; //  공격 대상
     public Player player;                   //  플레이어 스탯
 
+   
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
@@ -30,11 +31,11 @@ public class ClickAttack : MonoBehaviour
             if (isCritical)
             {
                 damage = Mathf.RoundToInt(damage * (player.critDamage / 100f));
-                Debug.Log(" 치명타! ");
+                Debug.Log($" 치명타! 데미지: {damage}");
             }
             else
             {
-                Debug.Log(" 타격!");
+                Debug.Log($" 타격! 데미지: {damage}");
             }
 
             enemyController.TakeDamage(damage);

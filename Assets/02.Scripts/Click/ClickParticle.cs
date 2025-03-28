@@ -5,13 +5,12 @@ using UnityEngine.EventSystems;
 
 public class ClickParticle : MonoBehaviour
 {
-    public GameObject effectPrefab;    
-    public float yOffset = 3f;       
-    public float lifeTime = 2f;        
+    public GameObject effectPrefab;
+    public float yOffset = 3f;
+    public float lifeTime = 2f;
 
     void Update()
     {
-        
         if (Input.GetMouseButtonDown(0))
         {
             if (EventSystem.current.IsPointerOverGameObject())
@@ -21,9 +20,10 @@ public class ClickParticle : MonoBehaviour
             pos.z = 0;
             pos.y += yOffset;
 
-            
-            GameObject effect = Instantiate(effectPrefab, pos, Quaternion.identity);            
+            GameObject effect = Instantiate(effectPrefab, pos, Quaternion.identity);
             Destroy(effect, lifeTime);
         }
     }
 }
+
+
