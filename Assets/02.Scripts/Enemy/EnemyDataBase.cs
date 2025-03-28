@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "EnemyDataBase", menuName = "NewEnemy")]
 public class EnemyDataBase : ScriptableObject
 {
-    public int id;
+    public string enemyName;
     public GameObject outfit; // Enemy의 외형
     public int hp;
     public int gainGold;
