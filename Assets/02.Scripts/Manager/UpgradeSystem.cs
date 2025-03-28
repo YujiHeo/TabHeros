@@ -11,10 +11,10 @@ public class UpgradeSystem : MonoBehaviour
     [SerializeField] private Player player;
     [SerializeField] private PlayerDataBase playerData;
 
-    public void Upgrade(PlayerStatType stat)
+    public void Upgrade(PlayerStatType stat) 
     {
-        int currentLevel = playerData.GetStatLevel(stat);
-        int upgradeCost = (currentLevel - 1) * 3 + 30;
+        int currentLevel = StatManager.instance.GetStatLevel(stat);
+        int upgradeCost = (currentLevel - 1) * 3*30 + 30;
         
         if (player.gold < upgradeCost)
         {
@@ -23,7 +23,9 @@ public class UpgradeSystem : MonoBehaviour
         }
         
         player.gold -= upgradeCost;
-        playerData.UpdateStat(stat, currentLevel + 1);
+        StatManager.instance.UpdateStat(stat, currentLevel + 1);
+        
+        player.UpdatePlayerStat();
     }
     
 }
