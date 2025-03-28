@@ -12,7 +12,7 @@ public class UIInventory : Singleton<UIInventory>
     [SerializeField] private WeaponSlot slotPrefab;
     [SerializeField] private Transform slotParent;
 
-    [SerializeField] private TextMeshProUGUI slotCounts;
+    //[SerializeField] private TextMeshProUGUI slotCounts;
 
     static Player player;
 
@@ -36,7 +36,6 @@ public class UIInventory : Singleton<UIInventory>
     public void InitInventoryUI()
     {
         int slotCount = 5;
-        slotCounts.text = slotCount.ToString();
 
         for (int i = 0; i < slotCount; i++) // 5번 반복됨
         {
@@ -48,8 +47,15 @@ public class UIInventory : Singleton<UIInventory>
 
     public void AddItem(WeaponData weaponData)
     {
-        slotList[slotIndex].SetItem(weaponData);
-        slotIndex++;
+        if (slotIndex < slotList.Count)
+        {
+            slotList[slotIndex].SetItem(weaponData);
+            slotIndex++;
+        }
+        else
+        {
+            Debug.Log("슬롯의 수를 초과했습니다.");
+        }
     }
 
     public void OpenInventory()
@@ -90,7 +96,6 @@ public class UIInventory : Singleton<UIInventory>
         if (equippedWeapon != null && newWeapon.weaponPrefab != null)
         {
             equippedWeapon = Instantiate(newWeapon.weaponPrefab, transform);
-            newWeapon.weaponPrefab.SetActive(true); //현재 장착 중인 WeaponImage 아이콘을 만들기 위한 기능
             weaponData = newWeapon;
         }
     }

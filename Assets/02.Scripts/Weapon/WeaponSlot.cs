@@ -8,8 +8,8 @@ public class WeaponSlot : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI weaponNameText;
     [SerializeField] private Image weaponImage;
-    [SerializeField] private int weaponLevel;
-    [SerializeField] private int weaponAbility;
+    [SerializeField] private TextMeshProUGUI weaponLevel;
+    [SerializeField] private TextMeshProUGUI weaponAbility;
 
     [SerializeField] private Button upgradeButton;
     [SerializeField] private TextMeshProUGUI upgradePoint;
@@ -19,22 +19,28 @@ public class WeaponSlot : MonoBehaviour
 
     private WeaponData weaponData;
 
-    static Player player;
+    public Player player { get; private set; }
 
     public void Start()
     {
+        if (player == null)
+        {
+            player = GetComponent<Player>();
+        }
+
         Button upgradeBtn = upgradeButton.GetComponent<Button>();
         upgradeBtn.onClick.AddListener(() => UIInventory.instance.WeaponUpgrade(weaponData));
 
         Button equipBtn = equipButton.GetComponent<Button>();
         equipBtn.onClick.AddListener(() => UIInventory.instance.WeaponEquipped(weaponData));
 
-        IsAbleToUpgrading();
+        //IsAbleToUpgrading();
     }
 
     public void SetItem(WeaponData weapon)
     {
         weaponData = weapon;
+
         RefreshUI();
     }
 
@@ -45,8 +51,9 @@ public class WeaponSlot : MonoBehaviour
         {
             weaponNameText.text = weaponData.name;
             weaponImage.sprite = weaponData.Icon;
-            weaponLevel = weaponData.level;
-            weaponAbility = weaponData.ability;
+            weaponLevel.text = weaponData.level.ToString();
+            weaponAbility.text = weaponData.ability.ToString();
+            upgradePoint.text = weaponData.ownUpgradePoint.ToString();
 
         }
 
@@ -54,11 +61,13 @@ public class WeaponSlot : MonoBehaviour
         {
             weaponNameText.text = "";
             weaponImage.sprite = null;
-            weaponLevel = 0;
-            weaponAbility = 0;
+            weaponLevel.text = "0";
+            weaponAbility.text = "0";
+            upgradePoint.text = "0";
         }
     }
 
+    /*
     public void IsAbleToUpgrading() //강화 불가능 시 포인트 텍스트를 붉은색으로 변경
     {
         if (player.upgradePoints < weaponData.ownUpgradePoint)
@@ -71,4 +80,5 @@ public class WeaponSlot : MonoBehaviour
             return;
         }
     }
+    */
 }
