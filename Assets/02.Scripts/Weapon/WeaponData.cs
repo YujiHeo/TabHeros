@@ -18,7 +18,7 @@ public class WeaponData : ScriptableObject
     public int level;
     public int ability;
 
-    public int ownUpgradePoint;
+    public int ownUpgradePoint; 
 
     public GameObject weaponPrefab;
 }
