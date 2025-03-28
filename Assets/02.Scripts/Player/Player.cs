@@ -6,6 +6,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
    [SerializeField]private PlayerDataBase playerData;
+   [SerializeField]private StatManager SM;
    
    [Header("Stats")]
    public int atk;
@@ -18,6 +19,7 @@ public class Player : MonoBehaviour
    private void Start()
    {
       UpdatePlayerStat();
+      SM = StatManager.instance;
    }
 
    public void UpdatePlayerStat()
@@ -25,15 +27,10 @@ public class Player : MonoBehaviour
       UpdatePlayerData();
    }
    private void UpdatePlayerData()
-   {
-      int atkLevel = playerData.GetStatLevel(PlayerStatType.Atk);
-      int critLevel = playerData.GetStatLevel(PlayerStatType.Crit);
-      int critDamageLevel = playerData.GetStatLevel(PlayerStatType.CritDamage);
-      int goldGainLevel = playerData.GetStatLevel(PlayerStatType.GoldGain);
- 
-      atk = (atkLevel - 1) * 10 + 10;  
-      crit = (critLevel - 1) * 0.1f + 5;
-      critDamage = (critDamageLevel - 1) * 10 + 100;
-      goldGainRate = (goldGainLevel - 1) * 10 + 100;
+   { 
+      atk = (int)SM.GetStatValue(PlayerStatType.Atk);
+      crit = SM.GetStatValue(PlayerStatType.Crit);
+      critDamage = (int)SM.GetStatValue(PlayerStatType.CritDamage);
+      goldGainRate = SM.GetStatValue(PlayerStatType.GoldGain);
    }
 }
