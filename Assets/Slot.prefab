@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponNameText: {fileID: 7184125797565031683}
-  weaponImage: {fileID: 0}
+  weaponImage: {fileID: 216887085667058336}
   weaponLevel: {fileID: 5020171660830893578}
   weaponAbility: {fileID: 456727894822080645}
   upgradeButton: {fileID: 5459940709781336703}

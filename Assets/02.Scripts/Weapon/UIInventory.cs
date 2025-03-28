@@ -89,7 +89,7 @@ public class UIInventory : Singleton<UIInventory>
     }
 
 
-
+    /*
     public void WeaponEquipped(WeaponData newWeapon) //¹«±â ÀåÂø
     {
         if (equippedWeapon != null)
@@ -103,4 +103,5 @@ public class UIInventory : Singleton<UIInventory>
             weaponData = newWeapon;
         }
     }
+    */
 }

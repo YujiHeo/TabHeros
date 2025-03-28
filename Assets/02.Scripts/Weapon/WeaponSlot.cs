@@ -25,8 +25,8 @@ public class WeaponSlot : MonoBehaviour
         Button upgradeBtn = upgradeButton.GetComponent<Button>();
         upgradeBtn.onClick.AddListener(() => UIInventory.instance.WeaponUpgrade(weaponData));
 
-        Button equipBtn = equipButton.GetComponent<Button>();
-        equipBtn.onClick.AddListener(() => UIInventory.instance.WeaponEquipped(weaponData));
+        //Button equipBtn = equipButton.GetComponent<Button>();
+        //equipBtn.onClick.AddListener(() => UIInventory.instance.WeaponEquipped(weaponData));
 
         if (player == null)
             player = GameManager.player;
@@ -50,11 +50,14 @@ public class WeaponSlot : MonoBehaviour
         if (weaponData != null)
         {
             weaponNameText.text = weaponData.name;
-            weaponImage.sprite = weaponData.Icon;
+            
             weaponLevel.text = weaponData.level.ToString();
             weaponAbility.text = weaponData.ability.ToString();
             upgradePoint.text = weaponData.ownUpgradePoint.ToString();
 
+            ///////////////////////////////////
+            weaponImage.sprite = weaponData.Icon; //이거 고쳐야됨~!!!!!!!
+            ///////////////////////////////////
         }
 
         else
