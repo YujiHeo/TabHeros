@@ -17,10 +17,14 @@ public class Player : MonoBehaviour
 
    private void Start()
    {
-      InitPlayerData();
+      UpdatePlayerStat();
    }
 
-   private void InitPlayerData()
+   public void UpdatePlayerStat()
+   {
+      UpdatePlayerData();
+   }
+   private void UpdatePlayerData()
    {
       int atkLevel = playerData.GetStatLevel(PlayerStatType.Atk);
       int critLevel = playerData.GetStatLevel(PlayerStatType.Crit);

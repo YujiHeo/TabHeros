@@ -55,6 +55,11 @@ public class StatPanel : MonoBehaviour
     }
     public void UpdateText()
     {
+        Color activeColor;
+        Color inactiveColor;
+        ColorUtility.TryParseHtmlString("#F3883D", out activeColor);
+        ColorUtility.TryParseHtmlString("#989390", out inactiveColor);
+        
         int level = playerData.GetStatLevel(statType);
         
         infoText.text = $"{statNames[statType]}\n<size=40>Lv. {level}</size>";
@@ -62,5 +67,7 @@ public class StatPanel : MonoBehaviour
         
         int upgradeCost = (level - 1) * 3 * 30 + 30;
         buttonText.text = $"<size=40>{upgradeCost}G</size>\n<size=48>Lv UP</size>";
+        
+        upgradeButton.image.color = player.gold > upgradeCost ? activeColor : inactiveColor;
     }
 }
