@@ -7,16 +7,17 @@ public class StatManager : Singleton<StatManager>
 {
     [SerializeField]private PlayerDataBase playerData;
     
-    // PlayerData.GetStatLevel(스탯) 을 사용해서 스텟 레벨을 받아 올 수 있습니다
+    
+    // PlayerDataBase에 존재하는 Playerstat에서 스탯을 가져오고
     public int GetStatLevel(PlayerStatType statType)
     {
         PlayerStat stat = playerData.stats.Find(s => s.statType == statType);
-        return stat != null ? stat.level : 1; // 기본 레벨 1
+        return stat != null ? stat.level : 1;
     }
     
-    public float GetStatValue(PlayerStatType statType)
+    public float SetStatValue(PlayerStatType statType)
     {
-        int level = GetStatLevel(statType);
+        int level = GetStatLevel(statType); // 가져온 레벨을 여기에서 타입에 맞춰서 계산하여, 스탯을 반환  
 
         return statType switch
         {
@@ -28,7 +29,7 @@ public class StatManager : Singleton<StatManager>
         };
     }
     
-    // playerData.UpdateStat(stat, currentLevel + 1); 처럼 스텟 관련 업데이트가 필요할 때, 이런식으로 사용하면됩니다.
+    // 스탯 최신화
     public void UpdateStat(PlayerStatType statType, int newLevel)
     {
         PlayerStat stat = playerData.stats.Find(s => s.statType == statType);

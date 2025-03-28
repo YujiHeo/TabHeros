@@ -8,6 +8,7 @@ public class PlayerStat
     public PlayerStatType statType;
     public int level;
 }
+
 [Serializable][CreateAssetMenu(fileName = "PlayerDataBase", menuName = "NewPlayer")]
 public class PlayerDataBase : ScriptableObject
 {

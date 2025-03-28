@@ -12,7 +12,7 @@ public enum PlayerStatType
     CritDamage,
     GoldGain
 }
-public class StatPanel : MonoBehaviour
+public class StatPanel  : MonoBehaviour
 {
     [Header("Data")]
     [SerializeField]private PlayerStatType statType;

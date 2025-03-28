@@ -12,7 +12,7 @@ public class Player : MonoBehaviour
    public int atk;
    public double crit;
    public int critDamage;
-   public int gold = 3000;
+   public int gold;
    public int upgradePoints;
    public double goldGainRate;
 
@@ -28,9 +28,9 @@ public class Player : MonoBehaviour
    }
    private void UpdatePlayerData()
    { 
-      atk = (int)SM.GetStatValue(PlayerStatType.Atk);
-      crit = SM.GetStatValue(PlayerStatType.Crit);
-      critDamage = (int)SM.GetStatValue(PlayerStatType.CritDamage);
-      goldGainRate = SM.GetStatValue(PlayerStatType.GoldGain);
+      atk = (int)SM.SetStatValue(PlayerStatType.Atk);
+      crit = SM.SetStatValue(PlayerStatType.Crit);
+      critDamage = (int)SM.SetStatValue(PlayerStatType.CritDamage);
+      goldGainRate = SM.SetStatValue(PlayerStatType.GoldGain);
    }
 }
