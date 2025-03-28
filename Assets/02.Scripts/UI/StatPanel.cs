@@ -38,37 +38,26 @@ public class StatPanel : MonoBehaviour
     private Dictionary<PlayerStatType, Func<Player, string>> statValue = new Dictionary<PlayerStatType, Func<Player, string>>()
     {
         { PlayerStatType.Atk, p => p.atk.ToString() },
-        { PlayerStatType.Crit, p => p.crit.ToString() },
-        { PlayerStatType.CritDamage, p => p.critDamage.ToString() },
-        { PlayerStatType.GoldGain, p => p.goldGainRate.ToString() }
+        { PlayerStatType.Crit, p => $"{p.crit.ToString("N1")}" +"%"},
+        { PlayerStatType.CritDamage, p => $"{p.critDamage.ToString()}"+"%" },
+        { PlayerStatType.GoldGain, p => $"{p.goldGainRate.ToString()}"+"%" }
     };
-    
-    private void OnEnable()
+
+    public void OnUpgradeButtonClicked()
     {
-        upgradeSystem.onUpgradeButtonClick.AddListener(OnUpgradeCompleted);
+        upgradeSystem.Upgrade(statType);
         UpdateText();
     }
 
-    private void OnDisable()
-    {
-        upgradeSystem.onUpgradeButtonClick.RemoveListener(OnUpgradeCompleted);
-    }
     private void Start()
     {
         UpdateText();
-    }
-    private void OnUpgradeCompleted(PlayerStatType upgradedStatType)
-    {
-        if (upgradedStatType == statType)
-        {
-            UpdateText();
-        }
     }
     public void UpdateText()
     {
         int level = playerData.GetStatLevel(statType);
         
-        infoText.text = $"{statNames[statType]}\n<size=52>{level}</size>";
+        infoText.text = $"{statNames[statType]}\n<size=40>Lv. {level}</size>";
         statText.text = statValue[statType](player);
         
         int upgradeCost = (level - 1) * 3 * 30 + 30;
