@@ -11,6 +11,7 @@ public class PlayerStat
 [Serializable][CreateAssetMenu(fileName = "PlayerDataBase", menuName = "NewPlayer")]
 public class PlayerDataBase : ScriptableObject
 {
+    // 스탯 레벨 리스트 
     [SerializeField]
     private List<PlayerStat> stats = new List<PlayerStat>
     {
