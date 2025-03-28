@@ -57,7 +57,7 @@ public class StatPanel : MonoBehaviour
     {
         Color activeColor;
         Color inactiveColor;
-        ColorUtility.TryParseHtmlString("#F3883D", out activeColor);
+        ColorUtility.TryParseHtmlString("#F3883D", out activeColor); 
         ColorUtility.TryParseHtmlString("#989390", out inactiveColor);
         
         int level = playerData.GetStatLevel(statType);
