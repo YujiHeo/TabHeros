@@ -5,9 +5,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "PlayerDataBase", menuName = "NewPlayer")]
 public class PlayerDataBase : ScriptableObject
 {
-    public int ATK;
-    public int crit;
-    public int gainGold;
-    public int upgradePoint;
-    public float autoAttackRate;
+    public int atkLevel = 1;
+    public int critLevel = 1;
+    public int critDamageLevel = 1;
+    public int gainGoldLevel = 1;
 }

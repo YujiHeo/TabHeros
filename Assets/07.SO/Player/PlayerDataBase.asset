@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e47472cf89b2f472fa1c7169e0c78072, type: 3}
   m_Name: PlayerDataBase
   m_EditorClassIdentifier: 
-  ATK: 0
-  crit: 0
-  gainGold: 0
-  upgradePoint: 0
-  autoAttackRate: 0
+  atkLevel: 1
+  critLevel: 1
+  critDamageLevel: 1
+  gainGoldLevel: 1
