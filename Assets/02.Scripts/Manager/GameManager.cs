@@ -1,30 +1,17 @@
 ﻿using UnityEngine;
 using System.IO;
 
-public class GameManager : MonoBehaviour
+public class GameManager : Singleton<GameManager>
 {
-    public static GameManager instance;  // 싱글톤 사용
+    //public static GameManager instance;  // 싱글톤 사용
 
     public PlayerCoreData playerData;
     public StatCoreData statData;
     public WeaponData weaponData;
 
+    public static Player player { get; private set; }
+
     private static string saveFilePath => Application.persistentDataPath + "/saveData.json";
-
-    private void Awake()
-    {
-        if (instance == null)
-        {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-
-
-    }
 
     // 하나를 묶어줄 수 있는 메서드 (중복을 줄일 수 있는)
 

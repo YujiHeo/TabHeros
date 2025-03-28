@@ -18,23 +18,23 @@ public class WeaponSlot : MonoBehaviour
     [SerializeField] private TextMeshProUGUI isEquip;
 
     private WeaponData weaponData;
-
-    public Player player { get; private set; }
+    private Player player;
 
     public void Start()
     {
-        if (player == null)
-        {
-            player = GetComponent<Player>();
-        }
-
         Button upgradeBtn = upgradeButton.GetComponent<Button>();
         upgradeBtn.onClick.AddListener(() => UIInventory.instance.WeaponUpgrade(weaponData));
 
         Button equipBtn = equipButton.GetComponent<Button>();
         equipBtn.onClick.AddListener(() => UIInventory.instance.WeaponEquipped(weaponData));
 
-        //IsAbleToUpgrading();
+        if (player == null)
+            player = GameManager.player;
+
+        if (weaponData == null)
+            weaponData = Resources.Load<WeaponData>("ATKUP");
+
+        IsAbleToUpgrading(player, weaponData);
     }
 
     public void SetItem(WeaponData weapon)
@@ -67,18 +67,19 @@ public class WeaponSlot : MonoBehaviour
         }
     }
 
-    /*
-    public void IsAbleToUpgrading() //강화 불가능 시 포인트 텍스트를 붉은색으로 변경
+    
+    public void IsAbleToUpgrading(Player player, WeaponData weaponData) //강화 불가능 시 포인트 텍스트를 붉은색으로 변경
     {
-        if (player.upgradePoints < weaponData.ownUpgradePoint)
+        if (player == null || weaponData == null) return;
+
+        if (GameManager.player.upgradePoints < weaponData.ownUpgradePoint)
         {
             upgradePoint.color = Color.red;
         }
-
         else
         {
-            return;
+            upgradePoint.color = Color.white; // 원래 색으로 되돌리기
         }
     }
-    */
+    
 }

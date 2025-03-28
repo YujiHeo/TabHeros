@@ -6,11 +6,10 @@ public class WeaponManager : Singleton<WeaponManager>
 {
     private WeaponData weaponData;
 
-    void Start()
+    private void Start()
     {
         AddItem(WeaponType.ATKUP);
     }
-
     public void AddItem(WeaponType weapon)
     {
         WeaponData weaponData = Resources.Load<WeaponData>(weapon.ToString());

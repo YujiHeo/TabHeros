@@ -9,7 +9,7 @@ public class UIInventory : Singleton<UIInventory>
     [SerializeField] public Button inventoryBtn;
     [SerializeField] public GameObject inventoryWindow;
 
-    [SerializeField] private WeaponSlot slotPrefab;
+    [SerializeField] private GameObject slotPrefab;
     [SerializeField] private Transform slotParent;
 
     //[SerializeField] private TextMeshProUGUI slotCounts;
@@ -25,10 +25,12 @@ public class UIInventory : Singleton<UIInventory>
     private WeaponData weaponData;
 
 
-    void Start()
+    protected override void Awake()
     {
-        Button btn = inventoryBtn.GetComponent<Button>();
-        btn.onClick.AddListener(OpenInventory);
+        base.Awake();
+
+        /*Button btn = inventoryBtn.GetComponent<Button>();
+        btn.onClick.AddListener(OpenInventory);*/
 
         InitInventoryUI();
     }
@@ -40,8 +42,9 @@ public class UIInventory : Singleton<UIInventory>
         for (int i = 0; i < slotCount; i++) // 5번 반복됨
         {
             Debug.Log($"슬롯 생성 중: {i}");
-            WeaponSlot newSlot = Instantiate(slotPrefab, slotParent);
-            slotList.Add(newSlot);
+            GameObject newSlotObject = Instantiate(slotPrefab, slotParent); //prefab에 Instantiate 
+            WeaponSlot weaponSlot = newSlotObject.GetComponent<WeaponSlot>(); 
+            slotList.Add(weaponSlot);
         }
     }
 
@@ -52,9 +55,10 @@ public class UIInventory : Singleton<UIInventory>
             slotList[slotIndex].SetItem(weaponData);
             slotIndex++;
         }
+
         else
         {
-            Debug.Log("슬롯의 수를 초과했습니다.");
+            Debug.LogWarning("슬롯의 수를 초과했습니다.");
         }
     }
 
