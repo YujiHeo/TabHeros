@@ -19,6 +19,7 @@ public class WeaponSlot : MonoBehaviour
 
     private WeaponData weaponData;
 
+    static Player player;
 
     public void Start()
     {
@@ -60,7 +61,7 @@ public class WeaponSlot : MonoBehaviour
 
     public void IsAbleToUpgrading() //강화 불가능 시 포인트 텍스트를 붉은색으로 변경
     {
-        if (player.instance.upgradePoint < weaponData.ownUpgradePoint)
+        if (player.upgradePoints < weaponData.ownUpgradePoint)
         {
             upgradePoint.color = Color.red;
         }

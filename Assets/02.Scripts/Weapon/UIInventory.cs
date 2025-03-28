@@ -14,6 +14,8 @@ public class UIInventory : Singleton<UIInventory>
 
     [SerializeField] private TextMeshProUGUI slotCounts;
 
+    static Player player;
+
     private GameObject equippedWeapon;
 
     private List<WeaponSlot> slotList = new List<WeaponSlot>();
@@ -57,13 +59,13 @@ public class UIInventory : Singleton<UIInventory>
 
     public void WeaponUpgrade(WeaponData newWeapon) //무기 업그레이드
     {
-        if (player.instance.upgradePoint >= newWeapon.ownUpgradePoint)
+        if (player.upgradePoints >= newWeapon.ownUpgradePoint)
         {
-            player.instance.upgradePoint -= newWeapon.ownUpgradePoint;
+            player.upgradePoints -= newWeapon.ownUpgradePoint;
 
             int point = newWeapon.ownUpgradePoint;
 
-            player.instance.upgradePoint -= point;
+            player.upgradePoints -= point;
             newWeapon.level ++;
             newWeapon.ability += 10;
 
