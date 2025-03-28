@@ -12,7 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e47472cf89b2f472fa1c7169e0c78072, type: 3}
   m_Name: PlayerDataBase
   m_EditorClassIdentifier: 
-  atkLevel: 1
-  critLevel: 1
-  critDamageLevel: 1
-  gainGoldLevel: 1
+  stats:
+  - statType: 0
+    level: 3
+  - statType: 1
+    level: 4
+  - statType: 2
+    level: 1
+  - statType: 3
+    level: 1
