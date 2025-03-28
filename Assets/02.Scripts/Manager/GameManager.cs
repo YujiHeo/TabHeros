@@ -5,7 +5,9 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;  // 싱글톤 사용
 
-    public SaveData saveData; // 저장되는 데이터
+    public PlayerCoreData playerData;
+    public StatCoreData statData;
+    public WeaponData weaponData;
 
     private static string saveFilePath => Application.persistentDataPath + "/saveData.json";
 
@@ -20,30 +22,21 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+
     }
 
-    private void Start()
+    // 하나를 묶어줄 수 있는 메서드 (중복을 줄일 수 있는)
+
+    public void AttackUpgrade(int atkChangeNum)
     {
-        LoadData();  // 게임 시작 시 저장된 데이터 불러오기
+
+        //PlayerUpgrade(계산완료된수치값);
+
+        SaveLoadManager.Instance.statData.atk = atkChangeNum;
+        SaveLoadManager.Instance.SaveStatData();
+
     }
 
-    public void SaveData()
-    {
-        string json = JsonUtility.ToJson(saveData, true);
-        File.WriteAllText(saveFilePath, json);
-    }
 
-    // 게임 불러오기
-    public void LoadData()
-    {
-        if (File.Exists(saveFilePath))
-        {
-            string json = File.ReadAllText(saveFilePath);
-            saveData = JsonUtility.FromJson<SaveData>(json);
-        }
-        else
-        {
-            // 초기화 값을 넣어줄 예정
-        }
-    }
 }
