@@ -754,8 +754,9 @@ GameObject:
   - component: {fileID: 4724670553801196539}
   - component: {fileID: 4253769551186616348}
   - component: {fileID: 4914694686908534241}
+  - component: {fileID: 8613391259694302558}
   m_Layer: 5
-  m_Name: MenuCanvas
+  m_Name: MenuPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -844,6 +845,22 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &8613391259694302558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7691398671266249915}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ad450f8542385345b2dd6c5d3b8536d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  statButton: {fileID: 4288550202755948302}
+  heroButton: {fileID: 3658209765699248443}
+  equipButton: {fileID: 3349585225192762297}
+  achieveButton: {fileID: 4412008167632734948}
 --- !u!1 &8298966096232648370
 GameObject:
   m_ObjectHideFlags: 0

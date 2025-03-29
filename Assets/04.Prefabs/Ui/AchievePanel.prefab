@@ -1055,7 +1055,7 @@ GameObject:
   - component: {fileID: 258743173400020356}
   - component: {fileID: 8712860378111336110}
   m_Layer: 5
-  m_Name: AchieveCanvas
+  m_Name: AchievePanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

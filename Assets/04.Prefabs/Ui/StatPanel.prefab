@@ -3713,7 +3713,7 @@ GameObject:
   - component: {fileID: 7438209045516051304}
   - component: {fileID: 4794607960585090809}
   m_Layer: 5
-  m_Name: StatCanvas
+  m_Name: StatPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
