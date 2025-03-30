@@ -2,17 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class BaseUI : MonoBehaviour
-{
-    protected UiManager uiManager => UiManager.Instance; // 싱글톤 접근 방식
+//public abstract class BaseUi : MonoBehaviour
+//{
+//    protected UiManager uiManager => UiManager.Instance;
 
-    protected abstract UiState GetUIState();
+//    protected abstract UiState GetUIState(); // 현재 Ui 상태 반환
 
-    public void SetActive(UiState state)
-    {
-        bool isActive = GetUIState() == state;
+//    public void SetActive(UiState state)
+//    {
+//        bool isActive = GetUIState() == state;
 
-        Debug.Log($"{this.name} SetActive({state}) -> {isActive}"); // 디버깅 추가
-        this.gameObject.SetActive(isActive);
-    }
-}
+//        Debug.Log($"{this.name} SetActive({state}) -> {isActive}"); // 디버깅 추가
+//        this.gameObject.SetActive(isActive);
+//    }
+//}

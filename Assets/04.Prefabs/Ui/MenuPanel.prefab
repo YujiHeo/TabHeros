@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3295692692848725562}
   - component: {fileID: 6419494468286140590}
   m_Layer: 5
-  m_Name: PlayerStatIcon
+  m_Name: StatIcon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -484,7 +484,7 @@ GameObject:
   - component: {fileID: 3486842750728017900}
   - component: {fileID: 4288550202755948302}
   m_Layer: 5
-  m_Name: PlayerStatBtn
+  m_Name: StatBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -857,10 +857,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ad450f8542385345b2dd6c5d3b8536d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  statButton: {fileID: 4288550202755948302}
-  heroButton: {fileID: 3658209765699248443}
-  equipButton: {fileID: 3349585225192762297}
-  achieveButton: {fileID: 4412008167632734948}
+  buttons:
+  - {fileID: 4288550202755948302}
+  - {fileID: 3658209765699248443}
+  - {fileID: 3349585225192762297}
+  - {fileID: 4412008167632734948}
+  panels:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &8298966096232648370
 GameObject:
   m_ObjectHideFlags: 0
