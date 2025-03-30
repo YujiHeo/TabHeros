@@ -28,13 +28,13 @@ public class ClickEffectManager : MonoBehaviour
             particlePos.z = 0;
             particlePos.y += yOffset;
 
-            // Attack ¿Ã∆Â∆Æ
-            ObjectPoolManager.Instance.SpawnFromPool(attackEffectTag, mouseWorldPos, Quaternion.identity, attackEffectLife);
+            // Attack ¿Ã∆Â∆Æ 
+            ObjectPoolManager.instance.SpawnFromPool(attackEffectTag, mouseWorldPos, Quaternion.identity, attackEffectLife);
 
             // Particle ¿Ã∆Â∆Æ
-            ObjectPoolManager.Instance.SpawnFromPool(particleEffectTag, particlePos, Quaternion.identity, particleEffectLife);
+            ObjectPoolManager.instance.SpawnFromPool(particleEffectTag, particlePos, Quaternion.identity, particleEffectLife);
 
-            // µ•πÃ¡ˆ ∞ËªÍ
+            
             bool isCritical = Random.value < player.crit / 100f;
             int damage = player.atk;
 
@@ -52,4 +52,5 @@ public class ClickEffectManager : MonoBehaviour
         }
     }
 }
+
 

@@ -2,10 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ObjectPoolManager : MonoBehaviour
+public class ObjectPoolManager : Singleton<ObjectPoolManager>
 {
-    public static ObjectPoolManager Instance;
-
     [System.Serializable]
     public class Pool
     {
@@ -16,11 +14,6 @@ public class ObjectPoolManager : MonoBehaviour
 
     public List<Pool> pools;
     private Dictionary<string, Queue<GameObject>> poolDictionary;
-
-    void Awake()
-    {
-        Instance = this;
-    }
 
     void Start()
     {
@@ -53,7 +46,6 @@ public class ObjectPoolManager : MonoBehaviour
 
         GameObject obj;
 
-        // Queue가 비어있다면 새로 생성해서 추가
         if (poolQueue.Count == 0)
         {
             Pool poolConfig = pools.Find(p => p.tag == tag);
