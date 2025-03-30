@@ -3,17 +3,20 @@ using UnityEngine.UI;
 
 public class MenuPanel : MonoBehaviour
 {
-    [SerializeField] private Button[] buttons;
+    [SerializeField] private Button[] menuButtons;
+    //[SerializeField] private Button[] maximalizeButtons;
+    //[SerializeField] private Button[] minimalizeButtons;
+    //[SerializeField] private Button[] closeButtons;
     [SerializeField] private GameObject[] panels; 
 
     private GameObject currentOpenPanel = null; // 현재 열려 있는 패널
 
     private void Start()
     {
-        for (int i = 0; i < buttons.Length; i++)
+        for (int i = 0; i < menuButtons.Length; i++)
         {
             int index = i;
-            buttons[i].onClick.AddListener(() => TogglePanel(panels[index]));
+            menuButtons[i].onClick.AddListener(() => TogglePanel(panels[index]));
 
         }
     }
@@ -22,7 +25,7 @@ public class MenuPanel : MonoBehaviour
     {
         if (currentOpenPanel == panel)
         {
-            panel.SetActive(false);
+            UiManager.Instance.ClosePanel(panel);
             currentOpenPanel = null;
         }
         else
@@ -40,7 +43,7 @@ public class MenuPanel : MonoBehaviour
     {
         foreach (var panel in panels)
         {
-            panel.SetActive(false);
+            UiManager.Instance.ClosePanel(panel);
         }
     }
 
