@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
 
+// Singleton<T> 적용하겠습니다.
+
 public class SaveData // 일종의 세이브 대장. 초기화 기능 담당
 {
     public PlayerCoreData playerCoreData = new PlayerCoreData();
