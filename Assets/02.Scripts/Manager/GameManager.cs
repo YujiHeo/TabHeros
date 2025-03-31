@@ -5,7 +5,6 @@ public class GameManager : Singleton<GameManager>
 {
     //public static GameManager instance;  // 싱글톤 사용
 
-
     public PlayerCoreData playerData;
     public StatCoreData statData;
     public WeaponData weaponData;
@@ -26,7 +25,6 @@ public class GameManager : Singleton<GameManager>
 
         SaveLoadManager.Instance.statData.atk = atkChangeNum;
         SaveLoadManager.Instance.SaveStatData();
-
     }
 
     public void Start()
