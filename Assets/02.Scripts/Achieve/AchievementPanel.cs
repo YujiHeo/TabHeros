@@ -57,7 +57,7 @@ public class AchievementPanel : MonoBehaviour
         Achievement achievement = achievementsOfType[achievementIndex]; // 저장된 인덱스 사용
 
         // UI 업데이트
-        achieveText.text = achievement.name;
+        achieveText.text = achievement.description;
         progressText.text = $"{achievement.currentProgress}/{achievement.targetValue}";
         rewardText.text = $"{achievement.rewardValue}";
         progressBar.fillAmount = Mathf.Clamp01((float)achievement.currentProgress / achievement.targetValue);
