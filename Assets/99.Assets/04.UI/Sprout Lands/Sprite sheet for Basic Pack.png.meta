@@ -564,7 +564,7 @@ TextureImporter:
         width: 33
         height: 19
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 13, y: 7, z: 13, w: 7}
       outline: []
       physicsShape: []
@@ -572,6 +572,27 @@ TextureImporter:
       bones: []
       spriteID: a65fdf2a1442d924b922de545481bfa0
       internalID: 1429613161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayBtn
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 33
+        width: 98
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e9afd143ca01d9409933d1845ef8d6a
+      internalID: -1472378169
       vertices: []
       indices: 
       edges: []
@@ -589,6 +610,7 @@ TextureImporter:
     nameFileIdTable:
       ButtonIn: 518374770
       ButtonOut: -250308560
+      PlayBtn: -1472378169
       Scroll: -769444189
       SliderBG: -1131961411
       Sprite sheet for Basic Pack_0: -1313357635

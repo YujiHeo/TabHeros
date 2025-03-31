@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Stage01
   m_EditorClassIdentifier: 
   stageName: "\uD551\uD06C \uC2AC\uB77C\uC784 0\uC758 \uC232"
-  killCountMax: 7
+  killCountMax: 2
   background: {fileID: 3808478336486071020, guid: b152dbb73d7130a46a9fcece0f80668d, type: 3}
   enemyData: {fileID: 11400000, guid: 534726417388e8d46a30ff06b8f5f8a2, type: 2}
-  bossData: {fileID: 11400000, guid: 534726417388e8d46a30ff06b8f5f8a2, type: 2}
+  bossData: {fileID: 11400000, guid: 61b1c59d13ba10243a59284bf9b78fc5, type: 2}
