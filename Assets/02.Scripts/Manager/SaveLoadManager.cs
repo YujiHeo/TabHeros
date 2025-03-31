@@ -61,8 +61,6 @@ public class SaveLoadManager : MonoBehaviour
         }
     }
 
-
-
     public void SaveStatData()
     {
         SaveData saveData = LoadGame();
@@ -81,13 +79,13 @@ public class SaveLoadManager : MonoBehaviour
     }
 
 
-
     public void SavePlayerData()
     {
         SaveData saveData = LoadGame();
         saveData.playerCoreData = playerData;
         SaveGame(saveData);
     }
+
     public void LoadPlayerData()
     {
         PlayerCoreData data = LoadGame().playerCoreData;
@@ -97,9 +95,6 @@ public class SaveLoadManager : MonoBehaviour
         }
         playerData = data;
     }
-
-
-
 
     public void SaveWeaponData()
     {

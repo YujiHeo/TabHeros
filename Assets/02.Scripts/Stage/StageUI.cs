@@ -1,18 +1,29 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class StageUI : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public TextMeshProUGUI txtStageName;
+    public TextMeshProUGUI txtKillCount;
+    public Button btnBossChallenge;
+
+    public void Init(StageDataBase _data)
     {
-        
+        txtStageName.text = _data.stageName;
+        txtKillCount.text = _data.killCountMax.ToString();
+        btnBossChallenge.gameObject.SetActive(false);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void SetEnemyCount(int _maxKillCountMax, int _currentKillCount)
     {
-        
+        txtKillCount.text = $"{_currentKillCount}/{_maxKillCountMax}";
+    }
+
+    public void SetBossActive(bool _isStageClear)
+    {
+        btnBossChallenge.gameObject.SetActive(true);
     }
 }
