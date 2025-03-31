@@ -29,7 +29,7 @@ public class WeaponSlot : MonoBehaviour
         //equipBtn.onClick.AddListener(() => UIInventory.instance.WeaponEquipped(weaponData));
 
         if (player == null)
-            player = GameManager.player;
+            player = GameManager.instance.player;
 
         if (weaponData == null)
             weaponData = Resources.Load<WeaponData>("ATKUP");
@@ -74,7 +74,7 @@ public class WeaponSlot : MonoBehaviour
     {
         if (player == null || weaponData == null) return;
 
-        if (GameManager.player.upgradePoints < weaponData.ownUpgradePoint)
+        if (GameManager.instance.player.upgradePoints < weaponData.ownUpgradePoint)
         {
             upgradePoint.color = Color.red;
         }
