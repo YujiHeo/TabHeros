@@ -55,9 +55,8 @@ public class WeaponSlot : MonoBehaviour
             weaponAbility.text = weaponData.ability.ToString();
             upgradePoint.text = weaponData.ownUpgradePoint.ToString();
 
-            ///////////////////////////////////
-            weaponImage.sprite = weaponData.Icon; //이거 고쳐야됨~!!!!!!!
-            ///////////////////////////////////
+            weaponImage.sprite = weaponData.Icon;
+
         }
 
         else
