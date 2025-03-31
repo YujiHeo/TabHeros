@@ -61,8 +61,11 @@ public class AchievementPanel : MonoBehaviour
 
     public void ButtonClicked()
     {
-        AchievementManager.instance.CompleteAchievement(achievementType);
-        Destroy(this.gameObject);
-        playerGoods.updateText();
+        bool isCleared = AchievementManager.instance.ReachTargetValue(achievementType);
+        if (isCleared)
+        {
+            Destroy(this.gameObject);
+            playerGoods.updateText();
+        }
     }
 }
