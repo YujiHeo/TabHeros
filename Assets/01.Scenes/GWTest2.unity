@@ -1485,19 +1485,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 479813268}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 350456350}
-        m_TargetAssemblyTypeName: HeroSlot, Assembly-CSharp
-        m_MethodName: OnClick
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &479813268
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1620,8 +1608,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30
-  m_fontSizeBase: 30
+  m_fontSize: 40
+  m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2556,19 +2544,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 722879050}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1704223725}
-        m_TargetAssemblyTypeName: HeroSlot, Assembly-CSharp
-        m_MethodName: OnClick
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &722879050
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2729,8 +2705,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30
-  m_fontSizeBase: 30
+  m_fontSize: 40
+  m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2903,9 +2879,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 691520ed5b584c04b946f3eba9351d28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  imgParentHP: {fileID: 0}
   imgCurrentHP: {fileID: 1996658922}
   txtName: {fileID: 551032073}
   txtHp: {fileID: 3490810}
+  txtDamage: {fileID: 0}
   goTimer: {fileID: 734700670}
   imgCurrentTimer: {fileID: 1626397669}
   txtTimer: {fileID: 2019863402}
@@ -4289,6 +4267,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c847467fbd92ae4479e4f3334161f869, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  warningTxt: {fileID: 0}
 --- !u!4 &1118846974
 Transform:
   m_ObjectHideFlags: 0
@@ -4963,8 +4942,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30
-  m_fontSizeBase: 30
+  m_fontSize: 40
+  m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -5312,19 +5291,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1483929538}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2132089172}
-        m_TargetAssemblyTypeName: HeroSlot, Assembly-CSharp
-        m_MethodName: OnClick
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1483929538
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5549,8 +5516,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30
-  m_fontSizeBase: 30
+  m_fontSize: 40
+  m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -6471,6 +6438,59 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1961292518}
   m_CullTransparentMesh: 1
+--- !u!1 &1991181803
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1991181805}
+  - component: {fileID: 1991181804}
+  m_Layer: 0
+  m_Name: StageManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1991181804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1991181803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37e04fea0e9bfd9498c0d934c348a929, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  goBackground: {fileID: 211221838003850503, guid: e9cf5d12a1c570b438b3d0c80ca9a52a, type: 3}
+  currentStage: 0
+  clearStage: -1
+  stageUI: {fileID: 0}
+  enemyController: {fileID: 78275823}
+  stageDataBases:
+  - {fileID: 11400000, guid: 5076f997683af8146a85c73487da2b71, type: 2}
+  - {fileID: 11400000, guid: 779b1623ee81ae34193688b12b565411, type: 2}
+  - {fileID: 11400000, guid: 987d038532764c94cb38bfd526e7b567, type: 2}
+--- !u!4 &1991181805
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1991181803}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 59.031136, y: 48.22093, z: -3.840245}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1996658919
 GameObject:
   m_ObjectHideFlags: 0
@@ -6973,19 +6993,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2096553967}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1961292520}
-        m_TargetAssemblyTypeName: HeroSlot, Assembly-CSharp
-        m_MethodName: OnClick
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &2096553967
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19712,19 +19720,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5061407541473354397}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 7310794545708885954}
-        m_TargetAssemblyTypeName: HeroSlot, Assembly-CSharp
-        m_MethodName: OnClick
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &5677977266873970326
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28653,8 +28649,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30
-  m_fontSizeBase: 30
+  m_fontSize: 40
+  m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -28764,7 +28760,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8910329000127954337
 RectTransform:
   m_ObjectHideFlags: 0
@@ -30326,3 +30322,4 @@ SceneRoots:
   - {fileID: 6137272449340969128}
   - {fileID: 4404726543295872722}
   - {fileID: 6499813548842334173}
+  - {fileID: 1991181805}

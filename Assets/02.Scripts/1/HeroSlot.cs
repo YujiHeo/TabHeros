@@ -19,6 +19,12 @@ public class HeroSlot : MonoBehaviour
     private Color activeColor = new Color(1f, 0.6f, 0f); // 주황
     private Color inactiveColor = Color.gray;            // 회색
 
+    private void Awake()
+    {
+        actionButton.onClick.RemoveAllListeners();
+        actionButton.onClick.AddListener(OnClick);
+    }
+
     public void SetData(HeroData data, bool isLocked, Player playerRef)
     {
         heroData = data;
@@ -31,7 +37,7 @@ public class HeroSlot : MonoBehaviour
         {
             levelText.text = $"Lv.{data.level}";
             atkText.text = $" {data.baseDamage + (data.level - 1) * 10}";
-            actionButton.GetComponentInChildren<TMP_Text>().text = "에너리어에";
+            actionButton.GetComponentInChildren<TMP_Text>().text = "레벨업";
             priceText.text = $"{GetLevelUpCost()} G";
             actionButton.interactable = true;
             actionButton.image.color = player.gold >= GetLevelUpCost() ? activeColor : inactiveColor;
@@ -55,9 +61,6 @@ public class HeroSlot : MonoBehaviour
                 actionButton.image.color = player.gold >= data.unlockPrice ? activeColor : inactiveColor;
             }
         }
-
-        actionButton.onClick.RemoveAllListeners();
-        actionButton.onClick.AddListener(() => OnClick());
     }
 
     private int GetLevelUpCost()
@@ -67,6 +70,8 @@ public class HeroSlot : MonoBehaviour
 
     public void OnClick()
     {
+        if (heroData == null || player == null) return;
+
         if (!heroData.isUnlocked)
         {
             if (player.gold >= heroData.unlockPrice)
@@ -91,6 +96,7 @@ public class HeroSlot : MonoBehaviour
         HeroManager.instance.RefreshAllSlots();
     }
 }
+
 
 
 

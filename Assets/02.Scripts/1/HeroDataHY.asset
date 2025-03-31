@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: HeroDataHY
   m_EditorClassIdentifier: 
   id: 2
-  heroName: "\uAE40\uD559\uC601"
+  heroName: "\uBE0C\uB860\uC988\uC758\uC655\uAE40\uD559\uC601"
   heroIcon: {fileID: 1362497421, guid: 49a8bac18a8355c49bf69ffd9175ac52, type: 3}
   baseDamage: 9
   unlockPrice: 1000
   heroPrefab: {fileID: 3011276602447267564, guid: 11241fa8951760a4cb7faa6cb9fc9fc9, type: 3}
   attackInterval: 0.5
-  isUnlocked: 0
+  isUnlocked: 1
   level: 1
