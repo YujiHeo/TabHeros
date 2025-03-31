@@ -18,23 +18,26 @@ public class WeaponSlot : MonoBehaviour
     [SerializeField] private TextMeshProUGUI isEquip;
 
     private WeaponData weaponData;
+    private WeaponSlot weaponSlot;
     private Player player;
 
     public void Start()
     {
-        Button upgradeBtn = upgradeButton.GetComponent<Button>();
-        upgradeBtn.onClick.AddListener(() => UIInventory.instance.WeaponUpgrade(weaponData));
-
-        //Button equipBtn = equipButton.GetComponent<Button>();
-        //equipBtn.onClick.AddListener(() => UIInventory.instance.WeaponEquipped(weaponData));
-
         if (player == null)
-            player = GameManager.player;
+            player = FindObjectOfType<Player>();
 
-        if (weaponData == null)
-            weaponData = Resources.Load<WeaponData>("ATKUP");
+        weaponSlot = GetComponent<WeaponSlot>();
 
-        IsAbleToUpgrading(player, weaponData);
+        //if (weaponData == null)
+            //weaponData = Resources.Load<WeaponData>("ATKUP");
+
+        Button upgradeBtn = upgradeButton.GetComponent<Button>();
+        upgradeBtn.onClick.AddListener(() => UIInventory.instance.WeaponUpgrade(player, weaponData));
+
+        Button equipBtn = equipButton.GetComponent<Button>();
+        equipBtn.onClick.AddListener(() => UIInventory.instance.WeaponEquipped(weaponSlot, weaponData));
+
+        //IsAbleToUpgrading(player, weaponData);
     }
 
     public void SetItem(WeaponData weapon)
@@ -69,7 +72,14 @@ public class WeaponSlot : MonoBehaviour
         }
     }
 
-    
+    public void AlreadyEquipped()
+    {
+         //equipButton = GetComponent<Button>().colors;
+        //equipButton.normalColor = Color.red;
+        //GetComponent<Button>().colors = equipButton;
+    }
+
+    /*
     public void IsAbleToUpgrading(Player player, WeaponData weaponData) //강화 불가능 시 포인트 텍스트를 붉은색으로 변경
     {
         if (player == null || weaponData == null) return;
@@ -83,5 +93,6 @@ public class WeaponSlot : MonoBehaviour
             upgradePoint.color = Color.white; // 원래 색으로 되돌리기
         }
     }
+    */
     
 }

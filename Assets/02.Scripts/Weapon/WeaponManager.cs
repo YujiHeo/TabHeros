@@ -5,13 +5,7 @@ using static UnityEditor.UIElements.ToolbarMenu;
 
 public class WeaponManager : Singleton<WeaponManager>
 {
-    [SerializeField]
-    private WeaponList weaponList;
 
-    public void Start()
-    {
-        weaponList.GetWeapon();
-    }
 
     /*
     public void AddItem(WeaponType weapon, int number)

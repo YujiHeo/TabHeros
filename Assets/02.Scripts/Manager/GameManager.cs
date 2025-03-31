@@ -7,7 +7,10 @@ public class GameManager : Singleton<GameManager>
 
     public PlayerCoreData playerData;
     public StatCoreData statData;
-    public WeaponData weaponData;
+    //public WeaponData weaponData;
+
+    [SerializeField]
+    private WeaponList weaponList;
 
     public static Player player { get; private set; }
 
@@ -25,5 +28,8 @@ public class GameManager : Singleton<GameManager>
 
     }
 
-
+    public void Start()
+    {
+        weaponList.GetWeapon();
+    }
 }

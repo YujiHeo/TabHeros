@@ -152,7 +152,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e846737e82390e4ab2e3af754181e1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponList: {fileID: 11400000, guid: 99555c6084f7b04439de13ee49651b5e, type: 2}
 --- !u!4 &120606519
 Transform:
   m_ObjectHideFlags: 0
@@ -606,6 +605,7 @@ MonoBehaviour:
     crit: 0
     critDamage: 0
   weaponData: {fileID: 0}
+  weaponList: {fileID: 11400000, guid: 99555c6084f7b04439de13ee49651b5e, type: 2}
 --- !u!1 &1975881235
 GameObject:
   m_ObjectHideFlags: 0
