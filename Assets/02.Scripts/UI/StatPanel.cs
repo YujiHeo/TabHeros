@@ -1,9 +1,11 @@
-using System;
-using System.Collections;
+  using System;
 using System.Collections.Generic;
+using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using ColorUtility = UnityEngine.ColorUtility;
 
 public enum PlayerStatType
 {
@@ -25,23 +27,11 @@ public class StatPanel  : MonoBehaviour
     [SerializeField]private TextMeshProUGUI infoText;
     [SerializeField]private TextMeshProUGUI statText;
     [SerializeField]private Button upgradeButton;
+
+    private Coroutine upgradeCoroutine;
+    private bool isPointerDown;
     
     
-    private Dictionary<PlayerStatType, string> statNames = new Dictionary<PlayerStatType, string>()
-    {
-        { PlayerStatType.Atk, "공격력" },
-        { PlayerStatType.Crit, "크리티컬 확률" },
-        { PlayerStatType.CritDamage, "크리티컬 데미지" },
-        { PlayerStatType.GoldGain, "골드 획득량" }
-    };
-    
-    private Dictionary<PlayerStatType, Func<Player, string>> statValue = new Dictionary<PlayerStatType, Func<Player, string>>()
-    {
-        { PlayerStatType.Atk, p => p.atk.ToString() },
-        { PlayerStatType.Crit, p => $"{p.crit.ToString("N1")}" +"%"},
-        { PlayerStatType.CritDamage, p => $"{p.critDamage.ToString()}"+"%" },
-        { PlayerStatType.GoldGain, p => $"{p.goldGainRate.ToString()}"+"%" }
-    };
 
     public void OnUpgradeButtonClicked()
     {
@@ -49,10 +39,21 @@ public class StatPanel  : MonoBehaviour
         UpdateText();
     }
 
+    private void OnEnable()
+    {
+        StatManager.OnStatUpdated += UpdateText;
+    }
+    
     private void Start()
     {
         UpdateText();
     }
+
+    private void OnDisable()
+    {
+        StatManager.OnStatUpdated -= UpdateText;
+    }
+
     public void UpdateText()
     {
         Color activeColor;
@@ -61,13 +62,52 @@ public class StatPanel  : MonoBehaviour
         ColorUtility.TryParseHtmlString("#989390", out inactiveColor);
         
         int level = StatManager.instance.GetStatLevel(statType);
+        float stat = StatManager.instance.SetStatValue(statType);
         
-        infoText.text = $"{statNames[statType]}\n<size=40>Lv. {level}</size>";
-        statText.text = statValue[statType](player);
+        infoText.text = $"Lv. {level}";
+        if(statType == PlayerStatType.Atk) statText.text = $"{stat}";
+        else statText.text = $"{stat}%";
         
-        int upgradeCost = (level - 1) * 3 * 30 + 30;
-        buttonText.text = $"<size=40>{upgradeCost}G</size>\n<size=48>Lv UP</size>";
+        int upgradeCost = upgradeSystem.GetUpgradeCost(level);
+        buttonText.text = $"{upgradeCost} G";
         
-        upgradeButton.image.color = player.gold > upgradeCost ? activeColor : inactiveColor;
+        upgradeButton.image.color = player.gold >= upgradeCost ? activeColor : inactiveColor;
     }
+    
+    public void OnPointerDown()
+    {
+        isPointerDown = true;
+        if (upgradeCoroutine == null)
+        {
+            upgradeCoroutine = StartCoroutine(UpgradeRoutine());
+        }
+    }
+
+    public void OnPointerUp()
+    {
+        isPointerDown = false;
+        if (upgradeCoroutine != null)
+        {
+            StopCoroutine(upgradeCoroutine);
+            upgradeCoroutine = null;
+        }
+    }
+    private IEnumerator UpgradeRoutine()
+    {
+        yield return new WaitForSecondsRealtime(0.2f); // 초기 0.2초 대기
+
+        while (isPointerDown)   
+        {
+            int level = StatManager.instance.GetStatLevel(statType);
+            int upgradeCost = upgradeSystem.GetUpgradeCost(level);
+
+            if (player.gold < upgradeCost)
+                break;
+
+            upgradeSystem.Upgrade(statType);
+            UpdateText();
+            yield return new WaitForSecondsRealtime(0.2f); // 연속 업그레이드 간격
+        }
+    }
+    
 }
