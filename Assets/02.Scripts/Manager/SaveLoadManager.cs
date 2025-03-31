@@ -3,43 +3,34 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 
-public class SaveLoadManager : MonoBehaviour
+public class SaveLoadManager : Singleton<SaveLoadManager>
 {
-    public static SaveLoadManager Instance { get; private set; }
-
-    public PlayerCoreData playerData;
+    public PlayerSaveData playerData;
     public StatCoreData statData;
     public WeaponData weaponData;
 
     private static string saveFilePath => Application.persistentDataPath + "/saveData.json";
 
-    public void Awake()
+    public void Start()
     {
-        if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);  
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
         LoadAllData();
-
     }
 
     public void SaveAllData()
     {
-        SavePlayerData();
-        SaveStatData();
-        SaveWeaponData();
+        SaveData saveData = LoadGame();
+        SaveDataGeneric(ref saveData, playerData);
+        SaveDataGeneric(ref saveData, statData);
+        SaveDataGeneric(ref saveData, weaponData);
+        SaveGame(saveData);
     }
 
     public void LoadAllData()
     {
-        LoadPlayerData();
-        LoadStatData();
-        LoadWeaponData();
+        SaveData saveData = LoadGame();
+        playerData = LoadDataGeneric(saveData, playerData);
+        statData = LoadDataGeneric(saveData, statData);
+        weaponData = LoadDataGeneric(saveData, weaponData);
     }
 
     public void SaveGame(SaveData saveData)  // 기본 저장 기능
@@ -61,56 +52,14 @@ public class SaveLoadManager : MonoBehaviour
         }
     }
 
-    public void SaveStatData()
+    private void SaveDataGeneric<T>(ref SaveData saveData, T data) where T : class
     {
-        SaveData saveData = LoadGame();
-        saveData.statCoreData = statData;
-        SaveGame(saveData);
+        saveData.SetData(data);
     }
 
-    public void LoadStatData()
+    private T LoadDataGeneric<T>(SaveData saveData, T data) where T : class, new()
     {
-        StatCoreData data = LoadGame().statCoreData;
-        if (data == null)
-        {
-            data = new StatCoreData();
-        }
-        statData = data;
-    }
-
-
-    public void SavePlayerData()
-    {
-        SaveData saveData = LoadGame();
-        saveData.playerCoreData = playerData;
-        SaveGame(saveData);
-    }
-
-    public void LoadPlayerData()
-    {
-        PlayerCoreData data = LoadGame().playerCoreData;
-        if (data == null)
-        {
-            data = new PlayerCoreData();
-        }
-        playerData = data;
-    }
-
-    public void SaveWeaponData()
-    {
-        SaveData saveData = LoadGame();
-        saveData.weaponCoreData = weaponData;
-        SaveGame(saveData);
-    }
-
-    public void LoadWeaponData()
-    {
-        WeaponData data = LoadGame().weaponCoreData;
-        if (data == null)
-        {
-            data = new WeaponData();
-        }
-        weaponData = data;
+        return saveData.GetData(ref data);
     }
 
 }
