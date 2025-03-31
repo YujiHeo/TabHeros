@@ -133,3 +133,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eda1695c5c74e7e43a6a209a8f5a253c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackEffectPrefab: {fileID: 3195664709646360931, guid: a4fe29022d0300a428f488c25344a6d8, type: 3}

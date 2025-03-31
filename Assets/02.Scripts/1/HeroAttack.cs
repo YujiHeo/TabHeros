@@ -7,6 +7,8 @@ public class HeroAttack : MonoBehaviour
     private HeroData heroData;
     private float timer;
 
+    public GameObject attackEffectPrefab;
+
     public void Init(HeroData data)
     {
         heroData = data;
@@ -14,7 +16,6 @@ public class HeroAttack : MonoBehaviour
 
     private void Update()
     {
-        // 히어로가 해금되지 않았거나 데이터가 없으면 공격 안 함
         if (heroData == null || !heroData.isUnlocked) return;
 
         timer += Time.deltaTime;
@@ -33,7 +34,16 @@ public class HeroAttack : MonoBehaviour
         if (target != null)
         {
             target.TakeDamage(damage);
-            Debug.Log($"{heroData.heroName}가 자동 공격! 데미지: {damage}");
+
+           
+            Quaternion rotation = heroData.isFlipped ? Quaternion.Euler(0, 180, 0) : Quaternion.identity;
+
+           
+            ObjectPoolManager.instance.SpawnFromPool("GWEffect", transform.position, rotation, 1.5f);
+            ObjectPoolManager.instance.SpawnFromPool("HYEffect", transform.position, rotation, 1.5f);
+            ObjectPoolManager.instance.SpawnFromPool("SHEffect", transform.position, rotation, 1.5f);
+            ObjectPoolManager.instance.SpawnFromPool("JWEffect", transform.position, rotation, 1.5f);
+            ObjectPoolManager.instance.SpawnFromPool("YJEffect", transform.position, rotation, 1.5f);
         }
     }
 }

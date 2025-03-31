@@ -607,6 +607,70 @@ PrefabInstance:
       propertyPath: m_Name
       value: ObjectPoolManager
       objectReference: {fileID: 0}
+    - target: {fileID: 4981286887053719569, guid: e060ff07c36af7340839a367f603dba4, type: 3}
+      propertyPath: pools.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4981286887053719569, guid: e060ff07c36af7340839a367f603dba4, type: 3}
+      propertyPath: pools.Array.data[2].tag
+      value: GWEffect
+      objectReference: {fileID: 0}
+    - target: {fileID: 4981286887053719569, guid: e060ff07c36af7340839a367f603dba4, type: 3}
+      propertyPath: pools.Array.data[3].tag
+      value: HYEffect
+      objectReference: {fileID: 0}
+    - target: {fileID: 4981286887053719569, guid: e060ff07c36af7340839a367f603dba4, type: 3}
+      propertyPath: pools.Array.data[4].tag
+      value: JWEffect
+      objectReference: {fileID: 0}
+    - target: {fileID: 4981286887053719569, guid: e060ff07c36af7340839a367f603dba4, type: 3}
+      propertyPath: pools.Array.data[5].tag
+      value: SHEffect
+      objectReference: {fileID: 0}
+    - target: {fileID: 4981286887053719569, guid: e060ff07c36af7340839a367f603dba4, type: 3}
+      propertyPath: pools.Array.data[6].tag
+      value: YJEffect
+      objectReference: {fileID: 0}
+    - target: {fileID: 4981286887053719569, guid: e060ff07c36af7340839a367f603dba4, type: 3}
+      propertyPath: pools.Array.data[2].size
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4981286887053719569, guid: e060ff07c36af7340839a367f603dba4, type: 3}
+      propertyPath: pools.Array.data[3].size
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4981286887053719569, guid: e060ff07c36af7340839a367f603dba4, type: 3}
+      propertyPath: pools.Array.data[4].size
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4981286887053719569, guid: e060ff07c36af7340839a367f603dba4, type: 3}
+      propertyPath: pools.Array.data[5].size
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4981286887053719569, guid: e060ff07c36af7340839a367f603dba4, type: 3}
+      propertyPath: pools.Array.data[6].size
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4981286887053719569, guid: e060ff07c36af7340839a367f603dba4, type: 3}
+      propertyPath: pools.Array.data[2].prefab
+      value: 
+      objectReference: {fileID: 3195664709646360931, guid: a4fe29022d0300a428f488c25344a6d8, type: 3}
+    - target: {fileID: 4981286887053719569, guid: e060ff07c36af7340839a367f603dba4, type: 3}
+      propertyPath: pools.Array.data[3].prefab
+      value: 
+      objectReference: {fileID: 5003756923033085423, guid: d99777d870911f14f8b63a47299cee05, type: 3}
+    - target: {fileID: 4981286887053719569, guid: e060ff07c36af7340839a367f603dba4, type: 3}
+      propertyPath: pools.Array.data[4].prefab
+      value: 
+      objectReference: {fileID: 1281912686232822870, guid: 236ccc2b47b5e3f43a1c46e91755dc1e, type: 3}
+    - target: {fileID: 4981286887053719569, guid: e060ff07c36af7340839a367f603dba4, type: 3}
+      propertyPath: pools.Array.data[5].prefab
+      value: 
+      objectReference: {fileID: 791175441253631403, guid: 3219234dab06b514eb188198484e59ea, type: 3}
+    - target: {fileID: 4981286887053719569, guid: e060ff07c36af7340839a367f603dba4, type: 3}
+      propertyPath: pools.Array.data[6].prefab
+      value: 
+      objectReference: {fileID: 1513372033839934627, guid: 0082a1ae11409a649a31debad24b8346, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
