@@ -4,9 +4,7 @@ using UnityEngine.UI;
 public class MenuPanel : MonoBehaviour
 {
     [SerializeField] private Button[] menuButtons;
-    //[SerializeField] private Button[] maximalizeButtons;
-    //[SerializeField] private Button[] minimalizeButtons;
-    //[SerializeField] private Button[] closeButtons;
+    [SerializeField] private Button[] closeButtons;
     [SerializeField] private GameObject[] panels; 
 
     private GameObject currentOpenPanel = null; // 현재 열려 있는 패널
@@ -16,34 +14,35 @@ public class MenuPanel : MonoBehaviour
         for (int i = 0; i < menuButtons.Length; i++)
         {
             int index = i;
-            menuButtons[i].onClick.AddListener(() => TogglePanel(panels[index]));
-
+            menuButtons[i].onClick.AddListener(() => ToggleMenuPanel(panels[index]));
+            closeButtons[i].onClick.AddListener(() => ToggleMenuPanel(panels[index]));
         }
+
     }
 
-    private void TogglePanel(GameObject panel)
+    private void ToggleMenuPanel(GameObject _panel)
     {
-        if (currentOpenPanel == panel)
+        if (currentOpenPanel == _panel)
         {
-            UiManager.Instance.ClosePanel(panel);
+            UiManager.instance.ClosePanel(_panel);
             currentOpenPanel = null;
         }
         else
         {
             // 모든 패널 닫기
-            CloseAllPanels();
+            CloseAllMenuPanel();
 
             // 새 패널 열기
-            panel.SetActive(true);
-            currentOpenPanel = panel;
+            UiManager.instance.OpenPanel(_panel);
+            currentOpenPanel = _panel;
         }
     }
 
-    private void CloseAllPanels()
+    private void CloseAllMenuPanel()
     {
         foreach (var panel in panels)
         {
-            UiManager.Instance.ClosePanel(panel);
+            UiManager.instance.ClosePanel(panel);
         }
     }
 
