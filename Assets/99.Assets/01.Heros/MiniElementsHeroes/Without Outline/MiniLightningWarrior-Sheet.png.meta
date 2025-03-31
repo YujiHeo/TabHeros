@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -43,12 +43,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 30
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -119,9 +119,190 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: MiniLightningWarrior-Sheet_37
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 94
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1f83bebb0f56d841b56d901e6321052
+      internalID: -699754516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MiniLightningWarrior-Sheet_38
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 94
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f791b9c753dd9a4f83af729b61a1e6b
+      internalID: 1281894188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MiniLightningWarrior-Sheet_39
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 94
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51fa8fe3abaef0542ac400e9d70c4d9b
+      internalID: -1981222060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MiniLightningWarrior-Sheet_40
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 94
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dab9a85d96bc8f8418c8ebb89212bc25
+      internalID: -1796158204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MiniLightningWarrior-Sheet_41
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 94
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a92ad0e73897d347b9654e6dc257beb
+      internalID: -1824598837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MiniLightningWarrior-Sheet_42
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 94
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8e77c34880105e4d9c381f7f6fe5021
+      internalID: 519792042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MiniLightningWarrior-Sheet_43
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 94
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 906363b62d719cd41b26848d9f6afe8d
+      internalID: -1791091269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MiniLightningWarrior-Sheet_44
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 94
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b29f9cf17265d446a592dc5236418b7
+      internalID: 169499677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -132,7 +313,70 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      MiniLightningWarrior-Sheet_0: -1163544328
+      MiniLightningWarrior-Sheet_1: -1430505197
+      MiniLightningWarrior-Sheet_10: -948782388
+      MiniLightningWarrior-Sheet_11: -1499905961
+      MiniLightningWarrior-Sheet_12: -977921330
+      MiniLightningWarrior-Sheet_13: 1723679231
+      MiniLightningWarrior-Sheet_14: 991422537
+      MiniLightningWarrior-Sheet_15: -1804970891
+      MiniLightningWarrior-Sheet_16: 1384199416
+      MiniLightningWarrior-Sheet_17: 438986966
+      MiniLightningWarrior-Sheet_18: -96571642
+      MiniLightningWarrior-Sheet_19: 1833393664
+      MiniLightningWarrior-Sheet_2: -1433939060
+      MiniLightningWarrior-Sheet_20: 1140378755
+      MiniLightningWarrior-Sheet_21: -2020254765
+      MiniLightningWarrior-Sheet_22: -1900554443
+      MiniLightningWarrior-Sheet_23: -553865579
+      MiniLightningWarrior-Sheet_24: 1360412994
+      MiniLightningWarrior-Sheet_25: -1207474735
+      MiniLightningWarrior-Sheet_26: -1680978858
+      MiniLightningWarrior-Sheet_27: -480762728
+      MiniLightningWarrior-Sheet_28: 1297462358
+      MiniLightningWarrior-Sheet_29: -148538460
+      MiniLightningWarrior-Sheet_3: -1788243480
+      MiniLightningWarrior-Sheet_30: 643497763
+      MiniLightningWarrior-Sheet_31: 368554472
+      MiniLightningWarrior-Sheet_32: -1005175984
+      MiniLightningWarrior-Sheet_33: -1155248779
+      MiniLightningWarrior-Sheet_34: 1974896092
+      MiniLightningWarrior-Sheet_35: 1038853606
+      MiniLightningWarrior-Sheet_36: -640423169
+      MiniLightningWarrior-Sheet_37: -699754516
+      MiniLightningWarrior-Sheet_38: 1281894188
+      MiniLightningWarrior-Sheet_39: -1981222060
+      MiniLightningWarrior-Sheet_4: -1393897844
+      MiniLightningWarrior-Sheet_40: -1796158204
+      MiniLightningWarrior-Sheet_41: -1824598837
+      MiniLightningWarrior-Sheet_42: 519792042
+      MiniLightningWarrior-Sheet_43: -1791091269
+      MiniLightningWarrior-Sheet_44: 169499677
+      MiniLightningWarrior-Sheet_45: 1019638319
+      MiniLightningWarrior-Sheet_46: 1460224002
+      MiniLightningWarrior-Sheet_47: 588625262
+      MiniLightningWarrior-Sheet_48: 234292200
+      MiniLightningWarrior-Sheet_49: 509163054
+      MiniLightningWarrior-Sheet_5: -1280726876
+      MiniLightningWarrior-Sheet_50: -1554969067
+      MiniLightningWarrior-Sheet_51: -665977697
+      MiniLightningWarrior-Sheet_52: -1259401908
+      MiniLightningWarrior-Sheet_53: 2036079062
+      MiniLightningWarrior-Sheet_54: -592208807
+      MiniLightningWarrior-Sheet_55: -754254679
+      MiniLightningWarrior-Sheet_56: 1665415706
+      MiniLightningWarrior-Sheet_57: 1111671221
+      MiniLightningWarrior-Sheet_58: 1241573370
+      MiniLightningWarrior-Sheet_59: -1120328511
+      MiniLightningWarrior-Sheet_6: -1690996885
+      MiniLightningWarrior-Sheet_60: -1909422992
+      MiniLightningWarrior-Sheet_61: 35145300
+      MiniLightningWarrior-Sheet_62: 1732508132
+      MiniLightningWarrior-Sheet_7: 2013783884
+      MiniLightningWarrior-Sheet_8: 924332597
+      MiniLightningWarrior-Sheet_9: 193189284
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
