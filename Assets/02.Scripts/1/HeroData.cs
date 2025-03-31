@@ -14,11 +14,7 @@ public class HeroData : ScriptableObject
     public float attackInterval;
     public bool isFlipped; //좌우반전된 히어로
 
-    public string GWeffect;
-    public string JWeffect;
-    public string YJeffect;
-    public string SHeffect;
-    public string HYeffect;
+   
     [HideInInspector] public bool isUnlocked;
     [HideInInspector] public int level = 1;
 }

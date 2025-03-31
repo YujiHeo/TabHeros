@@ -31,20 +31,44 @@ public class HeroAttack : MonoBehaviour
     {
         int damage = heroData.baseDamage + (heroData.level - 1) * 10;
         EnemyController target = FindObjectOfType<EnemyController>();
+
         if (target != null)
         {
             target.TakeDamage(damage);
+            Debug.Log($"{heroData.heroName}가 자동 공격! 데미지: {damage}");
 
            
-            Quaternion rotation = heroData.isFlipped ? Quaternion.Euler(0, 180, 0) : Quaternion.identity;
+            string tag = "DefaultEffect";
+            switch (heroData.heroName)
+            {
+                case "5톤통나무이건우":
+                    tag = "GWEffect"; break;
+                case "안경파괴자김상현":
+                    tag = "SHEffect"; break;
+                case "왕초보팀장허유지":
+                    tag = "YJEffect"; break;
+                case "슈퍼챌린저박진우":
+                    tag = "JWEffect"; break;
+                case "브론즈의왕김학영":
+                    tag = "HYEffect"; break;
+            }
 
            
-            ObjectPoolManager.instance.SpawnFromPool("GWEffect", transform.position, rotation, 1.5f);
-            ObjectPoolManager.instance.SpawnFromPool("HYEffect", transform.position, rotation, 1.5f);
-            ObjectPoolManager.instance.SpawnFromPool("SHEffect", transform.position, rotation, 1.5f);
-            ObjectPoolManager.instance.SpawnFromPool("JWEffect", transform.position, rotation, 1.5f);
-            ObjectPoolManager.instance.SpawnFromPool("YJEffect", transform.position, rotation, 1.5f);
+            float offsetX = heroData.isFlipped ? -1f : 1f;
+            Vector3 spawnPos = transform.position + new Vector3(offsetX, 0f, 0f);
+            Quaternion rot = transform.rotation;
+
+            GameObject effect = ObjectPoolManager.instance.SpawnFromPool(tag, spawnPos, rot, 1.5f);
+
+            if (effect != null)
+            {
+              
+                Vector3 scale = effect.transform.localScale;
+                scale.x = heroData.isFlipped ? -Mathf.Abs(scale.x) : Mathf.Abs(scale.x);
+                effect.transform.localScale = scale;
+            }
         }
     }
 }
+
 
