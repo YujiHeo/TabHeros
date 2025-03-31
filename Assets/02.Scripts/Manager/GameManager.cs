@@ -24,6 +24,4 @@ public class GameManager : Singleton<GameManager>
         SaveLoadManager.Instance.SaveStatData();
 
     }
-
-
 }
