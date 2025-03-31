@@ -6,38 +6,60 @@ using System.IO;
 public class SaveLoadManager : Singleton<SaveLoadManager>
 {
     public PlayerSaveData playerData;
+    public StatCoreData statData;
+    public WeaponData weaponData;
 
     private static string saveFilePath => Application.persistentDataPath + "/saveData.json";
 
     public void Start()
     {
-        playerData = LoadGame();
+        LoadAllData();
     }
 
-    public void SaveGame(PlayerSaveData data)
+    public void SaveAllData()
     {
-        string json = JsonUtility.ToJson(data, true);
+        SaveData saveData = LoadGame();
+        SaveDataGeneric(ref saveData, playerData);
+        SaveDataGeneric(ref saveData, statData);
+        SaveDataGeneric(ref saveData, weaponData);
+        SaveGame(saveData);
+    }
+
+    public void LoadAllData()
+    {
+        SaveData saveData = LoadGame();
+        playerData = LoadDataGeneric(saveData, playerData);
+        statData = LoadDataGeneric(saveData, statData);
+        weaponData = LoadDataGeneric(saveData, weaponData);
+    }
+
+    public void SaveGame(SaveData saveData)  // 기본 저장 기능
+    {
+        string json = JsonUtility.ToJson(saveData, true);
         File.WriteAllText(saveFilePath, json);
     }
 
-    public PlayerSaveData LoadGame()
+    public SaveData LoadGame()
     {
         if (File.Exists(saveFilePath))
         {
             string json = File.ReadAllText(saveFilePath);
-            return JsonUtility.FromJson<PlayerSaveData>(json);
+            return JsonUtility.FromJson<SaveData>(json);
         }
         else
         {
-            return new PlayerSaveData();
+            return new SaveData();
         }
     }
 
-    public void InitializeData()  // 테스트용 초기화
+    private void SaveDataGeneric<T>(ref SaveData saveData, T data) where T : class
     {
-        playerData = new PlayerSaveData();
-        playerData.Initialize();
-        SaveGame(playerData);
+        saveData.SetData(data);
+    }
+
+    private T LoadDataGeneric<T>(SaveData saveData, T data) where T : class, new()
+    {
+        return saveData.GetData(ref data);
     }
 
 }
