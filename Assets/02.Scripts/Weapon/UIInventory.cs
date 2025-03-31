@@ -9,10 +9,10 @@ public class UIInventory : Singleton<UIInventory>
     [SerializeField] public Button inventoryBtn;
     [SerializeField] public GameObject inventoryWindow;
 
-    [SerializeField] private WeaponSlot slotPrefab;
+    [SerializeField] private GameObject slotPrefab;
     [SerializeField] private Transform slotParent;
 
-    [SerializeField] private TextMeshProUGUI slotCounts;
+    //[SerializeField] private TextMeshProUGUI slotCounts;
 
     static Player player;
 
@@ -25,10 +25,12 @@ public class UIInventory : Singleton<UIInventory>
     private WeaponData weaponData;
 
 
-    void Start()
+    protected override void Awake()
     {
-        Button btn = inventoryBtn.GetComponent<Button>();
-        btn.onClick.AddListener(OpenInventory);
+        base.Awake();
+
+        /*Button btn = inventoryBtn.GetComponent<Button>();
+        btn.onClick.AddListener(OpenInventory);*/
 
         InitInventoryUI();
     }
@@ -36,20 +38,28 @@ public class UIInventory : Singleton<UIInventory>
     public void InitInventoryUI()
     {
         int slotCount = 5;
-        slotCounts.text = slotCount.ToString();
 
         for (int i = 0; i < slotCount; i++) // 5번 반복됨
         {
             Debug.Log($"슬롯 생성 중: {i}");
-            WeaponSlot newSlot = Instantiate(slotPrefab, slotParent);
-            slotList.Add(newSlot);
+            GameObject newSlotObject = Instantiate(slotPrefab, slotParent); //prefab에 Instantiate 
+            WeaponSlot weaponSlot = newSlotObject.GetComponent<WeaponSlot>(); 
+            slotList.Add(weaponSlot);
         }
     }
 
     public void AddItem(WeaponData weaponData)
     {
-        slotList[slotIndex].SetItem(weaponData);
-        slotIndex++;
+        if (slotIndex < slotList.Count)
+        {
+            slotList[slotIndex].SetItem(weaponData);
+            slotIndex++;
+        }
+
+        else
+        {
+            Debug.LogWarning("슬롯의 수를 초과했습니다.");
+        }
     }
 
     public void OpenInventory()
@@ -79,7 +89,7 @@ public class UIInventory : Singleton<UIInventory>
     }
 
 
-
+    /*
     public void WeaponEquipped(WeaponData newWeapon) //무기 장착
     {
         if (equippedWeapon != null)
@@ -90,8 +100,8 @@ public class UIInventory : Singleton<UIInventory>
         if (equippedWeapon != null && newWeapon.weaponPrefab != null)
         {
             equippedWeapon = Instantiate(newWeapon.weaponPrefab, transform);
-            newWeapon.weaponPrefab.SetActive(true); //현재 장착 중인 WeaponImage 아이콘을 만들기 위한 기능
             weaponData = newWeapon;
         }
     }
+    */
 }

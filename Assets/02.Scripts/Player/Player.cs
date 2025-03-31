@@ -5,31 +5,31 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-   [SerializeField]private PlayerDataBase playerData;
+   [SerializeField]private StatManager SM;
    
    [Header("Stats")]
    public int atk;
    public double crit;
    public int critDamage;
-   public int gold = 3000;
+   public int gold;
    public int upgradePoints;
    public double goldGainRate;
 
    private void Start()
    {
-      InitPlayerData();
+      UpdatePlayerStat();
+      SM = StatManager.instance;
    }
 
-   private void InitPlayerData()
+   public void UpdatePlayerStat()
    {
-      int atkLevel = playerData.GetStatLevel(PlayerStatType.Atk);
-      int critLevel = playerData.GetStatLevel(PlayerStatType.Crit);
-      int critDamageLevel = playerData.GetStatLevel(PlayerStatType.CritDamage);
-      int goldGainLevel = playerData.GetStatLevel(PlayerStatType.GoldGain);
- 
-      atk = (atkLevel - 1) * 10 + 10;  
-      crit = (critLevel - 1) * 0.1f + 5;
-      critDamage = (critDamageLevel - 1) * 10 + 100;
-      goldGainRate = (goldGainLevel - 1) * 10 + 100;
+      UpdatePlayerData();
+   }
+   private void UpdatePlayerData()
+   { 
+      atk = (int)SM.SetStatValue(PlayerStatType.Atk);
+      crit = SM.SetStatValue(PlayerStatType.Crit);
+      critDamage = (int)SM.SetStatValue(PlayerStatType.CritDamage);
+      goldGainRate = SM.SetStatValue(PlayerStatType.GoldGain);
    }
 }
