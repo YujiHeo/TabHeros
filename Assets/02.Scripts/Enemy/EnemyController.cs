@@ -38,14 +38,6 @@ public class EnemyController : MonoBehaviour
         StopWaitAction();
     }
 
-    void Update()
-    {
-        if (Input.GetMouseButtonDown(0))
-        {
-            TakeDamage(1000);
-        }
-    }
-
     public void StartBossTimer()
     {
         StopBossTimer();
