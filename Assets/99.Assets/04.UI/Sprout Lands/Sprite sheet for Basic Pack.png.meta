@@ -555,6 +555,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Sprite sheet for Basic Pack_15
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 118
+        width: 33
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 13, y: 7, z: 13, w: 7}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a65fdf2a1442d924b922de545481bfa0
+      internalID: 1429613161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -577,6 +598,7 @@ TextureImporter:
       Sprite sheet for Basic Pack_12: 1488512485
       Sprite sheet for Basic Pack_13: 1204560834
       Sprite sheet for Basic Pack_14: -174299314
+      Sprite sheet for Basic Pack_15: 1429613161
       Sprite sheet for Basic Pack_2: -814420084
       Sprite sheet for Basic Pack_3: 646410522
       Sprite sheet for Basic Pack_4: 673819448

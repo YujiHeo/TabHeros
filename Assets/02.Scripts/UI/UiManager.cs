@@ -15,7 +15,7 @@ public class UiManager : Singleton<UiManager>
     {
         panel.SetActive(false);
     }
-    public void UpdateCurrencyTxt() // 재화 관련 ui 업데이트
+    public void UpdateCurrencyTxt() // 재화 관련 ui 업데이트 (공통 기능)
     {
 
     }
