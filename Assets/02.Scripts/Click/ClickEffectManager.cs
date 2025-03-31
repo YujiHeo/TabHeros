@@ -1,7 +1,7 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using System.Collections.Generic;
 
 public class ClickEffectManager : MonoBehaviour
 {
@@ -19,8 +19,10 @@ public class ClickEffectManager : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            if (EventSystem.current.IsPointerOverGameObject()) return;
+            //  UI 위 클릭이면 아무 것도 하지 않음
+            if (IsPointerOverUIObject()) return;
 
+            // 이펙트 위치 계산
             Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             mouseWorldPos.z = 0;
 
@@ -28,13 +30,11 @@ public class ClickEffectManager : MonoBehaviour
             particlePos.z = 0;
             particlePos.y += yOffset;
 
-            // Attack 이펙트 
+            // 이펙트 생성
             ObjectPoolManager.instance.SpawnFromPool(attackEffectTag, mouseWorldPos, Quaternion.identity, attackEffectLife);
-
-            // Particle 이펙트
             ObjectPoolManager.instance.SpawnFromPool(particleEffectTag, particlePos, Quaternion.identity, particleEffectLife);
 
-            
+            // 데미지 계산 및 전달
             bool isCritical = Random.value < player.crit / 100f;
             int damage = player.atk;
 
@@ -51,6 +51,19 @@ public class ClickEffectManager : MonoBehaviour
             enemyController.TakeDamage(damage);
         }
     }
+
+    private bool IsPointerOverUIObject()
+    {
+        PointerEventData pointerData = new PointerEventData(EventSystem.current)
+        {
+            position = Input.mousePosition
+        };
+
+        List<RaycastResult> results = new List<RaycastResult>();
+        EventSystem.current.RaycastAll(pointerData, results);
+        return results.Count > 0;
+    }
 }
+
 
 

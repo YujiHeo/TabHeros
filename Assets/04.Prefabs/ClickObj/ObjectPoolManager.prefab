@@ -46,7 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pools:
   - tag: AttackEffect
-    prefab: {fileID: 4186470608034871016, guid: b64d71c4378388f43837ae5702cd0e0d, type: 3}
+    prefab: {fileID: 4186470608034871016, guid: 2800e8f19fd41564e885ebedc8005117, type: 3}
     size: 10
   - tag: ParticleEffect
     prefab: {fileID: 8442913855743077403, guid: dfb5641f4cc928e4ba09c5b6519c0f44, type: 3}
