@@ -18,23 +18,23 @@ public class WeaponSlot : MonoBehaviour
     [SerializeField] private TextMeshProUGUI isEquip;
 
     private WeaponData weaponData;
+    private WeaponSlot weaponSlot;
     private Player player;
 
     public void Start()
     {
-        Button upgradeBtn = upgradeButton.GetComponent<Button>();
-        upgradeBtn.onClick.AddListener(() => UIInventory.instance.WeaponUpgrade(weaponData));
-
-        //Button equipBtn = equipButton.GetComponent<Button>();
-        //equipBtn.onClick.AddListener(() => UIInventory.instance.WeaponEquipped(weaponData));
-
         if (player == null)
-            player = GameManager.instance.player;
+            player = FindObjectOfType<Player>();
 
-        if (weaponData == null)
-            weaponData = Resources.Load<WeaponData>("ATKUP");
+        weaponSlot = GetComponent<WeaponSlot>();
 
-        IsAbleToUpgrading(player, weaponData);
+        Button upgradeBtn = upgradeButton.GetComponent<Button>();
+        upgradeBtn.onClick.AddListener(() => UIInventory.instance.WeaponUpgrade(player, weaponData));
+
+        Button equipBtn = equipButton.GetComponent<Button>();
+        equipBtn.onClick.AddListener(() => UIInventory.instance.WeaponEquipped(weaponSlot, weaponData));
+
+        //IsAbleToUpgrading(player, weaponData);
     }
 
     public void SetItem(WeaponData weapon)
@@ -50,7 +50,7 @@ public class WeaponSlot : MonoBehaviour
         if (weaponData != null)
         {
             weaponNameText.text = weaponData.name;
-            
+
             weaponLevel.text = weaponData.level.ToString();
             weaponAbility.text = weaponData.ability.ToString();
             upgradePoint.text = weaponData.ownUpgradePoint.ToString();
@@ -69,19 +69,10 @@ public class WeaponSlot : MonoBehaviour
         }
     }
 
-    
-    public void IsAbleToUpgrading(Player player, WeaponData weaponData) //��ȭ �Ұ��� �� ����Ʈ �ؽ�Ʈ�� ���������� ����
+    public void AlreadyEquipped()
     {
-        if (player == null || weaponData == null) return;
-
-        if (GameManager.instance.player.upgradePoints < weaponData.ownUpgradePoint)
-        {
-            upgradePoint.color = Color.red;
-        }
-        else
-        {
-            upgradePoint.color = Color.white; // ���� ������ �ǵ�����
-        }
+        //equipButton = GetComponent<Button>().colors;
+        //equipButton.normalColor = Color.red;
+        //GetComponent<Button>().colors = equipButton;
     }
-    
 }

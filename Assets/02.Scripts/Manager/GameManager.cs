@@ -16,6 +16,9 @@ public class GameManager : Singleton<GameManager>
     public PlayerSaveData playerData;
     public WeaponData weaponData;
 
+    [SerializeField]
+    private WeaponList weaponList;
+
     //private Dictionary<CurrencyType, System.Action<int>> currentyActions;
 
     //private void Start()
@@ -83,5 +86,10 @@ public class GameManager : Singleton<GameManager>
     //    SaveLoadManager.instance.SaveStatData();
 
     //}
+
+    public void Start()
+    {
+        weaponList.GetWeapon();
+    }
 
 }

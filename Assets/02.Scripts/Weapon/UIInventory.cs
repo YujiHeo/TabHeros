@@ -6,31 +6,26 @@ using UnityEngine;
 
 public class UIInventory : Singleton<UIInventory>
 {
-    [SerializeField] public Button inventoryBtn;
-    [SerializeField] public GameObject inventoryWindow;
-
     [SerializeField] private GameObject slotPrefab;
     [SerializeField] private Transform slotParent;
 
-    //[SerializeField] private TextMeshProUGUI slotCounts;
+    [SerializeField] private Image CurrentWeapon;
 
     static Player player;
-
-    private GameObject equippedWeapon;
 
     private List<WeaponSlot> slotList = new List<WeaponSlot>();
 
     private int slotIndex = 0;
 
     private WeaponData weaponData;
+    private WeaponSlot weaponSlot;
 
 
     protected override void Awake()
     {
         base.Awake();
 
-        /*Button btn = inventoryBtn.GetComponent<Button>();
-        btn.onClick.AddListener(OpenInventory);*/
+        player = FindObjectOfType<Player>();
 
         InitInventoryUI();
     }
@@ -41,9 +36,8 @@ public class UIInventory : Singleton<UIInventory>
 
         for (int i = 0; i < slotCount; i++) // 5번 반복됨
         {
-            Debug.Log($"슬롯 생성 중: {i}");
             GameObject newSlotObject = Instantiate(slotPrefab, slotParent); //prefab에 Instantiate 
-            WeaponSlot weaponSlot = newSlotObject.GetComponent<WeaponSlot>(); 
+            WeaponSlot weaponSlot = newSlotObject.GetComponent<WeaponSlot>();
             slotList.Add(weaponSlot);
         }
     }
@@ -62,23 +56,14 @@ public class UIInventory : Singleton<UIInventory>
         }
     }
 
-    public void OpenInventory()
-    {
-        inventoryWindow.SetActive(true);
-    }
-
-    public void WeaponUpgrade(WeaponData newWeapon) //무기 업그레이드
+    public void WeaponUpgrade(Player player, WeaponData newWeapon) //무기 업그레이드
     {
         if (player.upgradePoints >= newWeapon.ownUpgradePoint)
         {
             player.upgradePoints -= newWeapon.ownUpgradePoint;
 
-            int point = newWeapon.ownUpgradePoint;
-
-            player.upgradePoints -= point;
-            newWeapon.level ++;
+            newWeapon.level++;
             newWeapon.ability += 10;
-
 
             newWeapon.ownUpgradePoint *= 2;
         }
@@ -89,19 +74,15 @@ public class UIInventory : Singleton<UIInventory>
     }
 
 
-    /*
-    public void WeaponEquipped(WeaponData newWeapon) //무기 장착
-    {
-        if (equippedWeapon != null)
-        {
-            Destroy(equippedWeapon);
-        }
 
-        if (equippedWeapon != null && newWeapon.weaponPrefab != null)
-        {
-            equippedWeapon = Instantiate(newWeapon.weaponPrefab, transform);
-            weaponData = newWeapon;
-        }
+    public void WeaponEquipped(WeaponSlot weaponSlot, WeaponData selectedWeapon) //무기 장착
+    {
+        //무기 장착 시 해당 무기 슬롯 장착 버튼 비활성화
+
+        //weaponSlot.AlreadyEquipped();
+        CurrentWeapon.sprite = selectedWeapon.Icon;
+
+        player.atk += selectedWeapon.ability;
     }
-    */
+
 }
