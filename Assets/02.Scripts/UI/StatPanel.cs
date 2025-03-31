@@ -30,22 +30,8 @@ public class StatPanel  : MonoBehaviour
 
     private Coroutine upgradeCoroutine;
     private bool isPointerDown;
-
-    private Dictionary<PlayerStatType, string> statNames = new Dictionary<PlayerStatType, string>()
-    {
-        { PlayerStatType.Atk, "공격력" },
-        { PlayerStatType.Crit, "크리티컬 확률" },
-        { PlayerStatType.CritDamage, "크리티컬 데미지" },
-        { PlayerStatType.GoldGain, "골드 획득량" }
-    };
     
-    private Dictionary<PlayerStatType, Func<Player, string>> statValue = new Dictionary<PlayerStatType, Func<Player, string>>()
-    {
-        { PlayerStatType.Atk, p => p.atk.ToString() },
-        { PlayerStatType.Crit, p => $"{p.crit.ToString("N1")}" +"%"},
-        { PlayerStatType.CritDamage, p => $"{p.critDamage.ToString()}"+"%" },
-        { PlayerStatType.GoldGain, p => $"{p.goldGainRate.ToString()}"+"%" }
-    };
+    
 
     public void OnUpgradeButtonClicked()
     {
@@ -53,10 +39,21 @@ public class StatPanel  : MonoBehaviour
         UpdateText();
     }
 
+    private void OnEnable()
+    {
+        StatManager.OnStatUpdated += UpdateText;
+    }
+    
     private void Start()
     {
         UpdateText();
     }
+
+    private void OnDisable()
+    {
+        StatManager.OnStatUpdated -= UpdateText;
+    }
+
     public void UpdateText()
     {
         Color activeColor;
@@ -65,12 +62,14 @@ public class StatPanel  : MonoBehaviour
         ColorUtility.TryParseHtmlString("#989390", out inactiveColor);
         
         int level = StatManager.instance.GetStatLevel(statType);
+        float stat = StatManager.instance.SetStatValue(statType);
         
-        infoText.text = $"{statNames[statType]}\n<size=40>Lv. {level}</size>";
-        statText.text = statValue[statType](player);
+        infoText.text = $"Lv. {level}";
+        if(statType == PlayerStatType.Atk) statText.text = $"{stat}";
+        else statText.text = $"{stat}%";
         
         int upgradeCost = upgradeSystem.GetUpgradeCost(level);
-        buttonText.text = $"<size=40>{upgradeCost}G</size>\n<size=48>Lv UP</size>";
+        buttonText.text = $"{upgradeCost} G";
         
         upgradeButton.image.color = player.gold >= upgradeCost ? activeColor : inactiveColor;
     }
