@@ -14,7 +14,7 @@ public class UpgradeSystem : MonoBehaviour
     public void Upgrade(PlayerStatType stat) 
     {
         int currentLevel = StatManager.instance.GetStatLevel(stat);
-        int upgradeCost = (currentLevel - 1) * 3*30 + 30;
+        int upgradeCost = GetUpgradeCost(currentLevel);
         
         if (player.gold < upgradeCost)
         {
@@ -27,5 +27,8 @@ public class UpgradeSystem : MonoBehaviour
         
         player.UpdatePlayerStat();
     }
-    
+    public int GetUpgradeCost(int level)
+    {
+        return (level - 1) * 3 * 30 + 30;
+    }
 }

@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-   [SerializeField]private PlayerDataBase playerData;
    [SerializeField]private StatManager SM;
    
    [Header("Stats")]
