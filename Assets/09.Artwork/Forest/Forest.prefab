@@ -2461,7 +2461,7 @@ GameObject:
   - component: {fileID: 9047086369667996756}
   - component: {fileID: 5729757688799885917}
   m_Layer: 0
-  m_Name: Stage01
+  m_Name: Forest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

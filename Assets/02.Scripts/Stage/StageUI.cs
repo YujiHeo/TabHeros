@@ -8,13 +8,15 @@ public class StageUI : MonoBehaviour
 {
     public TextMeshProUGUI txtStageName;
     public TextMeshProUGUI txtKillCount;
-    public Button btnBossChallenge;
+    public Button btnBossJoin;
+    public Button btnBossQuit;
 
-    public void Init(StageDataBase _data)
+    public void Init(StageDataBase _data, int _currentKillCount)
     {
         txtStageName.text = _data.stageName;
-        txtKillCount.text = _data.killCountMax.ToString();
-        btnBossChallenge.gameObject.SetActive(false);
+        txtKillCount.text = $"{_currentKillCount}/{_data.killCountMax}"; ;
+        btnBossJoin.gameObject.SetActive(false);
+        btnBossQuit.gameObject.SetActive(false);
     }
 
     public void SetEnemyCount(int _maxKillCountMax, int _currentKillCount)
@@ -22,8 +24,15 @@ public class StageUI : MonoBehaviour
         txtKillCount.text = $"{_currentKillCount}/{_maxKillCountMax}";
     }
 
-    public void SetBossActive(bool _isStageClear)
+    // 보스방 입장 가능 할 시 활성화
+    public void SetBossJoinActive(bool _isStageBoss)
     {
-        btnBossChallenge.gameObject.SetActive(true);
+        btnBossJoin.gameObject.SetActive(_isStageBoss);
+    }
+
+    // 보스 방 입장 시 보스방 나가기 버튼 활성화
+    public void SetBossQuitActive(bool _isJoinBoss)
+    {
+        btnBossQuit.gameObject.SetActive(_isJoinBoss);
     }
 }

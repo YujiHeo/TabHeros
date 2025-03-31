@@ -6,10 +6,10 @@ using UnityEngine;
 public class StageManager : Singleton<StageManager>
 {
     [Header("현재 데이터")]
-    private GameObject goBackground; // Stage의 배경
-    private int currentStage;
-    private Dictionary<int, int> killCount = new Dictionary<int, int>(); // stage와 count
-    private int clearStage;
+    public GameObject goBackground; // Stage의 배경
+    public int currentStage;
+    public Dictionary<int, int> killCount = new Dictionary<int, int>(); // stage와 count
+    public int clearStage = -1; // 클리어 한 스테이지가 아니라면 바로 보스방 진입
 
     [Header("할당 오브젝트")]
     public StageUI stageUI;
@@ -25,7 +25,7 @@ public class StageManager : Singleton<StageManager>
 
     public void SetStage(int _stage)
     {
-        currentStage = Math.Clamp(_stage, 0, stageDataBases.Count);
+        currentStage = Math.Clamp(_stage, 0, stageDataBases.Count - 1);
 
         // prefab이 있다면 하이라이키에서 삭제
         if (goBackground != null)
@@ -36,15 +36,20 @@ public class StageManager : Singleton<StageManager>
         goBackground = Instantiate(stageDataBases[currentStage].background, transform);
 
         // 적 설정
-        enemyController.SetEnemy(stageDataBases[currentStage].enemyData);
+        CreateEnemy();
 
         // 없다면 현재 스테이지의 킬 수 설정
         if (!killCount.ContainsKey(currentStage))
         {
             killCount.Add(currentStage, 0);
         }
+        stageUI.Init(stageDataBases[currentStage], killCount[currentStage]);
 
-        stageUI.SetEnemyCount(stageDataBases[currentStage].killCountMax, killCount[currentStage]);
+        // 보스 버튼 활성화
+        if (killCount[currentStage] >= stageDataBases[currentStage].killCountMax)
+        {
+            stageUI.SetBossJoinActive(true);
+        }
     }
 
 
@@ -54,8 +59,49 @@ public class StageManager : Singleton<StageManager>
         killCount[currentStage]++;
         stageUI.SetEnemyCount(stageDataBases[currentStage].killCountMax, killCount[currentStage]);
 
-        // 적 설정
-        Invoke("CreateEnemy", 0.5f);
+        // 적 설정 (바로 보스 소환) - 클리어가 안 된 스테이지라면
+        if (killCount[currentStage] >= stageDataBases[currentStage].killCountMax && clearStage < currentStage)
+        {
+            clearStage = currentStage;
+            stageUI.SetBossJoinActive(true);
+            stageUI.SetBossQuitActive(true);
+            CreateBoss();
+            // Invoke("CreateBoss", 0.5f);
+            return;
+        }
+
+        // 적 설정 (보스 소환 가능) - 이미 클리어가 된 스테이지 라면
+        if (killCount[currentStage] >= stageDataBases[currentStage].killCountMax)
+        {
+            stageUI.SetBossJoinActive(true);
+            stageUI.SetBossQuitActive(false);
+            CreateEnemy();
+            // Invoke("CreateEnemy", 0.5f);
+            return;
+        }
+
+        // 적 설정 (보스 소환 X)
+        stageUI.SetBossJoinActive(false);
+        stageUI.SetBossQuitActive(false);
+        CreateEnemy();
+        // Invoke("CreateEnemy", 0.5f);
+    }
+
+    public void BossKill()
+    {
+        SetStage(currentStage + 1);
+        // StartCoroutine(StartAction(() => SetStage(currentStage + 1), 0.5f));
+    }
+
+    public void BossTimeout()
+    {
+        SetStage(currentStage);
+    }
+
+    public IEnumerator StartAction(Action _action, float _time)
+    {
+        yield return new WaitForSeconds(_time);
+        _action();
     }
 
     public void CreateEnemy()
@@ -63,8 +109,22 @@ public class StageManager : Singleton<StageManager>
         enemyController.SetEnemy(stageDataBases[currentStage].enemyData);
     }
 
-    public void StartBoss()
+    public void CreateBoss()
     {
+        enemyController.SetEnemy(stageDataBases[currentStage].bossData);
+    }
 
+
+    public void OnClickBossJoin()
+    {
+        stageUI.SetBossJoinActive(false);
+        stageUI.SetBossQuitActive(true);
+        CreateBoss();
+    }
+    public void OnClickBossQuit()
+    {
+        stageUI.SetBossJoinActive(true);
+        stageUI.SetBossQuitActive(false);
+        CreateEnemy();
     }
 }
