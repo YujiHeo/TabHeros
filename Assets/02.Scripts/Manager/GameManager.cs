@@ -23,12 +23,14 @@ public class GameManager : Singleton<GameManager>
 
         //PlayerUpgrade(계산완료된수치값);
 
-        SaveLoadManager.Instance.statData.atk = atkChangeNum;
-        SaveLoadManager.Instance.SaveStatData();
+        SaveLoadManager.instance.statData.atk = atkChangeNum;
+        SaveLoadManager.instance.SaveStatData();
     }
 
     public void Start()
     {
+        //SaveLoadManager.instance.LoadWeaponData();
+
         weaponList.GetWeapon();
     }
 }

@@ -28,9 +28,6 @@ public class WeaponSlot : MonoBehaviour
 
         weaponSlot = GetComponent<WeaponSlot>();
 
-        //if (weaponData == null)
-            //weaponData = Resources.Load<WeaponData>("ATKUP");
-
         Button upgradeBtn = upgradeButton.GetComponent<Button>();
         upgradeBtn.onClick.AddListener(() => UIInventory.instance.WeaponUpgrade(player, weaponData));
 
@@ -78,21 +75,4 @@ public class WeaponSlot : MonoBehaviour
         //equipButton.normalColor = Color.red;
         //GetComponent<Button>().colors = equipButton;
     }
-
-    /*
-    public void IsAbleToUpgrading(Player player, WeaponData weaponData) //강화 불가능 시 포인트 텍스트를 붉은색으로 변경
-    {
-        if (player == null || weaponData == null) return;
-
-        if (GameManager.player.upgradePoints < weaponData.ownUpgradePoint)
-        {
-            upgradePoint.color = Color.red;
-        }
-        else
-        {
-            upgradePoint.color = Color.white; // 원래 색으로 되돌리기
-        }
-    }
-    */
-    
 }

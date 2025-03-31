@@ -25,12 +25,10 @@ public class WeaponList : ScriptableObject
     public WeaponData GetWeaponData(int id)
     {
         WeaponData weaponData = weaponList.Find(Data => Data.id == id);
+        WeaponData cloneData = Instantiate(weaponData); //원본을 복사
 
-        return weaponData;
+        return cloneData;
     }
-
-
-
 }
 
 

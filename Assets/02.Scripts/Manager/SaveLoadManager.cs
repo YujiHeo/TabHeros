@@ -3,27 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 
-public class SaveLoadManager : MonoBehaviour
+public class SaveLoadManager : Singleton<SaveLoadManager>
 {
-    public static SaveLoadManager Instance { get; private set; }
 
     public PlayerCoreData playerData;
     public StatCoreData statData;
     public WeaponData weaponData;
+    public WeaponList weaponList;
 
     private static string saveFilePath => Application.persistentDataPath + "/saveData.json";
 
     public void Awake()
     {
-        if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);  
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
+
         LoadAllData();
 
     }
@@ -105,12 +97,12 @@ public class SaveLoadManager : MonoBehaviour
 
     public void LoadWeaponData()
     {
-        WeaponData data = LoadGame().weaponCoreData;
-        if (data == null)
+        for (int i = 0; i < weaponList.weaponList.Count; i++)
         {
-            data = new WeaponData();
+
+            WeaponData cloneWeapon = Instantiate(weaponList.weaponList[i]);
+
         }
-        weaponData = data;
     }
 
 }
