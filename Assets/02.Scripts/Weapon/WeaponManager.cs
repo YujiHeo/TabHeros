@@ -5,16 +5,15 @@ using static UnityEditor.UIElements.ToolbarMenu;
 
 public class WeaponManager : Singleton<WeaponManager>
 {
-    private WeaponData weaponData;
+    [SerializeField]
+    private WeaponList weaponList;
 
-    private void Start()
+    public void Start()
     {
-        for (int i = 0; i < 5; i++)
-        {
-            AddItem(WeaponType.ATKUP, i);
-        }
-
+        weaponList.GetWeapon();
     }
+
+    /*
     public void AddItem(WeaponType weapon, int number)
     {
         string assetName = $"{weapon.ToString()} {number}";
@@ -28,4 +27,5 @@ public class WeaponManager : Singleton<WeaponManager>
 
         UIInventory.instance.AddItem(weaponData);
     }
+    */
 }
