@@ -5,9 +5,13 @@ public class GameManager : Singleton<GameManager>
 {
     //public static GameManager instance;  // 싱글톤 사용
 
+
     public PlayerCoreData playerData;
     public StatCoreData statData;
     public WeaponData weaponData;
+
+    [SerializeField]
+    private WeaponList weaponList;
 
     public static Player player { get; private set; }
 
@@ -23,5 +27,10 @@ public class GameManager : Singleton<GameManager>
         SaveLoadManager.Instance.statData.atk = atkChangeNum;
         SaveLoadManager.Instance.SaveStatData();
 
+    }
+
+    public void Start()
+    {
+        weaponList.GetWeapon();
     }
 }
