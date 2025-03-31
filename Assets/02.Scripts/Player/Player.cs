@@ -32,4 +32,9 @@ public class Player : MonoBehaviour
       critDamage = (int)SM.SetStatValue(PlayerStatType.CritDamage);
       goldGainRate = SM.SetStatValue(PlayerStatType.GoldGain);
    }
+
+   public void GetQuestReward(int value)
+   {
+      upgradePoints += value;
+   }
 }

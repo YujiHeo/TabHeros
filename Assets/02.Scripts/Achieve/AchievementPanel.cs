@@ -14,6 +14,7 @@ public enum AchievementType
 }
 public class AchievementPanel : MonoBehaviour
 {
+    [SerializeField] private PlayerGoods playerGoods;
     [SerializeField] private AchievementType achievementType;
     [Header("UI")]
     [SerializeField] private TextMeshProUGUI achieveText;
@@ -33,11 +34,6 @@ public class AchievementPanel : MonoBehaviour
     
     private void Start()
     {
-        UpdateUI();
-    }
-    public void Initialize(int achievementIndex)
-    {
-        this.achievementIndex = achievementIndex; // 인덱스 저장
         UpdateUI();
     }
 
@@ -63,8 +59,10 @@ public class AchievementPanel : MonoBehaviour
         progressBar.fillAmount = Mathf.Clamp01((float)achievement.currentProgress / achievement.targetValue);
     }
 
-    private void ButtonClicked()
+    public void ButtonClicked()
     {
-        
+        AchievementManager.instance.CompleteAchievement(achievementType);
+        Destroy(this.gameObject);
+        playerGoods.updateText();
     }
 }

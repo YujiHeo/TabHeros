@@ -15,7 +15,7 @@ public class Achievement
     public string rewardValue; 
     public string achievementType; // JSON 매핑용 필드 추가
 
-    [NonSerialized]public AchievementType Type;
+    [NonSerialized] public AchievementType Type;
     [NonSerialized] public int currentProgress; // 진행 현황 (저장 대상)
     [NonSerialized] public bool isCompleted;    // 달성 여부 (저장 대상)
 }
@@ -27,6 +27,7 @@ public class AchievementListWrapper
 
 public class AchievementManager : Singleton<AchievementManager>
 {
+    [SerializeField] private Player player;
     public List<Achievement> achievements = new List<Achievement>();
     private void Awake()
     {
@@ -65,4 +66,23 @@ public class AchievementManager : Singleton<AchievementManager>
     // 타입별 업적 조회 메서드 추가
     public List<Achievement> GetAchievementsByType(AchievementType type)
         => achievements.FindAll(a => a.Type == type);
+
+    public void CompleteAchievement(AchievementType type)
+    {
+        List<Achievement> achievementsOfType = GetAchievementsByType(type);
+        
+        Achievement achievement = achievementsOfType.Find(a => !a.isCompleted);
+        if (!achievement.isCompleted)
+        {
+            achievement.currentProgress = achievement.targetValue;
+            achievement.isCompleted = true;
+            GrantReward(achievement);
+            Debug.Log($"업적 완료: {achievement.name}");
+        }
+    }
+    private void GrantReward(Achievement achievement)
+    {
+        if(achievement.rewardType == "upgradePoints")
+            player.GetQuestReward(int.Parse(achievement.rewardValue));
+    }
 }
