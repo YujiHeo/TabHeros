@@ -29,7 +29,7 @@ public class WeaponSlot : MonoBehaviour
         //equipBtn.onClick.AddListener(() => UIInventory.instance.WeaponEquipped(weaponData));
 
         if (player == null)
-            player = GameManager.player;
+            player = GameManager.instance.player;
 
         if (weaponData == null)
             weaponData = Resources.Load<WeaponData>("ATKUP");
@@ -70,17 +70,17 @@ public class WeaponSlot : MonoBehaviour
     }
 
     
-    public void IsAbleToUpgrading(Player player, WeaponData weaponData) //°­È­ ºÒ°¡´É ½Ã Æ÷ÀÎÆ® ÅØ½ºÆ®¸¦ ºÓÀº»öÀ¸·Î º¯°æ
+    public void IsAbleToUpgrading(Player player, WeaponData weaponData) //ï¿½ï¿½È­ ï¿½Ò°ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ® ï¿½Ø½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
     {
         if (player == null || weaponData == null) return;
 
-        if (GameManager.player.upgradePoints < weaponData.ownUpgradePoint)
+        if (GameManager.instance.player.upgradePoints < weaponData.ownUpgradePoint)
         {
             upgradePoint.color = Color.red;
         }
         else
         {
-            upgradePoint.color = Color.white; // ¿ø·¡ »öÀ¸·Î µÇµ¹¸®±â
+            upgradePoint.color = Color.white; // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Çµï¿½ï¿½ï¿½ï¿½ï¿½
         }
     }
     
