@@ -33,8 +33,6 @@ public class WeaponSlot : MonoBehaviour
 
         Button equipBtn = equipButton.GetComponent<Button>();
         equipBtn.onClick.AddListener(() => UIInventory.instance.WeaponEquipped(weaponSlot, weaponData));
-
-        //IsAbleToUpgrading(player, weaponData);
     }
 
     public void SetItem(WeaponData weapon)
@@ -56,7 +54,6 @@ public class WeaponSlot : MonoBehaviour
             upgradePoint.text = weaponData.ownUpgradePoint.ToString();
 
             weaponImage.sprite = weaponData.Icon;
-
         }
 
         else
@@ -67,12 +64,5 @@ public class WeaponSlot : MonoBehaviour
             weaponAbility.text = "0";
             upgradePoint.text = "0";
         }
-    }
-
-    public void AlreadyEquipped()
-    {
-        //equipButton = GetComponent<Button>().colors;
-        //equipButton.normalColor = Color.red;
-        //GetComponent<Button>().colors = equipButton;
     }
 }
