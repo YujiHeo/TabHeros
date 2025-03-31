@@ -6,7 +6,7 @@ using UnityEngine;
 public class StatManager : Singleton<StatManager>
 {
     [SerializeField]private PlayerDataBase playerData;
-    
+    public static event Action OnStatUpdated;
     
     // PlayerDataBase에 존재하는 Playerstat에서 스탯을 가져오고
     public int GetStatLevel(PlayerStatType statType)
@@ -28,7 +28,7 @@ public class StatManager : Singleton<StatManager>
             _ => 0
         };
     }
-    
+
     // 스탯 최신화
     public void UpdateStat(PlayerStatType statType, int newLevel)
     {
@@ -41,5 +41,6 @@ public class StatManager : Singleton<StatManager>
         {
             playerData.stats.Add(new PlayerStat { statType = statType, level = newLevel });
         }
+        OnStatUpdated?.Invoke();
     }
 }
