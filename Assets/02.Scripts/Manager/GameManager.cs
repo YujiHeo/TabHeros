@@ -7,7 +7,7 @@ public class GameManager : Singleton<GameManager>
 
     public PlayerCoreData playerData;
     public StatCoreData statData;
-    public WeaponData weaponData;
+    //public WeaponData weaponData;
 
     [SerializeField]
     private WeaponList weaponList;
