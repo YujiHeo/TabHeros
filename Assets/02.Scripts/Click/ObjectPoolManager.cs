@@ -7,13 +7,13 @@ public class ObjectPoolManager : Singleton<ObjectPoolManager>
     [System.Serializable]
     public class Pool
     {
-        public string tag;
-        public GameObject prefab;
-        public int size;
+        public string tag; //오브젝트 구분용 키
+        public GameObject prefab; //생성할 프리펩 ex)이펙트
+        public int size; //미리 만들어둘 개수
     }
 
-    public List<Pool> pools;
-    private Dictionary<string, Queue<GameObject>> poolDictionary;
+    public List<Pool> pools; 
+    private Dictionary<string, Queue<GameObject>> poolDictionary; //태그별로 저장하는 딕셔너리
 
     void Start()
     {
@@ -38,7 +38,7 @@ public class ObjectPoolManager : Singleton<ObjectPoolManager>
     {
         if (!poolDictionary.ContainsKey(tag))
         {
-            Debug.LogWarning($"Pool with tag {tag} doesn't exist!");
+            Debug.LogWarning($"태그가 {tag}인풀이 없습니다.");
             return null;
         }
 
@@ -51,7 +51,7 @@ public class ObjectPoolManager : Singleton<ObjectPoolManager>
             Pool poolConfig = pools.Find(p => p.tag == tag);
             if (poolConfig == null)
             {
-                Debug.LogWarning($"No pool config found for tag {tag}");
+                Debug.LogWarning($"{tag}에 풀이 없습니다.");
                 return null;
             }
 
