@@ -354,7 +354,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 94332572}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 389220723}
+        m_TargetAssemblyTypeName: AchievementPanel, Assembly-CSharp
+        m_MethodName: ButtonClicked
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &94332572
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1349,6 +1361,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b039b59df77048dab6d1264f656b9fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerGoods: {fileID: 8712860377718565196}
   achievementType: 2
   achieveText: {fileID: 1094946896}
   progressText: {fileID: 1383832535}
@@ -2294,6 +2307,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b039b59df77048dab6d1264f656b9fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerGoods: {fileID: 8712860377718565196}
   achievementType: 3
   achieveText: {fileID: 640899402}
   progressText: {fileID: 1461199863}
@@ -3276,7 +3290,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 834433495}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1583275683}
+        m_TargetAssemblyTypeName: AchievementPanel, Assembly-CSharp
+        m_MethodName: ButtonClicked
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &834433495
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3616,6 +3642,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b039b59df77048dab6d1264f656b9fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerGoods: {fileID: 8712860377718565196}
   achievementType: 1
   achieveText: {fileID: 874599944}
   progressText: {fileID: 1947532806}
@@ -4306,6 +4333,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c847467fbd92ae4479e4f3334161f869, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  warningTxt: {fileID: 0}
 --- !u!4 &1118846974
 Transform:
   m_ObjectHideFlags: 0
@@ -4853,7 +4881,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1244336504}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 907826129}
+        m_TargetAssemblyTypeName: AchievementPanel, Assembly-CSharp
+        m_MethodName: ButtonClicked
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1244336504
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6129,6 +6169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b039b59df77048dab6d1264f656b9fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerGoods: {fileID: 8712860377718565196}
   achievementType: 4
   achieveText: {fileID: 185570480}
   progressText: {fileID: 160518775}
@@ -6507,6 +6548,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44d9319dd768d4416afca7388a8a1aea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 256880632}
   achievements:
   - name: 
     description: 
@@ -7106,7 +7148,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2135886102}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 636461487}
+        m_TargetAssemblyTypeName: AchievementPanel, Assembly-CSharp
+        m_MethodName: ButtonClicked
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2135886102
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12706,6 +12760,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b039b59df77048dab6d1264f656b9fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerGoods: {fileID: 8712860377718565196}
   achievementType: 0
   achieveText: {fileID: 2373325570920417678}
   progressText: {fileID: 1748685303577421366}
@@ -14591,7 +14646,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2393282862361256977}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4605286723600504432}
+        m_TargetAssemblyTypeName: AchievementPanel, Assembly-CSharp
+        m_MethodName: ButtonClicked
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6113950114659461283
 GameObject:
   m_ObjectHideFlags: 0
