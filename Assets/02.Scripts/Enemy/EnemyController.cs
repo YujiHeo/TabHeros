@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,7 +9,8 @@ public class EnemyController : MonoBehaviour
     private GameObject goOutfit; // Enemy의 외형
     private EnemyAnimHandler animHandler; // Enemy의 외형
     private int currentHP;
-    private float currentClearTime;
+    private IEnumerator coroutineBossTimer;
+    private IEnumerator coroutineWait;
 
     [Header("할당 오브젝트")]
     public EnemyUI enemyUI;
@@ -30,16 +32,41 @@ public class EnemyController : MonoBehaviour
         animHandler = goOutfit.GetComponent<EnemyAnimHandler>();
 
         currentHP = data.hp;
-        currentClearTime = data.clearTime;
         enemyUI.Init(data);
+
+        if (data.isBoss) StartBossTimer();
+        StopWaitAction();
     }
 
-    void Update()
+    public void StartBossTimer()
     {
-        if (Input.GetMouseButtonDown(0))
+        StopBossTimer();
+        coroutineBossTimer = CoroutineBossTimer();
+        StartCoroutine(coroutineBossTimer);
+    }
+
+    public void StopBossTimer()
+    {
+        if (coroutineBossTimer != null)
         {
-            TakeDamage(10);
+            StopCoroutine(coroutineBossTimer);
+            coroutineBossTimer = null;
         }
+    }
+
+    public IEnumerator CoroutineBossTimer()
+    {
+        float totalTime = data.clearTime;
+        float currentTime = data.clearTime;
+
+        while (0f < currentTime)
+        {
+            enemyUI.SetTimer(totalTime, currentTime);
+            currentTime -= Time.deltaTime;
+            yield return null;
+        }
+
+        StageManager.instance.BossTimeout();
     }
 
     public void TakeDamage(int _damage)
@@ -51,21 +78,54 @@ public class EnemyController : MonoBehaviour
         }
 
         currentHP -= _damage;
-        enemyUI.SetHPBar(data.hp, currentHP);
+        if (currentHP <= 0) currentHP = 0;
+        enemyUI.SetHPBar(data.hp, currentHP, _damage);
 
         if (currentHP <= 0)
         {
             // TODO : 사망하는 연출
             currentHP = 0;
             animHandler.Die();
-            StageManager.instance.EnemyKill();
+            Die();
         }
         else
         {
             // TODO : 데미지 입는 연출
             animHandler.Hurt();
         }
-
     }
 
+    public void Die()
+    {
+        if (data.isBoss)
+        {
+            StopBossTimer();
+            StopWaitAction();
+            coroutineWait = StartAction(StageManager.instance.BossKill, 0.5f);
+            StartCoroutine(coroutineWait);
+        }
+        else
+        {
+            StopWaitAction();
+            coroutineWait = StartAction(StageManager.instance.EnemyKill, 0.5f); // 타이머 확인해보기
+            StartCoroutine(coroutineWait);
+        }
+    }
+
+
+    public IEnumerator StartAction(Action _action, float _time)
+    {
+
+        yield return new WaitForSeconds(_time);
+        _action();
+    }
+
+    public void StopWaitAction()
+    {
+        if (coroutineWait != null)
+        {
+            StopCoroutine(coroutineWait);
+            coroutineWait = null;
+        }
+    }
 }

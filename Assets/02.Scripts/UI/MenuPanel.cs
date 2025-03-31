@@ -20,11 +20,11 @@ public class MenuPanel : MonoBehaviour
 
     }
 
-    private void ToggleMenuPanel(GameObject panel)
+    private void ToggleMenuPanel(GameObject _panel)
     {
-        if (currentOpenPanel == panel)
+        if (currentOpenPanel == _panel)
         {
-            UiManager.instance.ClosePanel(panel);
+            UiManager.instance.ClosePanel(_panel);
             currentOpenPanel = null;
         }
         else
@@ -33,8 +33,8 @@ public class MenuPanel : MonoBehaviour
             CloseAllMenuPanel();
 
             // 새 패널 열기
-            UiManager.instance.OpenPanel(panel);
-            currentOpenPanel = panel;
+            UiManager.instance.OpenPanel(_panel);
+            currentOpenPanel = _panel;
         }
     }
 
