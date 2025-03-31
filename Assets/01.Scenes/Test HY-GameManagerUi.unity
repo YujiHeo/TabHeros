@@ -243,7 +243,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slotPrefab: {fileID: 4905022400623331158, guid: a7feee3b582b783498359d088e4656ca, type: 3}
   slotParent: {fileID: 8798631445575086001}
-  CurrentWeapon: {fileID: 0}
+  CurrentWeapon: {fileID: 499045190252056976}
 --- !u!1 &627072192 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6695093366337604227, guid: 5be293e3a23ebd1418dce2c699f6bfb5, type: 3}
@@ -820,7 +820,7 @@ MonoBehaviour:
     clearStage: 0
     weaponDataList: []
   weaponData: {fileID: 0}
-  weaponList: {fileID: 0}
+  weaponList: {fileID: 11400000, guid: 02833fbb0834c5345ad6b67fe5f374cd, type: 2}
 --- !u!4 &1392904082
 Transform:
   m_ObjectHideFlags: 0
