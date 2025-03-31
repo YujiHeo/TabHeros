@@ -12,9 +12,10 @@ using System.Collections.Generic;
 
 public class GameManager : Singleton<GameManager>
 {
-    public Player player;
-    public PlayerSaveData playerData;
-    public WeaponData weaponData;
+    //public Player player;
+    //public PlayerSaveData playerData;
+    //public StatCoreData statData;
+    //public WeaponData weaponData;
 
     //private Dictionary<CurrencyType, System.Action<int>> currentyActions;
 
@@ -77,7 +78,7 @@ public class GameManager : Singleton<GameManager>
     //public void AttackUpgrade(int atkChangeNum)
     //{
 
-    //    PlayerUpgrade(계산완료된수치값);
+    //    //PlayerUpgrade(계산완료된수치값);
 
     //    SaveLoadManager.instance.statData.atk = atkChangeNum;
     //    SaveLoadManager.instance.SaveStatData();
