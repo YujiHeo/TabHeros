@@ -20,6 +20,8 @@ public class StageManager : Singleton<StageManager>
 
     void Start()
     {
+        stageUI.btnBossJoin.onClick.AddListener(OnClickBossJoin);
+        stageUI.btnBossQuit.onClick.AddListener(OnClickBossQuit);
         SetStage(0);
     }
 

@@ -57,7 +57,7 @@ public class EnemyUI : MonoBehaviour
     public void SetTimer(float _timer, float _currentTimer)
     {
         imgCurrentTimer.fillAmount = _currentTimer / _timer;
-        txtTimer.text = $"{_currentTimer.ToString("N0")}초";
+        txtTimer.text = $"{_currentTimer.ToString("N0")}S";
     }
 
     public void Decrease(float _changeHP, float _currentHP)
