@@ -13,6 +13,7 @@ public class WeaponSlot : MonoBehaviour
 
     [SerializeField] private Button upgradeButton;
     [SerializeField] private TextMeshProUGUI upgradePoint;
+    [SerializeField] private TextMeshProUGUI upgradeText;
 
     [SerializeField] private Button equipButton;
     [SerializeField] private TextMeshProUGUI isEquip;
@@ -24,7 +25,7 @@ public class WeaponSlot : MonoBehaviour
     public void Start()
     {
         if (player == null)
-            player = FindObjectOfType<Player>();
+        player = FindObjectOfType<Player>();
 
         weaponSlot = GetComponent<WeaponSlot>();
 
@@ -42,6 +43,7 @@ public class WeaponSlot : MonoBehaviour
         weaponData = weapon;
 
         RefreshUI();
+
     }
 
 
@@ -73,12 +75,18 @@ public class WeaponSlot : MonoBehaviour
     {
         Color activeColor;
         Color inactiveColor;
+        Color inactiveColorForText;
+
         ColorUtility.TryParseHtmlString("#F3883D", out activeColor);
         ColorUtility.TryParseHtmlString("#989390", out inactiveColor);
 
+        ColorUtility.TryParseHtmlString("#000000", out inactiveColorForText);
+
         int upgradePoints = weaponData.ownUpgradePoint;
 
+        upgradeButton.transition = Selectable.Transition.None;
+
         upgradeButton.image.color = player.upgradePoints >= upgradePoints ? activeColor : inactiveColor;
+        upgradeText.color = player.upgradePoints >= upgradePoints ? inactiveColorForText : activeColor;
     }
-    
 }
