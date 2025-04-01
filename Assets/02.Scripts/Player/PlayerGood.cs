@@ -13,6 +13,10 @@ public class PlayerGoods : MonoBehaviour
     private void Start()
     {
         playerData = SaveLoadManager.instance.playerData;
+    }
+
+    public void Update()
+    {
         updateText();
     }
 

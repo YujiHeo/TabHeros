@@ -88,7 +88,7 @@ public class WeaponSlot : MonoBehaviour
 
         upgradeButton.transition = Selectable.Transition.None;
 
-        upgradeButton.image.color = playerData.upgradePoints >= upgradePoints ? activeColor : inactiveColor;
+        upgradeButton.image.color = SaveLoadManager.instance.playerData.upgradePoints >= upgradePoints ? activeColor : inactiveColor;
         upgradeText.color = playerData.upgradePoints >= upgradePoints ? inactiveColorForText : activeColor;
     }
 }

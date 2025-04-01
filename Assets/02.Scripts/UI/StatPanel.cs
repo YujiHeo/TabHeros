@@ -73,7 +73,7 @@ public class StatPanel  : MonoBehaviour
         int upgradeCost = upgradeSystem.GetUpgradeCost(level);
         buttonText.text = $"{upgradeCost} G";
         
-        upgradeButton.image.color = SaveLoadManager.instance.playerData.gold >= upgradeCost ? activeColor : inactiveColor;
+        upgradeButton.image.color = playerData.gold >= upgradeCost ? activeColor : inactiveColor;
     }
     
     public void OnPointerDown()
