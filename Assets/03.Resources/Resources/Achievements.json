@@ -1,0 +1,52 @@
+{
+   "achievements":[
+{
+   "id": 1,
+   "name": "클릭 초심자",
+   "description": "클릭을 100번 해보자",
+   "targetValue": 100,
+   "rewardType": "upgradePoints",
+   "rewardValue": "30",
+   "achievementType": "Click"
+
+  },
+  {
+   "id": 2,
+   "name": "골드 모으기",
+   "description": "골드를 1000G 모아보자",
+   "targetValue": 1000,
+   "rewardType": "upgradePoints",
+   "rewardValue": "30",
+   "achievementType": "Gold"
+
+  },
+  {
+   "id": 3,
+   "name": "영웅 해방",
+   "description": "첫 영웅을 해금해보자",
+   "targetValue": 1,
+   "rewardType": "upgradePoints",
+   "rewardValue": "30",
+   "achievementType": "Hero"
+  },
+  {
+   "id": 4,
+   "name": "무기 해금",
+   "description": "첫 무기를 가져보자",
+   "targetValue": 1,
+   "rewardType": "upgradePoints",
+   "rewardValue": "30",
+   "achievementType": "Weapon"
+  },
+  {
+   "id": 5,
+   "name": "스테이지 돌파",
+   "description": "3 스테이지까지 돌파하자",
+   "targetValue": 3,
+   "rewardType": "upgradePoints",
+   "rewardValue": "30",
+   "achievementType": "Stage"
+  }
+
+ ]
+}

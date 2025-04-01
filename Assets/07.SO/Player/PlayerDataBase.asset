@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stats:
   - statType: 0
-    level: 9
+    level: 12
   - statType: 1
-    level: 4
+    level: 3
   - statType: 2
-    level: 9
+    level: 1
   - statType: 3
-    level: 2
+    level: 1

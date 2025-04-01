@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcab250657f70ce4a999f305bf8d79b9, type: 3}
+  m_Name: HeroDataJW
+  m_EditorClassIdentifier: 
+  id: 3
+  heroName: "\uC288\uD37C\uCC4C\uB9B0\uC800\uBC15\uC9C4\uC6B0"
+  heroIcon: {fileID: 122210628, guid: c61920c82aa6def46828c55b3587d3c5, type: 3}
+  baseDamage: 11
+  unlockPrice: 2000
+  heroPrefab: {fileID: 720276040477766554, guid: 1fd866d7f904ce440bc18062abddb86f, type: 3}
+  attackInterval: 0.5
+  isUnlocked: 1
+  level: 1

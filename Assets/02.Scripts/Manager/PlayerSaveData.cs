@@ -1,15 +1,25 @@
-using System;
+ï»¿using System;
 using System.Collections.Generic;
+using TMPro;
+using UnityEngine;
+
+public class SaveData  // ì„¸ì´ë¸Œ ì´ëŒ€ì¥
+{
+    public PlayerSaveData playerSaveData = new PlayerSaveData();
+    public StageSaveData stageSaveData = new StageSaveData();
+    public WeaponSaveData weaponSaveData = new WeaponSaveData();
+    public HeroSaveData heroSaveData = new HeroSaveData();
+}
 
 [Serializable]
 public class PlayerSaveData
 {
-    // ÀçÈ­ º¸À¯·®
+    // ì¬í™” ë³´ìœ ëŸ‰
     public int gold;
     public double goldGainRate;
     public int upgradePoints;
 
-    // ½ºÅÈ Á¤º¸
+    // ìŠ¤íƒ¯ ì •ë³´
     public int atk;
     public double crit;
     public int critDamage;
@@ -24,39 +34,46 @@ public class PlayerSaveData
         critDamage = player.critDamage;
     }
 
-    // ½ºÅ×ÀÌÁö ÁøÇà »óÈ²
+}
+
+[Serializable]
+public class StageSaveData
+{
+    // ìŠ¤í…Œì´ì§€ ì§„í–‰ ìƒí™©
     public int currentStage;
     public Dictionary<int, int> killCount = new Dictionary<int, int>();
     public int clearStage;
 
     public void SaveFromStageManager(StageManager stageManager)
     {
-        //currentStage = stageManager.currentStage;
-        //killCount = stageManager.killCount;
-        //clearStage = stageManager.clearStage;
-    }
-
-    // ¹«±â Á¤º¸
-    public List<WeaponData> weaponDataList = new List<WeaponData>();
-
-    public void SaveFromWeaponData(List<WeaponData> weaponDataList)
-    {
-        this.weaponDataList = weaponDataList;
-    }
-
-    public void Initialize()  // °ª ÃÊ±âÈ­ (Å×½ºÆ®¿ë) 
-    {
-        gold = 100;
-        goldGainRate = 1.0;
-        upgradePoints = 10;
-        atk = 10;
-        crit = 5.0;
-        critDamage = 50;
-        currentStage = 1;
-        killCount = new Dictionary<int, int>();
-        clearStage = 0;
-        weaponDataList = new List<WeaponData>();
+        currentStage = stageManager.currentStage;
+        killCount = stageManager.killCount;
+        clearStage = stageManager.clearStage;
     }
 }
 
+[Serializable]
+public class WeaponSaveData
+{
+    // ë¬´ê¸° ì¥ì°©ìƒí™©
+    public int weaponLevel;
+    public int weaponAbility;
+    public int upgradePoints;
+    //  ì´ upgaradePointsë¥¼ ì§€ê¸ˆì€ WeaponDataì˜ ê°’ìœ¼ë¡œ ì¶”ê°€í•´ì£¼ê³  ìˆëŠ”ë°,
+    //  player.upgradePointsì— ë³´ë‚´ë˜ì§€ ì¤‘ì•™ê´€ë¦¬ í•´ì•¼í•˜ëŠ” ê²ƒ ì•„ë‹Œì§€?
+
+    public void SaveFromWeaponData(WeaponData weaponData)
+    {
+        weaponLevel = weaponData.level;
+        weaponAbility = weaponData.ability;
+        upgradePoints = weaponData.ownUpgradePoint;
+    }
+
+}
+
+[Serializable]
+public class HeroSaveData
+{
+    // ì•ìœ¼ë¡œ ì €ì¥ë  ì˜ì›… ê´€ë ¨ ë°ì´í„°
+}
 
