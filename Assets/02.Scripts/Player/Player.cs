@@ -37,4 +37,12 @@ public class Player : MonoBehaviour
    {
       upgradePoints += value;
    }
+
+   public void Reward(int value, int upgradepoints)
+   {
+      double reward = value * (goldGainRate / 100);
+      upgradePoints += upgradepoints;
+      gold += (int)reward;
+      AchievementManager.instance.IncreaseAchievementProgress(AchievementType.Gold,(int)reward);
+   }
 }

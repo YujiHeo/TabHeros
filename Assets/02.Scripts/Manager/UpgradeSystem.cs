@@ -11,6 +11,12 @@ public class UpgradeSystem : MonoBehaviour
     [SerializeField] private Player player;
     [SerializeField] private PlayerDataBase playerData;
     [SerializeField] private PlayerGoods playerGoods;
+
+    private void Update()
+    {
+        playerGoods.updateText();
+    }
+
     public void Upgrade(PlayerStatType stat) 
     {
         int currentLevel = StatManager.instance.GetStatLevel(stat);

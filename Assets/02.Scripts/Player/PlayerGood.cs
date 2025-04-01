@@ -17,7 +17,7 @@ public class PlayerGoods : MonoBehaviour
 
     public void updateText()
     {
-        goldText.text = $"{player.gold} G";
+        goldText.text = $"{player.gold}G";
         pointText.text = player.upgradePoints.ToString();
     }
 }

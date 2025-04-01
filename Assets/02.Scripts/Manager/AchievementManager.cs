@@ -79,6 +79,8 @@ public class AchievementManager : Singleton<AchievementManager>
 
         AchievementListWrapper wrapper = JsonUtility.FromJson<AchievementListWrapper>(jsonText);
         achievements = wrapper?.achievements ?? new List<Achievement>();
+        achievements.RemoveAll(a => a.isCompleted);
+
     }
 
     private void ConvertAchievementTypes()
