@@ -102,8 +102,10 @@ MonoBehaviour:
   weaponAbility: {fileID: 456727894822080645}
   upgradeButton: {fileID: 5459940709781336703}
   upgradePoint: {fileID: 2391033642964040010}
+  upgradeText: {fileID: 0}
   equipButton: {fileID: 433684111992698414}
   isEquip: {fileID: 1417543291292112683}
+  weaponData: {fileID: 11400000, guid: 82ad00fffad0f5a41aeec66aa3f11e92, type: 2}
 --- !u!1 &1140103559950219174
 GameObject:
   m_ObjectHideFlags: 0
