@@ -10344,6 +10344,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 47f45ef7b5767674393cc401fc325705, type: 3}
   - {fileID: 8300000, guid: 1532c7e67c2d60c4c8780da14b7e8fcf, type: 3}
   - {fileID: 8300000, guid: f2a9e4c75dc1fdf48a91623978fa4547, type: 3}
+  - {fileID: 8300000, guid: bd3c4104b47feec47a987573af57fd8f, type: 3}
+  - {fileID: 8300000, guid: 9350b81cefbe09843a1cc5622864902c, type: 3}
 --- !u!4 &664470819
 Transform:
   m_ObjectHideFlags: 0
@@ -28000,7 +28002,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 399362124}
   m_HandleRect: {fileID: 399362123}
   m_Direction: 2
-  m_Value: 0.9999997
+  m_Value: 0.99999976
   m_Size: 0.40816328
   m_NumberOfSteps: 0
   m_OnValueChanged:
