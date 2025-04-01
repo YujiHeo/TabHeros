@@ -55,7 +55,7 @@ public class StageSaveData
     {
         currentStage = 0;
         killCount = new Dictionary<int, int>();
-        clearStage = 0;
+        clearStage = -1;
     }
 }
 
@@ -76,7 +76,7 @@ public class WeaponSaveData
 
     public WeaponSaveData()
     {
-        
+
     }
 }
 

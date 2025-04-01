@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8957b389d47bc6048949049e4fe4ae07, type: 3}
   m_Name: Stage01
   m_EditorClassIdentifier: 
+  stageBGM: {fileID: 8300000, guid: 475f4837af487ce4a9e68bb227455e4c, type: 3}
   stageName: "\uB9C8\uBC95\uC0AC\uC758 \uC232 1"
   killCountMax: 7
   background: {fileID: 3808478336486071020, guid: b152dbb73d7130a46a9fcece0f80668d, type: 3}

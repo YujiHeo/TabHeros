@@ -10,7 +10,7 @@ public class StageManager : Singleton<StageManager>
     public int currentStage;
     public Dictionary<int, int> killCount = new Dictionary<int, int>(); // stage와 count
     public int clearStage = -1; // 클리어 한 스테이지가 아니라면 바로 보스방 진입
-    
+
     [Header("할당 오브젝트")]
     public StageUI stageUI;
     public EnemyController enemyController;
@@ -20,10 +20,14 @@ public class StageManager : Singleton<StageManager>
 
     void Start()
     {
+        currentStage = SaveLoadManager.instance.stageData.currentStage;
+        killCount = SaveLoadManager.instance.stageData.killCount;
+        clearStage = SaveLoadManager.instance.stageData.clearStage;
+
         stageUI.btnBossJoin.onClick.AddListener(OnClickBossJoin);
         stageUI.btnBossQuit.onClick.AddListener(OnClickBossQuit);
-        SetStage(currentStage);
-       
+        SetStage(SaveLoadManager.instance.stageData.currentStage);
+
     }
 
     public void SetStage(int _stage)
@@ -54,6 +58,9 @@ public class StageManager : Singleton<StageManager>
         {
             stageUI.SetBossJoinActive(true);
         }
+
+        //브금 재생
+        SoundManager.instance.PlayBGM(stageDataBases[currentStage].stageBGM.name);
     }
 
 
@@ -68,6 +75,8 @@ public class StageManager : Singleton<StageManager>
         if (killCount[currentStage] >= stageDataBases[currentStage].killCountMax && clearStage < currentStage)
         {
             clearStage = currentStage;
+            SaveLoadManager.instance.stageData.clearStage = clearStage;
+            SaveLoadManager.instance.SaveAllData();
             stageUI.SetBossJoinActive(true);
             stageUI.SetBossQuitActive(true);
             CreateBoss();
