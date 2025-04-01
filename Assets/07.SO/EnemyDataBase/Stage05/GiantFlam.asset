@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99c25d08821ded04c8206237c1716e0b, type: 3}
+  m_Name: GiantFlam
+  m_EditorClassIdentifier: 
+  enemyName: "\uBE68\uAC04 \uBD88\uAF43"
+  outfit: {fileID: 2090434249124287433, guid: 10cc06c67d610f243a1d7101612571fe, type: 3}
+  hp: 19000
+  gainGold: 10000
+  upgradePoint: 10000
+  isBoss: 0
+  clearTime: 0

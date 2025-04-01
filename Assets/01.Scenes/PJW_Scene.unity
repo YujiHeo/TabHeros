@@ -2355,6 +2355,13 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 5076f997683af8146a85c73487da2b71, type: 2}
   - {fileID: 11400000, guid: 779b1623ee81ae34193688b12b565411, type: 2}
   - {fileID: 11400000, guid: 987d038532764c94cb38bfd526e7b567, type: 2}
+  - {fileID: 11400000, guid: b5cbdc136a158f344ab767ca47f6b920, type: 2}
+  - {fileID: 11400000, guid: b38e7f5f3bff3594fb01dc2e129296e0, type: 2}
+  - {fileID: 11400000, guid: cc5b94a23d748cf4eafbb2eb186eca0a, type: 2}
+  - {fileID: 11400000, guid: 379747c5c9b866843bdff2c1a754444e, type: 2}
+  - {fileID: 11400000, guid: 9c5c062a5c1b07e409036cc5c44bdba2, type: 2}
+  - {fileID: 11400000, guid: cd71f4289c10d654494f82e7cd94ed9d, type: 2}
+  - {fileID: 11400000, guid: 81e1f228c15b7b84495484ceff6ae6d0, type: 2}
 --- !u!1 &1618042870
 GameObject:
   m_ObjectHideFlags: 0
@@ -4716,7 +4723,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3808478336486071020, guid: b152dbb73d7130a46a9fcece0f80668d, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5809678135179433635, guid: b152dbb73d7130a46a9fcece0f80668d, type: 3}
       propertyPath: m_Color.b
