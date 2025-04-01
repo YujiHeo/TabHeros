@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class EffectMove : MonoBehaviour
 {
-    public float speed = 5f;
-    public float lifeTime = 1.5f;
+    public float speed = 2f;
+    public float lifeTime = 0.7f;
+
+    private int direction = 1;
 
     private void OnEnable()
     {
@@ -14,7 +16,13 @@ public class EffectMove : MonoBehaviour
 
     private void Update()
     {
-        transform.Translate(Vector3.right * speed * Time.deltaTime);
+        transform.Translate(Vector3.right * direction * speed * Time.deltaTime);
+    }
+
+    
+    public void SetDirection(bool isFlipped)
+    {
+        direction = isFlipped ? -1 : 1;
     }
 
     private void DisableSelf()
@@ -24,7 +32,9 @@ public class EffectMove : MonoBehaviour
 
     private void OnDisable()
     {
-        CancelInvoke(); 
+        CancelInvoke();
     }
 }
+
+
 
