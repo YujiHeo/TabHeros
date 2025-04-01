@@ -8,16 +8,17 @@ public class PlayerGoods : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI goldText;
     [SerializeField] private TextMeshProUGUI pointText;
-    [SerializeField] Player player;
+    private PlayerSaveData playerData;
     
     private void Start()
     {
+        playerData = SaveLoadManager.instance.playerData;
         updateText();
     }
 
     public void updateText()
     {
-        goldText.text = $"{player.gold}G";
-        pointText.text = player.upgradePoints.ToString();
+        goldText.text = $"{playerData.gold}G";
+        pointText.text = playerData.upgradePoints.ToString();
     }
 }

@@ -14,26 +14,15 @@ public class SaveData  // 세이브 총대장
 [Serializable]
 public class PlayerSaveData
 {
-    // 재화 보유량
+    //재화
     public int gold;
-    public double goldGainRate;
     public int upgradePoints;
-
-    // 스탯 정보
-    public int atk;
-    public double crit;
-    public int critDamage;
-
-    public void SaveFromPlayer(Player player)
-    {
-        gold = player.gold;
-        goldGainRate = player.goldGainRate;
-        upgradePoints = player.upgradePoints;
-        atk = player.atk;
-        crit = player.crit;
-        critDamage = player.critDamage;
-    }
-
+    // 레벨
+    public int atkLevel;
+    public int critLevel;
+    public int critDamageLevel;
+    public int goldGainLevel;
+    
 }
 
 [Serializable]
