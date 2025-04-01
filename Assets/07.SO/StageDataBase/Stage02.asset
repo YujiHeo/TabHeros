@@ -12,8 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8957b389d47bc6048949049e4fe4ae07, type: 3}
   m_Name: Stage02
   m_EditorClassIdentifier: 
-  stageName: "\uD551\uD06C \uC2AC\uB77C\uC784 1\uC758 \uC232"
-  killCountMax: 1
+  stageName: "\uB9C8\uBC95\uC0AC\uC758 \uC232 2"
+  killCountMax: 10
   background: {fileID: 3808478336486071020, guid: 0ca1c962377a6d346821a3c085658f2d, type: 3}
-  enemyData: {fileID: 11400000, guid: f3349e74561e11c428b6cfb5fae1180c, type: 2}
-  bossData: {fileID: 11400000, guid: c1d6919b7042ef745bfd07cc79f3ef3e, type: 2}
+  enemyDatas:
+  - {fileID: 11400000, guid: 056055119f5c9bd4f9b9350c8bdccae8, type: 2}
+  - {fileID: 11400000, guid: 2b39438a1e986ff42adc5c64b14eecbd, type: 2}
+  - {fileID: 11400000, guid: b516b41a439b17549ac26d7cb4d187bd, type: 2}
+  bossData: {fileID: 11400000, guid: bf5afe6ab93b6bd43adac8c6665f8497, type: 2}

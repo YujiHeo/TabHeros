@@ -11276,6 +11276,7 @@ GameObject:
   - component: {fileID: 715038548}
   - component: {fileID: 715038547}
   - component: {fileID: 715038546}
+  - component: {fileID: 715038549}
   m_Layer: 5
   m_Name: HeroPanel
   m_TagString: Untagged
@@ -11366,6 +11367,21 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: -1
   m_TargetDisplay: 0
+--- !u!114 &715038549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 715038544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7295e9ad8be6431790b684c1f0460a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  goldText: {fileID: 1021464239}
+  pointText: {fileID: 879823930}
+  player: {fileID: 956338160}
 --- !u!1 &717617842
 GameObject:
   m_ObjectHideFlags: 0
@@ -12691,6 +12707,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 956338160}
+    - target: {fileID: 9060336081126721031, guid: 56fa4c4fefe631b44beb94f944542492, type: 3}
+      propertyPath: critEffectLife
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 9060336081126721031, guid: 56fa4c4fefe631b44beb94f944542492, type: 3}
       propertyPath: enemyController
       value: 
@@ -27292,7 +27312,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4981286887053719569, guid: e060ff07c36af7340839a367f603dba4, type: 3}
       propertyPath: pools.Array.size
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4981286887053719569, guid: e060ff07c36af7340839a367f603dba4, type: 3}
       propertyPath: pools.Array.data[2].tag
@@ -27315,6 +27335,10 @@ PrefabInstance:
       value: YJEffect
       objectReference: {fileID: 0}
     - target: {fileID: 4981286887053719569, guid: e060ff07c36af7340839a367f603dba4, type: 3}
+      propertyPath: pools.Array.data[7].tag
+      value: CritEffect
+      objectReference: {fileID: 0}
+    - target: {fileID: 4981286887053719569, guid: e060ff07c36af7340839a367f603dba4, type: 3}
       propertyPath: pools.Array.data[2].size
       value: 10
       objectReference: {fileID: 0}
@@ -27335,6 +27359,14 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4981286887053719569, guid: e060ff07c36af7340839a367f603dba4, type: 3}
+      propertyPath: pools.Array.data[7].size
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4981286887053719569, guid: e060ff07c36af7340839a367f603dba4, type: 3}
+      propertyPath: pools.Array.data[1].prefab
+      value: 
+      objectReference: {fileID: 8442913855743077403, guid: dfb5641f4cc928e4ba09c5b6519c0f44, type: 3}
+    - target: {fileID: 4981286887053719569, guid: e060ff07c36af7340839a367f603dba4, type: 3}
       propertyPath: pools.Array.data[2].prefab
       value: 
       objectReference: {fileID: 3195664709646360931, guid: a4fe29022d0300a428f488c25344a6d8, type: 3}
@@ -27354,6 +27386,10 @@ PrefabInstance:
       propertyPath: pools.Array.data[6].prefab
       value: 
       objectReference: {fileID: 1513372033839934627, guid: 0082a1ae11409a649a31debad24b8346, type: 3}
+    - target: {fileID: 4981286887053719569, guid: e060ff07c36af7340839a367f603dba4, type: 3}
+      propertyPath: pools.Array.data[7].prefab
+      value: 
+      objectReference: {fileID: 5535842017077667752, guid: 9d811c8cf4026464ca9842abbb6d5b0d, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

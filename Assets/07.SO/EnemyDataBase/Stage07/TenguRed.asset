@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99c25d08821ded04c8206237c1716e0b, type: 3}
+  m_Name: TenguRed
+  m_EditorClassIdentifier: 
+  enemyName: "\uB108\uAD6C\uB9AC"
+  outfit: {fileID: 2090434249124287433, guid: e4ae606e550670642be8e439c9482a26, type: 3}
+  hp: 80000
+  gainGold: 40000
+  upgradePoint: 40000
+  isBoss: 0
+  clearTime: 0
