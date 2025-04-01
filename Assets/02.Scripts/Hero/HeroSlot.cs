@@ -80,6 +80,8 @@ public class HeroSlot : MonoBehaviour
                 heroData.isUnlocked = true;
                 heroData.level = 1;
                 HeroManager.instance.OnHeroUnlocked(heroData.id);
+
+                SaveLoadManager.instance.SaveAllData();
             }
         }
         else
@@ -90,6 +92,8 @@ public class HeroSlot : MonoBehaviour
                 SaveLoadManager.instance.playerData.gold -= cost;
                 heroData.level++;
                 Debug.Log($"[������] {heroData.heroName} �� Lv.{heroData.level}");
+
+                SaveLoadManager.instance.SaveAllData();
             }
         }
 
