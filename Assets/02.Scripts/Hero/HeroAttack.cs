@@ -53,22 +53,22 @@ public class HeroAttack : MonoBehaviour
                     tag = "HYEffect"; break;
             }
 
-            
+            // 이펙트 생성 위치 결정 (영웅이 바라보는 방향에 따라 생성 위치 조정)
             float offsetX = heroData.isFlipped ? -1f : 1f;
             Vector3 spawnPos = transform.position + new Vector3(offsetX, 0f, 0f);
             Quaternion rot = transform.rotation;
 
-           
+           // 이펙트 설정
             GameObject effect = ObjectPoolManager.instance.SpawnFromPool(tag, spawnPos, rot, 1.5f);
 
             if (effect != null)
             {
-                
+                //이펙트 좌우 반전 (스프라이트 기준)
                 Vector3 scale = effect.transform.localScale;
                 scale.x = heroData.isFlipped ? -Mathf.Abs(scale.x) : Mathf.Abs(scale.x);
                 effect.transform.localScale = scale;
 
-               
+                // 이펙트 이동 방향 설정
                 EffectMove moveScript = effect.GetComponent<EffectMove>();
                 if (moveScript != null)
                 {

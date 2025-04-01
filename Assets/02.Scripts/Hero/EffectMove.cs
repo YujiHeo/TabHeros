@@ -7,7 +7,7 @@ public class EffectMove : MonoBehaviour
     public float speed = 2f;
     public float lifeTime = 0.7f;
 
-    private int direction = 1;
+    private int direction = 1; //1: 오른쪽 -1: 왼쪽
 
     private void OnEnable()
     {
@@ -16,6 +16,7 @@ public class EffectMove : MonoBehaviour
 
     private void Update()
     {
+        //방향에 따라 오른쪽 또는 왼쪽으로 이동
         transform.Translate(Vector3.right * direction * speed * Time.deltaTime);
     }
 
