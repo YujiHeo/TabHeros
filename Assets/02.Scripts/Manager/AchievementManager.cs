@@ -34,7 +34,12 @@ public class AchievementManager : Singleton<AchievementManager>
         LoadAchievements();
         ConvertAchievementTypes();
     }
-    
+
+    private void Start()
+    {
+        Debug.Log(Application.persistentDataPath);
+    }
+
     public void SaveAchievements()
     {
         AchievementListWrapper wrapper = new AchievementListWrapper();

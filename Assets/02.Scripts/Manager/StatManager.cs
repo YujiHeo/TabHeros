@@ -11,6 +11,7 @@ public class StatManager : Singleton<StatManager>
     private void Start()
     {
         playerData = SaveLoadManager.instance.playerData;
+        
     }
 
     // PlayerDataBase에 존재하는 Playerstat에서 스탯을 가져오고

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using JetBrains.Annotations;
 using TMPro;
 using UnityEngine;
 
@@ -8,7 +9,7 @@ public class SaveData  // 세이브 총대장
     public PlayerSaveData playerSaveData = new PlayerSaveData();
     public StageSaveData stageSaveData = new StageSaveData();
     public WeaponSaveData weaponSaveData = new WeaponSaveData();
-   // public HeroSaveData heroSaveData = new HeroSaveData();
+    public HeroSaveData heroSaveData = new HeroSaveData();
 }
 
 [Serializable]
@@ -22,7 +23,17 @@ public class PlayerSaveData
     public int critLevel;
     public int critDamageLevel;
     public int goldGainLevel;
-    
+
+    public PlayerSaveData()
+    {
+        gold = 0;
+        upgradePoints = 0;
+
+        atkLevel = 1;
+        critLevel = 1;
+        critDamageLevel = 1;
+        goldGainLevel = 1;
+    }
 }
 
 [Serializable]
@@ -38,6 +49,13 @@ public class StageSaveData
         currentStage = stageManager.currentStage;
         killCount = stageManager.killCount;
         clearStage = stageManager.clearStage;
+    }
+
+    public StageSaveData()
+    {
+        currentStage = 0;
+        killCount = new Dictionary<int, int>();
+        clearStage = 0;
     }
 }
 
@@ -56,11 +74,22 @@ public class WeaponSaveData
         ownUpgradePoints = weaponData.ownUpgradePoint;
     }
 
+    public WeaponSaveData()
+    {
+        
+    }
 }
 
-//[Serializable]
-//public class HeroSaveData
-//{
-//    // 앞으로 저장될 영웅 관련 데이터
-//}
+[Serializable]
+public class HeroSaveData
+{
+    public bool[] isUnlocked = new bool[5];
+    public int[] level = new int[5];
+
+    public HeroSaveData()
+    {
+        isUnlocked = new bool[5];
+        level = new int[5];
+    }
+}
 
