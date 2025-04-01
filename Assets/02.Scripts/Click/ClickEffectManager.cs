@@ -11,6 +11,8 @@ public class ClickEffectManager : MonoBehaviour
     public float attackEffectLife = 1f;
     public float particleEffectLife = 2f;
     public float yOffset = 3f;
+    public string critEffectTag = "CritEffect"; 
+    public float critEffectLife = 2f;
 
     public EnemyController enemyController;
     public Player player;
@@ -19,10 +21,10 @@ public class ClickEffectManager : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            //  UI �� Ŭ���̸� �ƹ� �͵� ���� ����
+           
             if (IsPointerOverUIObject()) return;
 
-            // ����Ʈ ��ġ ���
+            
             Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             mouseWorldPos.z = 0;
 
@@ -30,23 +32,30 @@ public class ClickEffectManager : MonoBehaviour
             particlePos.z = 0;
             particlePos.y += yOffset;
 
-            // ����Ʈ ����
+            
             ObjectPoolManager.instance.SpawnFromPool(attackEffectTag, mouseWorldPos, Quaternion.identity, attackEffectLife);
             ObjectPoolManager.instance.SpawnFromPool(particleEffectTag, particlePos, Quaternion.identity, particleEffectLife);
 
-            // ������ ��� �� ����
+            
             bool isCritical = Random.value < player.crit / 100f;
             int damage = player.atk;
 
             if (isCritical)
             {
                 damage = Mathf.RoundToInt(damage * (player.critDamage / 100f));
-                Debug.Log($" ġ��Ÿ! ������: {damage}");
+                Debug.Log($"치명타! 데미지: {damage}");
+
+                
+                ObjectPoolManager.instance.SpawnFromPool(critEffectTag, particlePos, Quaternion.identity, critEffectLife);
             }
             else
             {
-                Debug.Log($" Ÿ��! ������: {damage}");
+                Debug.Log($"타격! 데미지: {damage}");
+
+                
+                ObjectPoolManager.instance.SpawnFromPool(particleEffectTag, particlePos, Quaternion.identity, particleEffectLife);
             }
+
 
             AchievementManager.instance.IncreaseAchievementProgress(AchievementType.Click, 1);
             enemyController.TakeDamage(damage);
