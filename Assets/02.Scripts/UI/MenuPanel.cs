@@ -5,9 +5,9 @@ public class MenuPanel : MonoBehaviour
 {
     [SerializeField] private Button[] menuButtons;
     [SerializeField] private Button[] closeButtons;
-    [SerializeField] private GameObject[] panels; 
+    [SerializeField] private GameObject[] panels;
 
-    private GameObject currentOpenPanel = null; // ÇöÀç ¿­·Á ÀÖ´Â ÆÐ³Î
+    private GameObject currentOpenPanel = null; // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½Ð³ï¿½
 
     private void Start()
     {
@@ -29,10 +29,10 @@ public class MenuPanel : MonoBehaviour
         }
         else
         {
-            // ¸ðµç ÆÐ³Î ´Ý±â
+            // ï¿½ï¿½ï¿½ ï¿½Ð³ï¿½ ï¿½Ý±ï¿½
             CloseAllMenuPanel();
 
-            // »õ ÆÐ³Î ¿­±â
+            // ï¿½ï¿½ ï¿½Ð³ï¿½ ï¿½ï¿½ï¿½ï¿½
             UiManager.instance.OpenPanel(_panel);
             currentOpenPanel = _panel;
         }
@@ -45,5 +45,4 @@ public class MenuPanel : MonoBehaviour
             UiManager.instance.ClosePanel(panel);
         }
     }
-
 }

@@ -70,6 +70,8 @@ public class UIInventory : Singleton<UIInventory>
             newWeapon.ownUpgradePoint *= 2;
 
             weaponSlot.RefreshUI();
+            
+            weaponSlot.UpdateText();
         }
         else
         {
@@ -91,5 +93,7 @@ public class UIInventory : Singleton<UIInventory>
         currentEquippedWeapon = selectedWeapon;
         CurrentWeapon.sprite = selectedWeapon.Icon;
         player.atk += selectedWeapon.ability;
+        
+        AchievementManager.instance.IncreaseAchievementProgress(AchievementType.Weapon , 1);
     }
 }

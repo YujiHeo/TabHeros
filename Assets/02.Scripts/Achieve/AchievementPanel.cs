@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -35,6 +36,13 @@ public class AchievementPanel : MonoBehaviour
     private void Start()
     {
         UpdateUI();
+        playerGoods.updateText();
+    }
+
+    private void Update()
+    {
+        UpdateUI();
+        playerGoods.updateText();
     }
 
     private int achievementIndex;
@@ -64,8 +72,8 @@ public class AchievementPanel : MonoBehaviour
         bool isCleared = AchievementManager.instance.ReachTargetValue(achievementType);
         if (isCleared)
         {
-            Destroy(this);
+            Destroy(this.gameObject);
             playerGoods.updateText();
         }
-    }
+    }   
 }

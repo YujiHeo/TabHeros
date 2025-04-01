@@ -22,7 +22,7 @@ public class StageManager : Singleton<StageManager>
     {
         stageUI.btnBossJoin.onClick.AddListener(OnClickBossJoin);
         stageUI.btnBossQuit.onClick.AddListener(OnClickBossQuit);
-        SetStage(0);
+        SetStage(currentStage);
     }
 
     public void SetStage(int _stage)
@@ -59,6 +59,7 @@ public class StageManager : Singleton<StageManager>
     {
         // 킬 수 증가
         killCount[currentStage]++;
+        SaveLoadManager.instance.SaveAllData();
         stageUI.SetEnemyCount(stageDataBases[currentStage].killCountMax, killCount[currentStage]);
 
         // 적 설정 (바로 보스 소환) - 클리어가 안 된 스테이지라면
@@ -87,6 +88,7 @@ public class StageManager : Singleton<StageManager>
         stageUI.SetBossQuitActive(false);
         CreateEnemy();
         // Invoke("CreateEnemy", 0.5f);
+        
     }
 
     public void BossKill()
