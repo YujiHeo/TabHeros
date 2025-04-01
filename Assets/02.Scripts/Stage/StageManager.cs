@@ -52,6 +52,9 @@ public class StageManager : Singleton<StageManager>
         {
             stageUI.SetBossJoinActive(true);
         }
+
+        //브금 재생
+        SoundManager.instance.PlayBGM(stageDataBases[currentStage].stageBGM.name);
     }
 
 

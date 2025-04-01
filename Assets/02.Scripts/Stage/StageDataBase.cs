@@ -5,6 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "StageDataBase", menuName = "NewStage")]
 public class StageDataBase : ScriptableObject
 {
+    public AudioClip stageBGM;
     public string stageName;
     public int killCountMax;
     public GameObject background; // Stage의 배경
