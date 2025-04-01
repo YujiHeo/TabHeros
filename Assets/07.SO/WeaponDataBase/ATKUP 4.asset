@@ -10,10 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 749e43c6986c1ba4cbe4181cf57b7292, type: 3}
-  m_Name: ATKUP 3
+  m_Name: ATKUP 4
   m_EditorClassIdentifier: 
-  name: "\uBCF4\uD1B5 \uAC804"
-  Icon: {fileID: -116235703, guid: c14838f64ba1b8b4691b21510aab6000, type: 3}
+  name: "\uBCF4\uD1B5 \uAC805"
+  Icon: {fileID: -272388858, guid: c14838f64ba1b8b4691b21510aab6000, type: 3}
   level: 1
-  ability: 70
-  ownUpgradePoint: 60
+  ability: 100
+  ownUpgradePoint: 80
+  id: 1005

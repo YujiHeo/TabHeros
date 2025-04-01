@@ -17,4 +17,4 @@ MonoBehaviour:
   level: 1
   ability: 10
   ownUpgradePoint: 10
-  weaponPrefab: {fileID: 0}
+  id: 1001
