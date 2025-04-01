@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SocialPlatforms.Impl;
@@ -36,26 +37,50 @@ public class AchievementManager : Singleton<AchievementManager>
         LoadAchievements();
         ConvertAchievementTypes();
     }
-
+    
+    public void SaveAchievements()
+    {
+        AchievementListWrapper wrapper = new AchievementListWrapper();
+        wrapper.achievements = achievements;
+    
+        // JsonUtility를 이용해 JSON 문자열로 변환
+        string json = JsonUtility.ToJson(wrapper, true);
+    
+        // Application.persistentDataPath 경로에 파일을 저장
+        string filePath = Path.Combine(Application.persistentDataPath, "Achievements.json");
+        File.WriteAllText(filePath, json);
+    }
     private void LoadAchievements()
     {
-        TextAsset jsonText = Resources.Load<TextAsset>("Achievements");
-        if (jsonText == null)
+        // persistentDataPath에 저장된 파일 경로
+        string filePath = Path.Combine(Application.persistentDataPath, "Achievements.json");
+
+        string jsonText = "";
+
+        // persistentDataPath에 파일이 존재하는 경우
+        if (File.Exists(filePath))
         {
-            Debug.LogError("Achievements.json 파일을 찾을 수 없음");
-            return;
+            jsonText = File.ReadAllText(filePath);
+        }
+        else
+        {
+            // Resources 폴더에서 기본 파일 읽기
+            TextAsset resourceText = Resources.Load<TextAsset>("Achievements");
+            if (resourceText == null)
+            {
+                return;
+            }
+
+            jsonText = resourceText.text;
+
+            // 처음 로드 시 persistentDataPath로 복사하여 저장
+            File.WriteAllText(filePath, jsonText);
         }
 
-        try
-        {
-            AchievementListWrapper wrapper = JsonUtility.FromJson<AchievementListWrapper>(jsonText.text);
-            achievements = wrapper?.achievements ?? new List<Achievement>();
-        }
-        catch (Exception ex)
-        {
-            Debug.LogError($"JSON 로드 실패: {ex.Message}");
-        }
+        AchievementListWrapper wrapper = JsonUtility.FromJson<AchievementListWrapper>(jsonText);
+        achievements = wrapper?.achievements ?? new List<Achievement>();
     }
+
     private void ConvertAchievementTypes()
     {
         foreach (var achievement in achievements)
@@ -79,9 +104,10 @@ public class AchievementManager : Singleton<AchievementManager>
             achievement.currentProgress = achievement.targetValue;
             achievement.isCompleted = true;
             GrantReward(achievement);
-            Debug.Log($"업적 완료: {achievement.name}");
+            SaveAchievements();
         }
     }
+    
     private void GrantReward(Achievement achievement)
     {
         if(achievement.rewardType == "upgradePoints")
