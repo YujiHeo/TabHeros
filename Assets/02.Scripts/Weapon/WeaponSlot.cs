@@ -25,7 +25,7 @@ public class WeaponSlot : MonoBehaviour
     public void Start()
     {
         if (player == null)
-        player = FindObjectOfType<Player>();
+            player = FindObjectOfType<Player>();
 
         weaponSlot = GetComponent<WeaponSlot>();
 
@@ -35,7 +35,7 @@ public class WeaponSlot : MonoBehaviour
         Button equipBtn = equipButton.GetComponent<Button>();
         equipBtn.onClick.AddListener(() => UIInventory.instance.WeaponEquipped(weaponSlot, weaponData));
 
-        
+
         UpdateText();
     }
 
@@ -71,7 +71,7 @@ public class WeaponSlot : MonoBehaviour
         }
     }
 
-    
+
     public void UpdateText()
     {
         Color activeColor;
@@ -83,11 +83,11 @@ public class WeaponSlot : MonoBehaviour
 
         ColorUtility.TryParseHtmlString("#000000", out inactiveColorForText);
 
-//        int upgradePoints = weaponData.ownUpgradePoint;
+        int upgradePoints = weaponData.ownUpgradePoint;
 
         upgradeButton.transition = Selectable.Transition.None;
 
- //      upgradeButton.image.color = player.upgradePoints >= upgradePoints ? activeColor : inactiveColor;
- //      upgradeText.color = player.upgradePoints >= upgradePoints ? inactiveColorForText : activeColor;
+        upgradeButton.image.color = player.upgradePoints >= upgradePoints ? activeColor : inactiveColor;
+        upgradeText.color = player.upgradePoints >= upgradePoints ? inactiveColorForText : activeColor;
     }
 }

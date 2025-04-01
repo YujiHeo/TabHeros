@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -6,7 +7,7 @@ using DG.Tweening;
 
 public class GameSceneManager : Singleton<GameSceneManager>
 {
-    public GameObject fadeCanvas; // °ËÀº»ö È­¸é ÀÌ¹ÌÁö
+    public GameObject fadeCanvas; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ È­ï¿½ï¿½ ï¿½Ì¹ï¿½ï¿½ï¿½
     public Image fadeImage;
 
     private void Start()
@@ -14,6 +15,23 @@ public class GameSceneManager : Singleton<GameSceneManager>
         FadeIn();
     }
 
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if (scene.name != "HY_StartScene")
+        {
+            Destroy(gameObject);
+        }
+    }
     public void OnPlayButtonClicked(string sceneName)
     {
         fadeCanvas.gameObject.SetActive(true);

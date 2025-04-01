@@ -19,10 +19,10 @@ public class ClickEffectManager : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            //  UI À§ Å¬¸¯ÀÌ¸é ¾Æ¹« °Íµµ ÇÏÁö ¾ÊÀ½
+            //  UI ï¿½ï¿½ Å¬ï¿½ï¿½ï¿½Ì¸ï¿½ ï¿½Æ¹ï¿½ ï¿½Íµï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
             if (IsPointerOverUIObject()) return;
 
-            // ÀÌÆåÆ® À§Ä¡ °è»ê
+            // ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½Ä¡ ï¿½ï¿½ï¿½
             Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             mouseWorldPos.z = 0;
 
@@ -30,24 +30,25 @@ public class ClickEffectManager : MonoBehaviour
             particlePos.z = 0;
             particlePos.y += yOffset;
 
-            // ÀÌÆåÆ® »ý¼º
+            // ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½
             ObjectPoolManager.instance.SpawnFromPool(attackEffectTag, mouseWorldPos, Quaternion.identity, attackEffectLife);
             ObjectPoolManager.instance.SpawnFromPool(particleEffectTag, particlePos, Quaternion.identity, particleEffectLife);
 
-            // µ¥¹ÌÁö °è»ê ¹× Àü´Þ
+            // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
             bool isCritical = Random.value < player.crit / 100f;
             int damage = player.atk;
 
             if (isCritical)
             {
                 damage = Mathf.RoundToInt(damage * (player.critDamage / 100f));
-                Debug.Log($" Ä¡¸íÅ¸! µ¥¹ÌÁö: {damage}");
+                Debug.Log($" Ä¡ï¿½ï¿½Å¸! ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½: {damage}");
             }
             else
             {
-                Debug.Log($" Å¸°Ý! µ¥¹ÌÁö: {damage}");
+                Debug.Log($" Å¸ï¿½ï¿½! ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½: {damage}");
             }
 
+            AchievementManager.instance.IncreaseAchievementProgress(AchievementType.Click, 1);
             enemyController.TakeDamage(damage);
         }
     }
