@@ -10,6 +10,6 @@ public class StartScene : MonoBehaviour
 
     private void Start()
     {
-        playButton.onClick.AddListener(() => GameSceneManager.instance.OnPlayButtonClicked(nextSceneName));
+        playButton.onClick.AddListener(() => SceneTransition.instance.OnPlayButtonClicked(nextSceneName));
     }
 }
