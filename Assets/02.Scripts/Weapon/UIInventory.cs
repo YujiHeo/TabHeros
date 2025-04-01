@@ -58,7 +58,7 @@ public class UIInventory : Singleton<UIInventory>
         }
     }
 
-    public void WeaponUpgrade(Player player, WeaponData newWeapon) //무기 업그레이드
+    public void WeaponUpgrade(Player player, WeaponData newWeapon, WeaponSlot weaponSlot) //무기 업그레이드
     {
         if (player.upgradePoints >= newWeapon.ownUpgradePoint)
         {
@@ -68,6 +68,8 @@ public class UIInventory : Singleton<UIInventory>
             newWeapon.ability += 10;
 
             newWeapon.ownUpgradePoint *= 2;
+
+            weaponSlot.RefreshUI();
         }
         else
         {

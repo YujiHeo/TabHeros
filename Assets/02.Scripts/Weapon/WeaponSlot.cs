@@ -29,10 +29,12 @@ public class WeaponSlot : MonoBehaviour
         weaponSlot = GetComponent<WeaponSlot>();
 
         Button upgradeBtn = upgradeButton.GetComponent<Button>();
-        upgradeBtn.onClick.AddListener(() => UIInventory.instance.WeaponUpgrade(player, weaponData));
+        upgradeBtn.onClick.AddListener(() => UIInventory.instance.WeaponUpgrade(player, weaponData, weaponSlot));
 
         Button equipBtn = equipButton.GetComponent<Button>();
         equipBtn.onClick.AddListener(() => UIInventory.instance.WeaponEquipped(weaponSlot, weaponData));
+
+        UpdateText();
     }
 
     public void SetItem(WeaponData weapon)
@@ -65,4 +67,18 @@ public class WeaponSlot : MonoBehaviour
             upgradePoint.text = "0";
         }
     }
+
+    
+    public void UpdateText()
+    {
+        Color activeColor;
+        Color inactiveColor;
+        ColorUtility.TryParseHtmlString("#F3883D", out activeColor);
+        ColorUtility.TryParseHtmlString("#989390", out inactiveColor);
+
+        int upgradePoints = weaponData.ownUpgradePoint;
+
+        upgradeButton.image.color = player.upgradePoints >= upgradePoints ? activeColor : inactiveColor;
+    }
+    
 }
