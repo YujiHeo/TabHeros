@@ -9,7 +9,7 @@ public class SaveLoadManager : Singleton<SaveLoadManager>
     public PlayerSaveData playerData;
     public StageSaveData stageData;
     public WeaponSaveData weaponData;
-    // public HeroSaveData heroData;
+    public HeroSaveData heroData;
 
     private static string saveFilePath => Application.persistentDataPath + "/saveData.json";
 
@@ -23,7 +23,7 @@ public class SaveLoadManager : Singleton<SaveLoadManager>
         SaveDataGeneric(ref playerData, data => data.playerSaveData = playerData);
         SaveDataGeneric(ref stageData, data => data.stageSaveData = stageData);
         SaveDataGeneric(ref weaponData, data => data.weaponSaveData = weaponData);
-        // SaveDataGeneric(ref heroData, data => data.heroSaveData = heroData);
+        //SaveDataGeneric(ref heroData, data => data.heroSaveData = heroData);
     }
 
     public void LoadAllData()
@@ -31,7 +31,7 @@ public class SaveLoadManager : Singleton<SaveLoadManager>
         LoadDataGeneric(ref playerData, data => data.playerSaveData);
         LoadDataGeneric(ref stageData, data => data.stageSaveData);
         LoadDataGeneric(ref weaponData, data => data.weaponSaveData);
-        // LoadDataGeneric(ref heroData, data => data.heroSaveData = heroData);
+        //LoadDataGeneric(ref heroData, data => data.heroSaveData = heroData);
     }
 
     public void SaveGame(SaveData saveData) 
