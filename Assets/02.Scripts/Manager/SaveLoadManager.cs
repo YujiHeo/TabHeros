@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 using UnityEditor.U2D.Aseprite;
+using Newtonsoft.Json;
 
 public class SaveLoadManager : Singleton<SaveLoadManager>
 {
@@ -11,61 +12,105 @@ public class SaveLoadManager : Singleton<SaveLoadManager>
     public WeaponSaveData weaponData;
     public HeroSaveData heroData;
 
-    private static string saveFilePath => Application.persistentDataPath + "/saveData.json";
+    private static string playerSaveFilePath => Application.persistentDataPath + "/playerData.json";
+    private static string stageSaveFilePath => Application.persistentDataPath + "/stageData.json";
+    private static string weaponSaveFilePath => Application.persistentDataPath + "/weaponData.json";
+    private static string heroSaveFilePath => Application.persistentDataPath + "/heroData.json";
 
-    public void Start()
+    public void Awake()
     {
         LoadAllData();
     }
 
     public void SaveAllData()
     {
-        SaveDataGeneric(ref playerData, data => data.playerSaveData = playerData);
-        SaveDataGeneric(ref stageData, data => data.stageSaveData = stageData);
-        SaveDataGeneric(ref weaponData, data => data.weaponSaveData = weaponData);
-        //SaveDataGeneric(ref heroData, data => data.heroSaveData = heroData);
+        SavePlayerData();
+        SaveStageData();
+        SaveWeaponData();
+        SaveHeroData();
     }
 
     public void LoadAllData()
     {
-        LoadDataGeneric(ref playerData, data => data.playerSaveData);
-        LoadDataGeneric(ref stageData, data => data.stageSaveData);
-        LoadDataGeneric(ref weaponData, data => data.weaponSaveData);
-        //LoadDataGeneric(ref heroData, data => data.heroSaveData = heroData);
+        LoadPlayerData();
+        LoadStageData();
+        LoadWeaponData();
+        LoadHeroData();
     }
 
-    public void SaveGame(SaveData saveData) 
+    public void SavePlayerData()
     {
-        string json = JsonUtility.ToJson(saveData, true);
-        File.WriteAllText(saveFilePath, json);
+        string json = JsonConvert.SerializeObject(playerData, Formatting.Indented);
+        File.WriteAllText(playerSaveFilePath, json);
     }
 
-    public SaveData LoadGame()
+    public void LoadPlayerData()
     {
-        if (File.Exists(saveFilePath))
+        if (File.Exists(playerSaveFilePath))
         {
-            string json = File.ReadAllText(saveFilePath);
-            return JsonUtility.FromJson<SaveData>(json);
+            string json = File.ReadAllText(playerSaveFilePath);
+            playerData = JsonConvert.DeserializeObject<PlayerSaveData>(json);
         }
         else
         {
-            return new SaveData();
+            playerData = new PlayerSaveData();
         }
     }
 
-    private void SaveDataGeneric<T>(ref T data, System.Action<SaveData> setSaveData)
+    public void SaveStageData()
     {
-        SaveData saveData = LoadGame();
-        setSaveData(saveData);
-        SaveGame(saveData);
+        string json = JsonConvert.SerializeObject(stageData, Formatting.Indented);
+        File.WriteAllText(stageSaveFilePath, json);
     }
 
-    private void LoadDataGeneric<T>(ref T data, System.Func<SaveData, T> getSaveData) where T : new()
+    public void LoadStageData()
     {
-        data = getSaveData(LoadGame());
-        if (data == null)
+        if (File.Exists(stageSaveFilePath))
         {
-            data = new T();
+            string json = File.ReadAllText(stageSaveFilePath);
+            stageData = JsonConvert.DeserializeObject<StageSaveData>(json);
+        }
+        else
+        {
+            stageData = new StageSaveData();
+        }
+    }
+
+    public void SaveWeaponData()
+    {
+        string json = JsonConvert.SerializeObject(weaponData, Formatting.Indented);
+        File.WriteAllText(weaponSaveFilePath, json);
+    }
+
+    public void LoadWeaponData()
+    {
+        if (File.Exists(weaponSaveFilePath))
+        {
+            string json = File.ReadAllText(weaponSaveFilePath);
+            weaponData = JsonConvert.DeserializeObject<WeaponSaveData>(json);
+        }
+        else
+        {
+            weaponData = new WeaponSaveData();
+        }
+    }
+
+    public void SaveHeroData()
+    {
+        string json = JsonConvert.SerializeObject(heroData, Formatting.Indented);
+        File.WriteAllText(heroSaveFilePath, json);
+    }
+
+    public void LoadHeroData()
+    {
+        if (File.Exists(heroSaveFilePath))
+        {
+            string json = File.ReadAllText(heroSaveFilePath);
+            heroData = JsonConvert.DeserializeObject<HeroSaveData>(json);
+        }
+        else
+        {
+            heroData = new HeroSaveData();
         }
     }
 

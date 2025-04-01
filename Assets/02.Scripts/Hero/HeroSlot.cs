@@ -16,8 +16,8 @@ public class HeroSlot : MonoBehaviour
     private HeroData heroData;
     private Player player;
 
-    private Color activeColor = new Color(1f, 0.6f, 0f); // ÁÖÈ²
-    private Color inactiveColor = Color.gray;            // È¸»ö
+    private Color activeColor = new Color(1f, 0.6f, 0f); // ï¿½ï¿½È²
+    private Color inactiveColor = Color.gray;            // È¸ï¿½ï¿½
 
     private void Awake()
     {
@@ -37,16 +37,16 @@ public class HeroSlot : MonoBehaviour
         {
             levelText.text = $"Lv.{data.level}";
             atkText.text = $" {data.baseDamage + (data.level - 1) * 10}";
-            actionButton.GetComponentInChildren<TMP_Text>().text = "·¹º§¾÷";
+            actionButton.GetComponentInChildren<TMP_Text>().text = "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½";
             priceText.text = $"{GetLevelUpCost()} G";
             actionButton.interactable = true;
-            actionButton.image.color = player.gold >= GetLevelUpCost() ? activeColor : inactiveColor;
+            actionButton.image.color = SaveLoadManager.instance.playerData.gold >= GetLevelUpCost() ? activeColor : inactiveColor;
         }
         else
         {
             levelText.text = "Lv.?";
             atkText.text = "?";
-            actionButton.GetComponentInChildren<TMP_Text>().text = "ÇØ±Ý";
+            actionButton.GetComponentInChildren<TMP_Text>().text = "ï¿½Ø±ï¿½";
 
             if (isLocked)
             {
@@ -58,7 +58,7 @@ public class HeroSlot : MonoBehaviour
             {
                 priceText.text = $"{data.unlockPrice} G";
                 actionButton.interactable = true;
-                actionButton.image.color = player.gold >= data.unlockPrice ? activeColor : inactiveColor;
+                actionButton.image.color = SaveLoadManager.instance.playerData.gold >= data.unlockPrice ? activeColor : inactiveColor;
             }
         }
     }
@@ -74,9 +74,9 @@ public class HeroSlot : MonoBehaviour
 
         if (!heroData.isUnlocked)
         {
-            if (player.gold >= heroData.unlockPrice)
+            if (SaveLoadManager.instance.playerData.gold >= heroData.unlockPrice)
             {
-                player.gold -= heroData.unlockPrice;
+                SaveLoadManager.instance.playerData.gold -= heroData.unlockPrice;
                 heroData.isUnlocked = true;
                 heroData.level = 1;
                 HeroManager.instance.OnHeroUnlocked(heroData.id);
@@ -85,11 +85,11 @@ public class HeroSlot : MonoBehaviour
         else
         {
             int cost = GetLevelUpCost();
-            if (player.gold >= cost)
+            if (SaveLoadManager.instance.playerData.gold >= cost)
             {
-                player.gold -= cost;
+                SaveLoadManager.instance.playerData.gold -= cost;
                 heroData.level++;
-                Debug.Log($"[·¹º§¾÷] {heroData.heroName} ¡æ Lv.{heroData.level}");
+                Debug.Log($"[ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½] {heroData.heroName} ï¿½ï¿½ Lv.{heroData.level}");
             }
         }
 

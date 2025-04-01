@@ -28,7 +28,6 @@ public class AchievementPanel : MonoBehaviour
     private void Start()
     {
         UpdateUI();
-        playerGoods.updateText();
     }
 
     private void Update()

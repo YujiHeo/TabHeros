@@ -18,7 +18,7 @@ public class StatPanel  : MonoBehaviour
 {
     [Header("Data")]
     [SerializeField]private PlayerStatType statType;
-    [SerializeField]private PlayerDataBase playerData;
+    [SerializeField]private PlayerSaveData playerData;
     [SerializeField]private Player player;
     [SerializeField]private UpgradeSystem upgradeSystem;
     public PlayerSaveData saveData;
@@ -36,21 +36,19 @@ public class StatPanel  : MonoBehaviour
     public void OnUpgradeButtonClicked()
     {
         upgradeSystem.Upgrade(statType);
-        saveData.SaveFromPlayer(player);
-        
+        SaveLoadManager.instance.SaveAllData();
         UpdateText();
     }
 
-    private void OnEnable()
+    private void OnEnable() 
     {
         StatManager.OnStatUpdated += UpdateText;
     }
     
     private void Start()
     {
+        playerData = SaveLoadManager.instance.playerData;
         UpdateText();
-        saveData.SaveFromPlayer(player);
-
     }
 
     private void OnDisable()
@@ -75,7 +73,7 @@ public class StatPanel  : MonoBehaviour
         int upgradeCost = upgradeSystem.GetUpgradeCost(level);
         buttonText.text = $"{upgradeCost} G";
         
-        upgradeButton.image.color = player.gold >= upgradeCost ? activeColor : inactiveColor;
+        upgradeButton.image.color = playerData.gold >= upgradeCost ? activeColor : inactiveColor;
     }
     
     public void OnPointerDown()
@@ -105,7 +103,7 @@ public class StatPanel  : MonoBehaviour
             int level = StatManager.instance.GetStatLevel(statType);
             int upgradeCost = upgradeSystem.GetUpgradeCost(level);
 
-            if (player.gold < upgradeCost)
+            if (playerData.gold < upgradeCost)
                 break;
 
             upgradeSystem.Upgrade(statType);

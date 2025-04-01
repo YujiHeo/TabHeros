@@ -22,6 +22,7 @@ public class WeaponSlot : MonoBehaviour
     private WeaponSlot weaponSlot;
     private Player player;
 
+    [SerializeField]private PlayerSaveData playerData;
     public void Start()
     {
         if (player == null)
@@ -35,7 +36,7 @@ public class WeaponSlot : MonoBehaviour
         Button equipBtn = equipButton.GetComponent<Button>();
         equipBtn.onClick.AddListener(() => UIInventory.instance.WeaponEquipped(weaponSlot, weaponData));
 
-
+        playerData = SaveLoadManager.instance.playerData;
         UpdateText();
     }
 
@@ -87,7 +88,7 @@ public class WeaponSlot : MonoBehaviour
 
         upgradeButton.transition = Selectable.Transition.None;
 
-        upgradeButton.image.color = player.upgradePoints >= upgradePoints ? activeColor : inactiveColor;
-        upgradeText.color = player.upgradePoints >= upgradePoints ? inactiveColorForText : activeColor;
+        upgradeButton.image.color = SaveLoadManager.instance.playerData.upgradePoints >= upgradePoints ? activeColor : inactiveColor;
+        upgradeText.color = playerData.upgradePoints >= upgradePoints ? inactiveColorForText : activeColor;
     }
 }

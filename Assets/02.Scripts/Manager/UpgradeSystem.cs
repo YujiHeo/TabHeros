@@ -9,8 +9,13 @@ public class UpgradeSystem : MonoBehaviour
 {
     private int target;
     [SerializeField] private Player player;
-    [SerializeField] private PlayerDataBase playerData;
+    [SerializeField] private PlayerSaveData playerData;
     [SerializeField] private PlayerGoods playerGoods;
+
+    private void Start()
+    {
+        playerData = SaveLoadManager.instance.playerData;
+    }
 
     private void Update()
     {
@@ -22,13 +27,13 @@ public class UpgradeSystem : MonoBehaviour
         int currentLevel = StatManager.instance.GetStatLevel(stat);
         int upgradeCost = GetUpgradeCost(currentLevel);
         
-        if (player.gold < upgradeCost)
+        if (playerData.gold < upgradeCost)
         {
             Debug.Log("Can't upgrade");
             return;
         }
         
-        player.gold -= upgradeCost;
+        playerData.gold -= upgradeCost;
         StatManager.instance.UpdateStat(stat, currentLevel + 1);
         
         playerGoods.updateText();

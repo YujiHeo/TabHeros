@@ -902,11 +902,11 @@ MonoBehaviour:
   upgradeSystem: {fileID: 59015799}
   saveData:
     gold: 0
-    goldGainRate: 0
     upgradePoints: 0
-    atk: 0
-    crit: 0
-    critDamage: 0
+    atkLevel: 1
+    critLevel: 0
+    critDamageLevel: 0
+    goldGainLevel: 0
   buttonText: {fileID: 1309989177}
   infoText: {fileID: 404791966}
   statText: {fileID: 1662500459}
@@ -1171,11 +1171,11 @@ MonoBehaviour:
   upgradeSystem: {fileID: 71526759}
   saveData:
     gold: 0
-    goldGainRate: 0
     upgradePoints: 0
-    atk: 0
-    crit: 0
-    critDamage: 0
+    atkLevel: 0
+    critLevel: 0
+    critDamageLevel: 0
+    goldGainLevel: 0
   buttonText: {fileID: 6311088}
   infoText: {fileID: 1865059374}
   statText: {fileID: 1782574003}
@@ -2128,12 +2128,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerData:
-    gold: 0
-    goldGainRate: 0
-    upgradePoints: 0
-    atk: 0
-    crit: 0
-    critDamage: 0
+    gold: 10000
+    upgradePoints: 100
+    atkLevel: 1
+    critLevel: 1
+    critDamageLevel: 1
+    goldGainLevel: 1
   stageData:
     currentStage: 0
     clearStage: 0
@@ -7692,11 +7692,11 @@ MonoBehaviour:
   upgradeSystem: {fileID: 480980577}
   saveData:
     gold: 0
-    goldGainRate: 0
     upgradePoints: 0
-    atk: 0
-    crit: 0
-    critDamage: 0
+    atkLevel: 0
+    critLevel: 0
+    critDamageLevel: 0
+    goldGainLevel: 0
   buttonText: {fileID: 1578423330}
   infoText: {fileID: 1955456181}
   statText: {fileID: 721354982}
@@ -7958,11 +7958,11 @@ MonoBehaviour:
   player: {fileID: 956338160}
   playerData:
     gold: 0
-    goldGainRate: 0
     upgradePoints: 0
-    atk: 0
-    crit: 0
-    critDamage: 0
+    atkLevel: 0
+    critLevel: 0
+    critDamageLevel: 0
+    goldGainLevel: 0
   weaponData: {fileID: 0}
   weaponList: {fileID: 11400000, guid: 02833fbb0834c5345ad6b67fe5f374cd, type: 2}
 --- !u!4 &525213824
@@ -11202,11 +11202,11 @@ MonoBehaviour:
   upgradeSystem: {fileID: 712485661}
   saveData:
     gold: 0
-    goldGainRate: 0
     upgradePoints: 0
-    atk: 0
-    crit: 0
-    critDamage: 0
+    atkLevel: 0
+    critLevel: 0
+    critDamageLevel: 0
+    goldGainLevel: 0
   buttonText: {fileID: 1339907546}
   infoText: {fileID: 29179296}
   statText: {fileID: 1955932356}
@@ -18597,6 +18597,7 @@ MonoBehaviour:
     rewardType: 
     rewardValue: 
     achievementType: 
+    currentProgress: 0
     isCompleted: 0
 --- !u!4 &1297397389
 Transform:
@@ -25142,7 +25143,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b636db300f96242d7b7e648f6c9195d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerData: {fileID: 11400000, guid: 98c545bd91d61420187bc6d0de1d757a, type: 2}
 --- !u!4 &1815314061
 Transform:
   m_ObjectHideFlags: 0
