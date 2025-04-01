@@ -10,24 +10,24 @@ public class HeroManager : Singleton<HeroManager>
 
     private Player player;
 
-    private void Start()
-    {
-        player = FindObjectOfType<Player>();
-        RefreshAllSlots();
-
-    }
     //private void Start()
     //{
     //    player = FindObjectOfType<Player>();
-
-    //    foreach (var hero in heroList)
-    //    {
-    //        hero.level = 0;
-    //        hero.isUnlocked = false;
-    //    }
-
     //    RefreshAllSlots();
+
     //}
+    private void Start()
+    {
+        player = FindObjectOfType<Player>();
+
+        foreach (var hero in heroList)
+        {
+            hero.level = 0;
+            hero.isUnlocked = false;
+        }
+
+        RefreshAllSlots();
+    }
 
     public void OnHeroUnlocked(int heroId)
     {
