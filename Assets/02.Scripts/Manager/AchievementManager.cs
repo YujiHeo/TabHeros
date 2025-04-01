@@ -165,6 +165,7 @@ public class AchievementManager : Singleton<AchievementManager>
                 }
             }
         }
+        SaveAchievements();
     }
 
 }
