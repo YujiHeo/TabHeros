@@ -7,15 +7,8 @@ using UnityEngine.UI;
 
 public class UiManager : Singleton<UiManager>
 {
-    [SerializeField] private Button playButton;
-    [SerializeField] private string nextSceneName = "HY-GameManagerUi";
     [SerializeField] private TMP_Text warningTxt;
-
-    private void Start()
-    {
-        playButton.onClick.AddListener(() => GameSceneManager.instance.OnPlayButtonClicked(nextSceneName));
-    }
-
+    
     public void OpenPanel(GameObject panel)
     {
         panel.SetActive(true);

@@ -21,7 +21,7 @@ public class StatPanel  : MonoBehaviour
     [SerializeField]private PlayerDataBase playerData;
     [SerializeField]private Player player;
     [SerializeField]private UpgradeSystem upgradeSystem;
-    
+    public PlayerSaveData saveData;
     [Header("UI")]
     [SerializeField]private TextMeshProUGUI buttonText;
     [SerializeField]private TextMeshProUGUI infoText;
@@ -36,6 +36,8 @@ public class StatPanel  : MonoBehaviour
     public void OnUpgradeButtonClicked()
     {
         upgradeSystem.Upgrade(statType);
+        saveData.SaveFromPlayer(player);
+        
         UpdateText();
     }
 
@@ -47,6 +49,8 @@ public class StatPanel  : MonoBehaviour
     private void Start()
     {
         UpdateText();
+        saveData.SaveFromPlayer(player);
+
     }
 
     private void OnDisable()

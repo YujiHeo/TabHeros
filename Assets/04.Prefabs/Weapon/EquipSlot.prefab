@@ -1373,7 +1373,7 @@ GameObject:
   - component: {fileID: 7663075181512272794}
   - component: {fileID: 121115114391875759}
   m_Layer: 5
-  m_Name: GoldIcon
+  m_Name: PointIcon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1426,7 +1426,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -1749951913, guid: 54d3b5adc1c97be41bb9286776f618df, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 70e92df91699f664ab5bad7bf4723022, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

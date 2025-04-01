@@ -1,12 +1,9 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.IO;
-using TMPro;
 using UnityEngine;
-using UnityEngine.SocialPlatforms.Impl;
-using UnityEngine.UI;
-[System.Serializable]
+
+[Serializable]
 public class Achievement
 {
     public string name;
@@ -18,9 +15,9 @@ public class Achievement
 
     [NonSerialized] public AchievementType Type;
     [NonSerialized] public int currentProgress; // 진행 현황 (저장 대상)
-    [NonSerialized] public bool isCompleted;    // 달성 여부 (저장 대상)
+    public bool isCompleted;    // 달성 여부 (저장 대상)
 }
-[System.Serializable]
+[Serializable]
 public class AchievementListWrapper
 {   
     public List<Achievement> achievements;
@@ -88,8 +85,6 @@ public class AchievementManager : Singleton<AchievementManager>
         foreach (var achievement in achievements)
             if (Enum.TryParse(achievement.achievementType, true, out AchievementType type))
                 achievement.Type = type;
-            else
-                Debug.LogError($"잘못된 업적 타입: {achievement.achievementType}");
     }
 
     // 타입별 업적 조회 메서드 추가
@@ -101,7 +96,7 @@ public class AchievementManager : Singleton<AchievementManager>
         List<Achievement> achievementsOfType = GetAchievementsByType(type);
         
         Achievement achievement = achievementsOfType.Find(a => !a.isCompleted);
-        if (!achievement.isCompleted)
+        if (achievement != null &&!achievement.isCompleted)
         {
             achievement.currentProgress = achievement.targetValue;
             achievement.isCompleted = true;
@@ -138,6 +133,7 @@ public class AchievementManager : Singleton<AchievementManager>
         if (achievement.currentProgress >= achievement.targetValue)
         {
             CompleteAchievement(achievementType);
+            achievement.isCompleted = true;
             return true;
         }
         return false;
@@ -152,6 +148,7 @@ public class AchievementManager : Singleton<AchievementManager>
         // 모든 업적에 대해 진행도 업데이트
         foreach (Achievement achievement in achievementsOfType)
         {
+            
             if (!achievement.isCompleted)
             {
                 achievement.currentProgress += amount;
@@ -159,7 +156,6 @@ public class AchievementManager : Singleton<AchievementManager>
                 if (achievement.currentProgress >= achievement.targetValue)
                 {
                     achievement.currentProgress = achievement.targetValue;
-                    achievement.isCompleted = true;
                     GrantReward(achievement);
                 }
             }

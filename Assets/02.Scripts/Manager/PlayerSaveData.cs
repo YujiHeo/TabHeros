@@ -58,15 +58,13 @@ public class WeaponSaveData
     // 무기 장착상황
     public int weaponLevel;
     public int weaponAbility;
-    public int upgradePoints;
-    //  이 upgaradePoints를 지금은 WeaponData의 값으로 추가해주고 있는데,
-    //  player.upgradePoints에 보내던지 중앙관리 해야하는 것 아닌지?
+    public int ownUpgradePoints;
 
     public void SaveFromWeaponData(WeaponData weaponData)
     {
         weaponLevel = weaponData.level;
         weaponAbility = weaponData.ability;
-        upgradePoints = weaponData.ownUpgradePoint;
+        ownUpgradePoints = weaponData.ownUpgradePoint;
     }
 
 }
