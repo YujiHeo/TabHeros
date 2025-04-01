@@ -897,7 +897,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statType: 0
-  playerData: {fileID: 11400000, guid: 98c545bd91d61420187bc6d0de1d757a, type: 2}
+  playerData:
+    gold: 0
+    upgradePoints: 0
+    atkLevel: 1
+    critLevel: 1
+    critDamageLevel: 1
+    goldGainLevel: 1
   player: {fileID: 956338160}
   upgradeSystem: {fileID: 59015799}
   saveData:
@@ -924,7 +930,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 956338160}
-  playerData: {fileID: 11400000, guid: 98c545bd91d61420187bc6d0de1d757a, type: 2}
+  playerData:
+    gold: 0
+    upgradePoints: 0
+    atkLevel: 1
+    critLevel: 1
+    critDamageLevel: 1
+    goldGainLevel: 1
   playerGoods: {fileID: 692362034}
 --- !u!114 &59015800
 MonoBehaviour:
@@ -1166,7 +1178,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statType: 2
-  playerData: {fileID: 11400000, guid: 98c545bd91d61420187bc6d0de1d757a, type: 2}
+  playerData:
+    gold: 0
+    upgradePoints: 0
+    atkLevel: 1
+    critLevel: 1
+    critDamageLevel: 1
+    goldGainLevel: 1
   player: {fileID: 956338160}
   upgradeSystem: {fileID: 71526759}
   saveData:
@@ -1193,7 +1211,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 956338160}
-  playerData: {fileID: 11400000, guid: 98c545bd91d61420187bc6d0de1d757a, type: 2}
+  playerData:
+    gold: 0
+    upgradePoints: 0
+    atkLevel: 1
+    critLevel: 1
+    critDamageLevel: 1
+    goldGainLevel: 1
   playerGoods: {fileID: 692362034}
 --- !u!114 &71526760
 MonoBehaviour:
@@ -7687,7 +7711,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statType: 1
-  playerData: {fileID: 11400000, guid: 98c545bd91d61420187bc6d0de1d757a, type: 2}
+  playerData:
+    gold: 0
+    upgradePoints: 0
+    atkLevel: 1
+    critLevel: 1
+    critDamageLevel: 1
+    goldGainLevel: 1
   player: {fileID: 956338160}
   upgradeSystem: {fileID: 480980577}
   saveData:
@@ -7714,7 +7744,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 956338160}
-  playerData: {fileID: 11400000, guid: 98c545bd91d61420187bc6d0de1d757a, type: 2}
+  playerData:
+    gold: 0
+    upgradePoints: 0
+    atkLevel: 1
+    critLevel: 1
+    critDamageLevel: 1
+    goldGainLevel: 1
   playerGoods: {fileID: 692362034}
 --- !u!114 &480980578
 MonoBehaviour:
@@ -7964,6 +8000,13 @@ MonoBehaviour:
     critDamageLevel: 0
     goldGainLevel: 0
   weaponData: {fileID: 0}
+  weaponSaveData:
+    weaponLevel: 0
+    weaponAbility: 0
+    ownUpgradePoints: 0
+  stageSaveData:
+    currentStage: 0
+    clearStage: 0
   weaponList: {fileID: 11400000, guid: 02833fbb0834c5345ad6b67fe5f374cd, type: 2}
 --- !u!4 &525213824
 Transform:
@@ -10823,7 +10866,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   goldText: {fileID: 741416226}
   pointText: {fileID: 1629117193}
-  player: {fileID: 956338160}
 --- !u!114 &692362035
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11076,7 +11118,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   goldText: {fileID: 2145047692}
   pointText: {fileID: 1953206044}
-  player: {fileID: 956338160}
 --- !u!114 &705466360
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11197,7 +11238,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statType: 3
-  playerData: {fileID: 11400000, guid: 98c545bd91d61420187bc6d0de1d757a, type: 2}
+  playerData:
+    gold: 0
+    upgradePoints: 0
+    atkLevel: 1
+    critLevel: 1
+    critDamageLevel: 1
+    goldGainLevel: 1
   player: {fileID: 956338160}
   upgradeSystem: {fileID: 712485661}
   saveData:
@@ -11224,7 +11271,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 956338160}
-  playerData: {fileID: 11400000, guid: 98c545bd91d61420187bc6d0de1d757a, type: 2}
+  playerData:
+    gold: 0
+    upgradePoints: 0
+    atkLevel: 1
+    critLevel: 1
+    critDamageLevel: 1
+    goldGainLevel: 1
   playerGoods: {fileID: 692362034}
 --- !u!114 &712485662
 MonoBehaviour:
@@ -11381,7 +11434,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   goldText: {fileID: 1021464239}
   pointText: {fileID: 879823930}
-  player: {fileID: 956338160}
 --- !u!1 &717617842
 GameObject:
   m_ObjectHideFlags: 0
@@ -14797,9 +14849,7 @@ MonoBehaviour:
   atk: 10
   crit: 5
   critDamage: 100
-  gold: 100000
-  upgradePoints: 100
-  goldGainRate: 0
+  goldGainRate: 10000
 --- !u!4 &956338161
 Transform:
   m_ObjectHideFlags: 0
@@ -27482,8 +27532,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 399362124}
   m_HandleRect: {fileID: 399362123}
   m_Direction: 2
-  m_Value: 0.9999999
-  m_Size: 0.40816325
+  m_Value: 0.99999976
+  m_Size: 0.40816328
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:

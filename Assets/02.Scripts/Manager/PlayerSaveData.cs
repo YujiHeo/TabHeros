@@ -80,16 +80,25 @@ public class WeaponSaveData
     }
 }
 
-[Serializable]
+[System.Serializable]
 public class HeroSaveData
 {
-    public bool[] isUnlocked = new bool[5];
-    public int[] level = new int[5];
+    public bool[] isUnlocked;
+    public int[] level;
 
     public HeroSaveData()
     {
-        isUnlocked = new bool[5];
-        level = new int[5];
+        int heroCount = 5; 
+        isUnlocked = new bool[heroCount];
+        level = new int[heroCount];
+
+        
+        for (int i = 0; i < heroCount; i++)
+        {
+            isUnlocked[i] = false;
+            level[i] = 0;
+        }
     }
 }
+
 
