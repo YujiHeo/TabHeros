@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Resources/DOTweenSettings.asset.meta
+guid: 23e8e72177215dd4ea3622f6aa73e844
+=======
 guid: c3cacbf598358424cb146d6571085ed2
+>>>>>>> Dev:Assets/07.SO/WeaponDataBase/DOTweenSettings.asset.meta
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 11400000

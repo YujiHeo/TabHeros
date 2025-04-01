@@ -24,7 +24,11 @@ public class WeaponSlot : MonoBehaviour
     public void Start()
     {
         if (player == null)
+<<<<<<< HEAD
+            player = GameManager.instance.player;
+=======
             player = FindObjectOfType<Player>();
+>>>>>>> Dev
 
         weaponSlot = GetComponent<WeaponSlot>();
 
@@ -71,8 +75,21 @@ public class WeaponSlot : MonoBehaviour
 
     public void AlreadyEquipped()
     {
+<<<<<<< HEAD
+        if (player == null || weaponData == null) return;
+
+        if (GameManager.instance.player.upgradePoints < weaponData.ownUpgradePoint)
+        {
+            upgradePoint.color = Color.red;
+        }
+        else
+        {
+            upgradePoint.color = Color.white; // 원래 색으로 되돌리기
+        }
+=======
         //equipButton = GetComponent<Button>().colors;
         //equipButton.normalColor = Color.red;
         //GetComponent<Button>().colors = equipButton;
+>>>>>>> Dev
     }
 }
