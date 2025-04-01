@@ -9,7 +9,8 @@ public class GameManager : Singleton<GameManager>
     public Player player;
     public PlayerSaveData playerData;
     public WeaponData weaponData;
-
+    public WeaponSaveData weaponSaveData;
+    
     [SerializeField]
     private WeaponList weaponList;
 
@@ -17,5 +18,7 @@ public class GameManager : Singleton<GameManager>
     {
         weaponList.GetWeapon();
     }
+
+
 
 }

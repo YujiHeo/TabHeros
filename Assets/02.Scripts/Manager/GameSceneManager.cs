@@ -7,7 +7,7 @@ using DG.Tweening;
 
 public class GameSceneManager : Singleton<GameSceneManager>
 {
-    public GameObject fadeCanvas; // ������ ȭ�� �̹���
+    public GameObject fadeCanvas;
     public Image fadeImage;
 
     private void Start()

@@ -8,7 +8,7 @@ public class SaveData  // 세이브 총대장
     public PlayerSaveData playerSaveData = new PlayerSaveData();
     public StageSaveData stageSaveData = new StageSaveData();
     public WeaponSaveData weaponSaveData = new WeaponSaveData();
-   // public HeroSaveData heroSaveData = new HeroSaveData();
+    public HeroSaveData heroSaveData = new HeroSaveData();
 }
 
 [Serializable]
@@ -32,6 +32,7 @@ public class PlayerSaveData
         atk = player.atk;
         crit = player.crit;
         critDamage = player.critDamage;
+        // 장착 여부를 플레이어에서 관리 
     }
 
 }
@@ -53,12 +54,13 @@ public class StageSaveData
 }
 
 [Serializable]
-public class WeaponSaveData
+public class WeaponSaveData  // 리스트 형태가 되어야 됨 (각 무기가)
 {
     // 무기 장착상황
+    // 초기화 값을 -1로 설정하면 아예 가지고 있지 않은 상태. 
     public int weaponLevel;
-    public int weaponAbility;
-    public int ownUpgradePoints;
+    public int weaponAbility;  // 저장할 필요가 없음. 로드한 다음에 계산해서 써야 됨. 
+    public int ownUpgradePoints; // 저장할 필요가 없음. 마찬가지로 계산해서 써야 됨.
 
     public void SaveFromWeaponData(WeaponData weaponData)
     {
@@ -69,9 +71,10 @@ public class WeaponSaveData
 
 }
 
-//[Serializable]
-//public class HeroSaveData
-//{
-//    // 앞으로 저장될 영웅 관련 데이터
-//}
+[Serializable]
+public class HeroSaveData
+{
+    public bool[] isUnlocked = new bool[5];
+    public int[] level = new int[5];
+}
 
