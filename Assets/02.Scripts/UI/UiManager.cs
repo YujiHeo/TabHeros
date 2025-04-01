@@ -7,8 +7,6 @@ using UnityEngine.UI;
 
 public class UiManager : Singleton<UiManager>
 {
-    [SerializeField] private TMP_Text warningTxt;
-    
     public void OpenPanel(GameObject panel)
     {
         panel.SetActive(true);
@@ -19,26 +17,6 @@ public class UiManager : Singleton<UiManager>
         panel.SetActive(false);
     }
 
-    public void UpdateCurrencyTxt(TMP_Text currencyText, int amount)
-    {
-        if (currencyText != null)
-        {
-            currencyText.text = $"Currency: {amount}";
-        }
-    }
-
-    public void ShowWarningMessage(string message)
-    {
-        StartCoroutine(ShowWarningMessageCoroutine(message));
-    }
-
-    private IEnumerator ShowWarningMessageCoroutine(string message)
-    {
-        warningTxt.text = message;
-        warningTxt.gameObject.SetActive(true);
-        yield return new WaitForSeconds(2f); // 2�� �� ��� �޽��� ��Ȱ��ȭ
-        warningTxt.gameObject.SetActive(false);
-    }
 
 }
 

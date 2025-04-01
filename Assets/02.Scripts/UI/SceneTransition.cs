@@ -42,11 +42,9 @@ public class SceneTransition : Singleton<SceneTransition>
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        if (scene.name != "StartScene")
-        {
-            Destroy(gameObject);
-        }
+        FadeIn();
     }
+
     public void OnPlayButtonClicked(string sceneName)
     {
         fadeCanvas.gameObject.SetActive(true);
@@ -63,13 +61,17 @@ public class SceneTransition : Singleton<SceneTransition>
 
     public void FadeIn()
     {
+        fadeCanvas.SetActive(true);
         fadeImage.color = new Color(0, 0, 0, 1);
-        fadeImage.DOFade(0, 1f).SetEase(Ease.InOutQuad);
+        fadeImage.DOFade(0, 1f).SetEase(Ease.InOutQuad).OnComplete(() =>
+        {
+            fadeCanvas.SetActive(false); // FadeIn이 끝나면 캔버스 비활성화
+        });
     }
 
     public void FadeOut(Action onComplete = null)
     {
-        fadeImage.DOFade(1, 5f).SetEase(Ease.InOutQuad).OnComplete(() =>
+        fadeImage.DOFade(1, 1f).SetEase(Ease.InOutQuad).OnComplete(() =>
         {
             onComplete?.Invoke();
         });
