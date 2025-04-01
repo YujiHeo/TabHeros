@@ -88,7 +88,7 @@ public class StageManager : Singleton<StageManager>
         stageUI.SetBossQuitActive(false);
         CreateEnemy();
         // Invoke("CreateEnemy", 0.5f);
-        
+
     }
 
     public void BossKill()
@@ -110,7 +110,8 @@ public class StageManager : Singleton<StageManager>
 
     public void CreateEnemy()
     {
-        enemyController.SetEnemy(stageDataBases[currentStage].enemyData);
+        // 배열 중 한개 랜덤으로 가져옴
+        enemyController.SetEnemy(stageDataBases[currentStage].enemyDatas[UnityEngine.Random.Range(0, stageDataBases[currentStage].enemyDatas.Count)]);
     }
 
     public void CreateBoss()

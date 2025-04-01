@@ -20,6 +20,7 @@ public class SaveLoadManager : Singleton<SaveLoadManager>
     public void Start()
     {
         LoadAllData();
+        Debug.Log(saveFilePath);
     }
 
     public void SaveAllData()

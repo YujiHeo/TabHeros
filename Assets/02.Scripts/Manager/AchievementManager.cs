@@ -14,7 +14,7 @@ public class Achievement
     public string achievementType; // JSON 매핑용 필드 추가
 
     [NonSerialized] public AchievementType Type;
-    [NonSerialized] public int currentProgress; // 진행 현황 (저장 대상)
+    public int currentProgress; // 진행 현황 (저장 대상)
     public bool isCompleted;    // 달성 여부 (저장 대상)
 }
 [Serializable]
@@ -76,6 +76,8 @@ public class AchievementManager : Singleton<AchievementManager>
 
         AchievementListWrapper wrapper = JsonUtility.FromJson<AchievementListWrapper>(jsonText);
         achievements = wrapper?.achievements ?? new List<Achievement>();
+        achievements.RemoveAll(a => a.isCompleted);
+
     }
 
     private void ConvertAchievementTypes()
@@ -150,7 +152,7 @@ public class AchievementManager : Singleton<AchievementManager>
             if (!achievement.isCompleted)
             {
                 achievement.currentProgress += amount;
-                // 목표치 초과하지 않도록 클램프 처리
+                
                 if (achievement.currentProgress >= achievement.targetValue)
                 {
                     achievement.currentProgress = achievement.targetValue;

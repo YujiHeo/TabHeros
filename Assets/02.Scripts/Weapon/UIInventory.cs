@@ -36,9 +36,9 @@ public class UIInventory : Singleton<UIInventory>
     {
         int slotCount = 5;
 
-        for (int i = 0; i < slotCount; i++) // 5¹ø ¹Ýº¹µÊ
+        for (int i = 0; i < slotCount; i++) // 5ï¿½ï¿½ ï¿½Ýºï¿½ï¿½ï¿½
         {
-            GameObject newSlotObject = Instantiate(slotPrefab, slotParent); //prefab¿¡ Instantiate 
+            GameObject newSlotObject = Instantiate(slotPrefab, slotParent); //prefabï¿½ï¿½ Instantiate 
             WeaponSlot weaponSlot = newSlotObject.GetComponent<WeaponSlot>();
             slotList.Add(weaponSlot);
         }
@@ -54,15 +54,15 @@ public class UIInventory : Singleton<UIInventory>
 
         else
         {
-            Debug.LogWarning("½½·ÔÀÇ ¼ö¸¦ ÃÊ°úÇß½À´Ï´Ù.");
+            Debug.LogWarning("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ê°ï¿½ï¿½ß½ï¿½ï¿½Ï´ï¿½.");
         }
     }
 
-    public void WeaponUpgrade(Player player, WeaponData newWeapon, WeaponSlot weaponSlot) //¹«±â ¾÷±×·¹ÀÌµå
+    public void WeaponUpgrade(Player player, WeaponData newWeapon, WeaponSlot weaponSlot) //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½×·ï¿½ï¿½Ìµï¿½
     {
-        if (player.upgradePoints >= newWeapon.ownUpgradePoint)
+        if (SaveLoadManager.instance.playerData.upgradePoints >= newWeapon.ownUpgradePoint)
         {
-            player.upgradePoints -= newWeapon.ownUpgradePoint;
+            SaveLoadManager.instance.playerData.upgradePoints -= newWeapon.ownUpgradePoint;
 
             newWeapon.level++;
             newWeapon.ability += 10;
@@ -75,15 +75,15 @@ public class UIInventory : Singleton<UIInventory>
         }
         else
         {
-            Debug.Log("Æ÷ÀÎÆ®°¡ ºÎÁ·ÇÕ´Ï´Ù!");
+            Debug.Log("ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½!");
         }
     }
 
 
 
-    public void WeaponEquipped(WeaponSlot weaponSlot, WeaponData selectedWeapon) //¹«±â ÀåÂø
+    public void WeaponEquipped(WeaponSlot weaponSlot, WeaponData selectedWeapon) //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
     {
-        //¹«±â ÀåÂø ½Ã ÇØ´ç ¹«±â ½½·Ô ÀåÂø ¹öÆ° ºñÈ°¼ºÈ­
+        //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ø´ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Æ° ï¿½ï¿½È°ï¿½ï¿½È­
 
         if (currentEquippedWeapon != null)
         {

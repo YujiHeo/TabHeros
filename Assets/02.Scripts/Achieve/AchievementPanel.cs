@@ -15,6 +15,7 @@ public enum AchievementType
 }
 public class AchievementPanel : MonoBehaviour
 {
+    private int achievementIndex;
     [SerializeField] private PlayerGoods playerGoods;
     [SerializeField] private AchievementType achievementType;
     [Header("UI")]
@@ -24,19 +25,9 @@ public class AchievementPanel : MonoBehaviour
     [SerializeField] private Button button;
     [SerializeField] private Image progressBar;
     
-    private Dictionary<AchievementType, string> achievementLabels = new Dictionary<AchievementType, string>()
-    {
-        { AchievementType.Click, "Click" },
-        { AchievementType.Gold, "Gold" },
-        { AchievementType.Hero, "Hero" },
-        { AchievementType.Stage, "Stage" },
-        { AchievementType.Weapon, "Weapon" }
-    };
-    
     private void Start()
     {
         UpdateUI();
-        playerGoods.updateText();
     }
 
     private void Update()
@@ -45,7 +36,6 @@ public class AchievementPanel : MonoBehaviour
         playerGoods.updateText();
     }
 
-    private int achievementIndex;
 
     public void UpdateUI()
     {
@@ -56,7 +46,7 @@ public class AchievementPanel : MonoBehaviour
         {
             gameObject.SetActive(false);
             return;
-        }
+        }   
 
         Achievement achievement = achievementsOfType[achievementIndex]; // 저장된 인덱스 사용
 

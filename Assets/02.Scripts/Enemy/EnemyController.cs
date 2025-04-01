@@ -33,7 +33,7 @@ public class EnemyController : MonoBehaviour
 
         currentHP = data.hp;
         enemyUI.Init(data);
-
+        
         if (data.isBoss) StartBossTimer();
         StopWaitAction();
     }
@@ -97,6 +97,7 @@ public class EnemyController : MonoBehaviour
 
     public void Die()
     {
+        GameManager.instance.player.Reward(data.gainGold, data.upgradePoint);
         if (data.isBoss)
         {
             StopBossTimer();
