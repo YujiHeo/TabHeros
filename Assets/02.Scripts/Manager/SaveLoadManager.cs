@@ -17,7 +17,7 @@ public class SaveLoadManager : Singleton<SaveLoadManager>
     private static string weaponSaveFilePath => Application.persistentDataPath + "/weaponData.json";
     private static string heroSaveFilePath => Application.persistentDataPath + "/heroData.json";
 
-    public void Start()
+    public void Awake()
     {
         LoadAllData();
     }
