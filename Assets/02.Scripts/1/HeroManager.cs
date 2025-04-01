@@ -10,24 +10,24 @@ public class HeroManager : Singleton<HeroManager>
 
     private Player player;
 
-    //private void Start()
-    //{
-    //    player = FindObjectOfType<Player>();
-    //    RefreshAllSlots();
-
-    //}
     private void Start()
     {
         player = FindObjectOfType<Player>();
-
-        foreach (var hero in heroList)
-        {
-            hero.level = 0;
-            hero.isUnlocked = false;
-        }
-
         RefreshAllSlots();
+
     }
+    //private void Start()
+    //{
+    //    player = FindObjectOfType<Player>();
+
+    //    foreach (var hero in heroList)
+    //    {
+    //        hero.level = 0;
+    //        hero.isUnlocked = false;
+    //    }
+
+    //    RefreshAllSlots();
+    //}
 
     public void OnHeroUnlocked(int heroId)
     {
@@ -66,6 +66,30 @@ public class HeroManager : Singleton<HeroManager>
 
         Debug.Log($"[HeroManager] {data.heroName} 스폰 완료");
     }
+    public HeroSaveData GetHeroSaveData()
+    {
+        HeroSaveData saveData = new HeroSaveData();
+
+        for (int i = 0; i < heroList.Count; i++)
+        {
+            saveData.isUnlocked[i] = heroList[i].isUnlocked;
+            saveData.level[i] = heroList[i].level;
+        }
+
+        return saveData;
+    }
+    public void LoadHeroSaveData(HeroSaveData saveData)
+    {
+        for (int i = 0; i < heroList.Count; i++)
+        {
+            heroList[i].isUnlocked = saveData.isUnlocked[i];
+            heroList[i].level = saveData.level[i];
+        }
+
+        RefreshAllSlots();
+    }
+
+
 }
 
 

@@ -19,5 +19,6 @@ MonoBehaviour:
   unlockPrice: 1000
   heroPrefab: {fileID: 3011276602447267564, guid: 11241fa8951760a4cb7faa6cb9fc9fc9, type: 3}
   attackInterval: 0.5
+  isFlipped: 1
   isUnlocked: 1
   level: 1
