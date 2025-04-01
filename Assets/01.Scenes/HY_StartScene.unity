@@ -510,7 +510,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playButton: {fileID: 1209211075}
-  nextSceneName: HY-GameManagerUi
+  nextSceneName: GameScene
   warningTxt: {fileID: 0}
 --- !u!4 &758806093
 Transform:

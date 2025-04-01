@@ -43,7 +43,7 @@ public class UiManager : Singleton<UiManager>
     {
         warningTxt.text = message;
         warningTxt.gameObject.SetActive(true);
-        yield return new WaitForSeconds(2f); // 2ÃÊ ÈÄ °æ°í ¸Þ½ÃÁö ºñÈ°¼ºÈ­
+        yield return new WaitForSeconds(2f); // 2ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½Þ½ï¿½ï¿½ï¿½ ï¿½ï¿½È°ï¿½ï¿½È­
         warningTxt.gameObject.SetActive(false);
     }
 

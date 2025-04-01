@@ -8,7 +8,7 @@ public class SaveData  // 세이브 총대장
     public PlayerSaveData playerSaveData = new PlayerSaveData();
     public StageSaveData stageSaveData = new StageSaveData();
     public WeaponSaveData weaponSaveData = new WeaponSaveData();
-    public HeroSaveData heroSaveData = new HeroSaveData();
+   // public HeroSaveData heroSaveData = new HeroSaveData();
 }
 
 [Serializable]
@@ -71,9 +71,9 @@ public class WeaponSaveData
 
 }
 
-[Serializable]
-public class HeroSaveData
-{
-    // 앞으로 저장될 영웅 관련 데이터
-}
+//[Serializable]
+//public class HeroSaveData
+//{
+//    // 앞으로 저장될 영웅 관련 데이터
+//}
 
