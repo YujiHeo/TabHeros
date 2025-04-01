@@ -13,6 +13,7 @@ public class WeaponSlot : MonoBehaviour
 
     [SerializeField] private Button upgradeButton;
     [SerializeField] private TextMeshProUGUI upgradePoint;
+    [SerializeField] private TextMeshProUGUI upgradeText;
 
     [SerializeField] private Button equipButton;
     [SerializeField] private TextMeshProUGUI isEquip;
@@ -24,18 +25,17 @@ public class WeaponSlot : MonoBehaviour
     public void Start()
     {
         if (player == null)
-            player = GameManager.instance.player;
-            player = FindObjectOfType<Player>();
+        player = FindObjectOfType<Player>();
 
         weaponSlot = GetComponent<WeaponSlot>();
 
         Button upgradeBtn = upgradeButton.GetComponent<Button>();
-        upgradeBtn.onClick.AddListener(() => UIInventory.instance.WeaponUpgrade(player, weaponData));
+        upgradeBtn.onClick.AddListener(() => UIInventory.instance.WeaponUpgrade(player, weaponData, weaponSlot));
 
         Button equipBtn = equipButton.GetComponent<Button>();
         equipBtn.onClick.AddListener(() => UIInventory.instance.WeaponEquipped(weaponSlot, weaponData));
 
-        //IsAbleToUpgrading(player, weaponData);
+        UpdateText();
     }
 
     public void SetItem(WeaponData weapon)
@@ -43,6 +43,7 @@ public class WeaponSlot : MonoBehaviour
         weaponData = weapon;
 
         RefreshUI();
+
     }
 
 
@@ -57,7 +58,6 @@ public class WeaponSlot : MonoBehaviour
             upgradePoint.text = weaponData.ownUpgradePoint.ToString();
 
             weaponImage.sprite = weaponData.Icon;
-
         }
 
         else
@@ -70,20 +70,23 @@ public class WeaponSlot : MonoBehaviour
         }
     }
 
-    public void AlreadyEquipped()
+    
+    public void UpdateText()
     {
-        if (player == null || weaponData == null) return;
+        Color activeColor;
+        Color inactiveColor;
+        Color inactiveColorForText;
 
-        if (GameManager.instance.player.upgradePoints < weaponData.ownUpgradePoint)
-        {
-            upgradePoint.color = Color.red;
-        }
-        else
-        {
-            upgradePoint.color = Color.white; // ���� ������ �ǵ�����
-        }
-        //equipButton = GetComponent<Button>().colors;
-        //equipButton.normalColor = Color.red;
-        //GetComponent<Button>().colors = equipButton;
+        ColorUtility.TryParseHtmlString("#F3883D", out activeColor);
+        ColorUtility.TryParseHtmlString("#989390", out inactiveColor);
+
+        ColorUtility.TryParseHtmlString("#000000", out inactiveColorForText);
+
+        int upgradePoints = weaponData.ownUpgradePoint;
+
+        upgradeButton.transition = Selectable.Transition.None;
+
+        upgradeButton.image.color = player.upgradePoints >= upgradePoints ? activeColor : inactiveColor;
+        upgradeText.color = player.upgradePoints >= upgradePoints ? inactiveColorForText : activeColor;
     }
 }

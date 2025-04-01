@@ -832,9 +832,10 @@ MonoBehaviour:
   weaponNameText: {fileID: 3980699846207619737}
   weaponImage: {fileID: 2285733322848333879}
   weaponLevel: {fileID: 6163526300152688633}
-  weaponAbility: {fileID: 1642804389117479870}
+  weaponAbility: {fileID: 4379759922317064118}
   upgradeButton: {fileID: 9070674498078637880}
   upgradePoint: {fileID: 8923149937036373659}
+  upgradeText: {fileID: 4757366408576935917}
   equipButton: {fileID: 147312885779381794}
   isEquip: {fileID: 7068905483146559923}
 --- !u!1 &5923204829566240261
