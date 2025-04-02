@@ -24,6 +24,7 @@ public class SaveLoadManager : Singleton<SaveLoadManager>
 
     public void SaveAllData()
     {
+        HeroManager.instance.SaveHeroData();
         SavePlayerData();
         SaveStageData();
         SaveWeaponData();
@@ -97,9 +98,11 @@ public class SaveLoadManager : Singleton<SaveLoadManager>
 
     public void SaveHeroData()
     {
+        heroData = HeroManager.instance.GetHeroSaveData(); 
         string json = JsonConvert.SerializeObject(heroData, Formatting.Indented);
         File.WriteAllText(heroSaveFilePath, json);
     }
+
 
     public void LoadHeroData()
     {

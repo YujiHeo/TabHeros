@@ -7,9 +7,10 @@ public class StartScene : MonoBehaviour
 {
     [SerializeField] private Button playButton;
     [SerializeField] private string nextSceneName = "GameScene";
+    [SerializeField] private SceneTransition sceneTransition;
 
     private void Start()
     {
-        playButton.onClick.AddListener(() => SceneTransition.instance.OnPlayButtonClicked(nextSceneName));
+        playButton.onClick.AddListener(() => sceneTransition.OnPlayButtonClicked(nextSceneName));
     }
 }

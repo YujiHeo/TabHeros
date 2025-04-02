@@ -9,25 +9,37 @@ public class HeroManager : Singleton<HeroManager>
     public List<Transform> heroSpawnPositions; 
 
     private Player player;
-
-    //private void Start()
-    //{
-    //    player = FindObjectOfType<Player>();
-    //    RefreshAllSlots();
-
-    //}
     private void Start()
     {
         player = FindObjectOfType<Player>();
 
-        foreach (var hero in heroList)
+        HeroSaveData save = SaveLoadManager.instance.heroData;
+        if (save != null)
         {
-            hero.level = 0;
-            hero.isUnlocked = false;
+            LoadHeroSaveData(save); 
+        }
+        else
+        {
+           
+            foreach (var hero in heroList)
+            {
+                hero.level = 0;
+                hero.isUnlocked = false;
+            }
         }
 
         RefreshAllSlots();
+
+       
+        foreach (var hero in heroList)
+        {
+            if (hero.isUnlocked)
+            {
+                SpawnHero(hero);
+            }
+        }
     }
+
 
     public void OnHeroUnlocked(int heroId)
     {
@@ -35,6 +47,8 @@ public class HeroManager : Singleton<HeroManager>
         if (hero != null)
         {
             SpawnHero(hero);
+
+            SaveLoadManager.instance.SaveAllData();
         }
     }
 
@@ -88,7 +102,10 @@ public class HeroManager : Singleton<HeroManager>
 
         RefreshAllSlots();
     }
-
+    public void SaveHeroData()
+    {
+        SaveLoadManager.instance.heroData = GetHeroSaveData();
+    }
 
 }
 

@@ -81,6 +81,7 @@ public class HeroSlot : MonoBehaviour
                 heroData.level = 1;
                 HeroManager.instance.OnHeroUnlocked(heroData.id);
                 AchievementManager.instance.IncreaseAchievementProgress(AchievementType.Hero,1);
+                SaveLoadManager.instance.SaveAllData();
             }
         }
         else
@@ -91,6 +92,8 @@ public class HeroSlot : MonoBehaviour
                 SaveLoadManager.instance.playerData.gold -= cost;
                 heroData.level++;
                 Debug.Log($"[������] {heroData.heroName} �� Lv.{heroData.level}");
+
+                SaveLoadManager.instance.SaveAllData();
             }
         }
 
