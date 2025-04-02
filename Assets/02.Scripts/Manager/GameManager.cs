@@ -1,7 +1,5 @@
 ﻿using UnityEngine;
 using System.IO;
-using Unity.PlasticSCM.Editor.WebApi;
-using TMPro;
 using System.Collections.Generic;
 
 public class GameManager : Singleton<GameManager>

@@ -106,7 +106,7 @@ public class HeroManager : Singleton<HeroManager>
         for (int i = 0; i < heroList.Count; i++)
         {
             saveData.isUnlocked[i] = heroList[i].isUnlocked;
-            saveData.level[i] = heroList[i].level;
+            saveData.heroLevel[i] = heroList[i].level;
         }
 
         return saveData;
@@ -116,7 +116,7 @@ public class HeroManager : Singleton<HeroManager>
         for (int i = 0; i < heroList.Count; i++)
         {
             heroList[i].isUnlocked = saveData.isUnlocked[i];
-            heroList[i].level = saveData.level[i];
+            heroList[i].level = saveData.heroLevel[i];
         }
 
         RefreshAllSlots();

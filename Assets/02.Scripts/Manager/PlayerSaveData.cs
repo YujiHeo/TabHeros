@@ -4,7 +4,8 @@ using JetBrains.Annotations;
 using TMPro;
 using UnityEngine;
 
-public class SaveData  // 세이브 총대장
+// 전체 게임 데이터 관리 클래스
+public class SaveData
 {
     public PlayerSaveData playerSaveData = new PlayerSaveData();
     public StageSaveData stageSaveData = new StageSaveData();
@@ -15,10 +16,11 @@ public class SaveData  // 세이브 총대장
 [Serializable]
 public class PlayerSaveData
 {
-    //재화
+    //재화 정보
     public int gold;
     public int upgradePoints;
-    // 레벨
+
+    // 플레이어 레벨 정보
     public int atkLevel;
     public int critLevel;
     public int critDamageLevel;
@@ -62,41 +64,44 @@ public class StageSaveData
 [Serializable]
 public class WeaponSaveData
 {
-    // 무기 장착상황
-    public int weaponLevel;
-    public int weaponAbility;
-    public int ownUpgradePoints;
-
-    public void SaveFromWeaponData(WeaponData weaponData)
-    {
-        weaponLevel = weaponData.level;
-        weaponAbility = weaponData.ability;
-        ownUpgradePoints = weaponData.ownUpgradePoint;
-    }
+    // 무기 정보
+    public bool[] isUnlocked;  // 무기 해금 여부
+    public int[] weaponLevel;  // weaponLevel에 따라 ability와 upgradepoints가 달라지게끔
 
     public WeaponSaveData()
     {
+        int weaponCount = 5; // 무기의 개수
+        isUnlocked = new bool[weaponCount];
+        weaponLevel = new int[weaponCount];
+
+        for (int i = 0; i < weaponCount; i++)
+        {
+            isUnlocked[i] = false;
+            weaponLevel[i] = 0;
+        }
 
     }
+
 }
 
 [System.Serializable]
 public class HeroSaveData
 {
+    // 영웅 잠금 상태 및 정보
     public bool[] isUnlocked;
-    public int[] level;
+    public int[] heroLevel;
 
     public HeroSaveData()
     {
         int heroCount = 5; 
         isUnlocked = new bool[heroCount];
-        level = new int[heroCount];
+        heroLevel = new int[heroCount];
 
         
         for (int i = 0; i < heroCount; i++)
         {
             isUnlocked[i] = false;
-            level[i] = 0;
+            heroLevel[i] = 0;
         }
     }
 }

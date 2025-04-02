@@ -71,7 +71,7 @@ public class SceneTransition : Singleton<SceneTransition>
 
     public void FadeOut(Action onComplete = null)
     {
-        fadeImage.DOFade(1, 1f).SetEase(Ease.InOutQuad).OnComplete(() =>
+        fadeImage.DOFade(1, 0.5f).SetEase(Ease.InOutQuad).OnComplete(() =>
         {
             onComplete?.Invoke();
         });

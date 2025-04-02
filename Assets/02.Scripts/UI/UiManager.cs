@@ -17,6 +17,10 @@ public class UiManager : Singleton<UiManager>
         panel.SetActive(false);
     }
 
+    public void OpenErrorPanel(GameObject panel)
+    {
+        panel.SetActive(true);
+    }
 
 }
 
