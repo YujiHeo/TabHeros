@@ -43,12 +43,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 30
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -119,9 +119,190 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: WindEffect-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 26
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7925e1b42fcc5634abfd7ae47428de84
+      internalID: -814280972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WindEffect-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 26
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5090cbddaaaabce4cbc649d846b88424
+      internalID: 247998675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WindEffect-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 30
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be41d77d53fef6541b6761a1a2e27ad7
+      internalID: 1651462253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WindEffect-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 32
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69dde730813cb31418b0273ef4cd35a5
+      internalID: 660768972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WindEffect-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 32
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ba6aeed9d97249478c3983fd051097f
+      internalID: 46918927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WindEffect-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 32
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4482149419ebe84b8613f5b93c2b7f5
+      internalID: -328569411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WindEffect-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 32
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20aeb89c131d75543be26d8c526f6ef2
+      internalID: 1954587977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WindEffect-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 32
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47e48cad4496b024b9264a1a601728b4
+      internalID: 437863161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -132,7 +313,32 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      WindEffect-Sheet_0: -814280972
+      WindEffect-Sheet_1: 1258558234
+      WindEffect-Sheet_10: 437863161
+      WindEffect-Sheet_11: 913010287
+      WindEffect-Sheet_12: 1998329406
+      WindEffect-Sheet_13: 165692192
+      WindEffect-Sheet_14: 825789632
+      WindEffect-Sheet_15: -728630181
+      WindEffect-Sheet_16: 522451116
+      WindEffect-Sheet_17: 1324529449
+      WindEffect-Sheet_18: 732744861
+      WindEffect-Sheet_19: 2027705557
+      WindEffect-Sheet_2: 247998675
+      WindEffect-Sheet_20: -1865490831
+      WindEffect-Sheet_21: 1037482273
+      WindEffect-Sheet_22: -1366309224
+      WindEffect-Sheet_23: 671163498
+      WindEffect-Sheet_24: 1850129707
+      WindEffect-Sheet_3: 1651462253
+      WindEffect-Sheet_4: 660768972
+      WindEffect-Sheet_5: 493983359
+      WindEffect-Sheet_6: 46918927
+      WindEffect-Sheet_7: -328569411
+      WindEffect-Sheet_8: 1954587977
+      WindEffect-Sheet_9: 61863422
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

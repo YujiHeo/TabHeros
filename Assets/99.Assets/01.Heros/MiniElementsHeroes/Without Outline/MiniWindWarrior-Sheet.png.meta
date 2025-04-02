@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -43,12 +43,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 30
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -119,9 +119,1366 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: MiniWindWarrior-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 248
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d6d5a2f89d6c0e41a3471763f80a170
+      internalID: 382553491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MiniWindWarrior-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 248
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46fe4fb442dafbc42b29052aa9b85e62
+      internalID: 1299310656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MiniWindWarrior-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 248
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3186890ff7edd0943934c16b04742246
+      internalID: 1400990335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MiniWindWarrior-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 248
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b2bba04dde2a3546934364ddc465f81
+      internalID: -1493706949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MiniWindWarrior-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 218
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3316844b680a2414789fca94c2089db5
+      internalID: -1710965570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MiniWindWarrior-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 218
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3cb93af8abac79e499cf72c71cb67357
+      internalID: 679260513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MiniWindWarrior-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 218
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4648190eb2c70714db73d7154476da14
+      internalID: -1823735822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MiniWindWarrior-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 218
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76e3b06c2ef2e3641a14a1db86df8879
+      internalID: 381172284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MiniWindWarrior-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 218
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bab063d088d2b7948b45a10b6d29f4e2
+      internalID: -1072189391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MiniWindWarrior-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 218
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22dffaf284952ca4c9cbfe4d7822f6df
+      internalID: -181566375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MiniWindWarrior-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 188
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87727d156336f7a4bad3a1a2d2d3b803
+      internalID: -1237025420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MiniWindWarrior-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 188
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e6410b1b4072324f9fce9de9cd1ea98
+      internalID: -1870026484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MiniWindWarrior-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 188
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3370d38dc82b2d94a901d1c3d9a851e4
+      internalID: -1338244324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MiniWindWarrior-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 158
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 051b92c16bcdde344a704e424266d152
+      internalID: 130595942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MiniWindWarrior-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 158
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e90094b1aa2d0fd40b59b5094706f504
+      internalID: -1788443928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MiniWindWarrior-Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 158
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8fd97a3b061d8a418415cccdf8ba16e
+      internalID: 1344114434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MiniWindWarrior-Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 158
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd1f9c1ac00c1244dbbe49d19ee9ed5d
+      internalID: 2015494672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MiniWindWarrior-Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 158
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f5f81555a41a314e8e0f5ff59d8d225
+      internalID: 1432676077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MiniWindWarrior-Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 158
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f091121ea7284db448d529a4c825f487
+      internalID: -1089269407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MiniWindWarrior-Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 128
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a345543811c21124aaa64185ed077926
+      internalID: 812033943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MiniWindWarrior-Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 128
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1630e07264a8bd479d8a5feff9501ea
+      internalID: 1480686807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MiniWindWarrior-Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 128
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f554011855ff39b469230a6bd3d70fe3
+      internalID: 219409861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MiniWindWarrior-Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 128
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38a89d43979bcbd44950e177f5a3972a
+      internalID: -1995303563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MiniWindWarrior-Sheet_23
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 128
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b217f2999fadc8247b4918e446efe032
+      internalID: -1369617103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MiniWindWarrior-Sheet_24
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 128
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 766e5a977fd7379438d0ef14cb603eca
+      internalID: 1598709231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MiniWindWarrior-Sheet_25
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 128
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf0618e5376298647a4c041d121813e3
+      internalID: -1305993051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MiniWindWarrior-Sheet_26
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 98
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b65314bf11031e458930aa47a601d3b
+      internalID: 639004522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MiniWindWarrior-Sheet_27
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 98
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c453a27aaae847a4fb486bbbe360add8
+      internalID: 1503154419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MiniWindWarrior-Sheet_28
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 98
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7810badd67f4cb44adfed30a9349748
+      internalID: -1119659339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MiniWindWarrior-Sheet_29
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 98
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab4d2f33a61070a4998b823b784d98ff
+      internalID: -117175510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MiniWindWarrior-Sheet_30
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 98
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3b7791aa74a4fb44b0dd20348f5b0b5
+      internalID: -1614354618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MiniWindWarrior-Sheet_31
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 98
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11a98bb87f1a24847afd97ed46038804
+      internalID: 820533925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MiniWindWarrior-Sheet_32
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 98
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdedb4bb43f32154083bcbb727783a88
+      internalID: 1713231245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MiniWindWarrior-Sheet_33
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 98
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58f50546019a67a439024fdeec31c918
+      internalID: 75236728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MiniWindWarrior-Sheet_34
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 98
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0beb49dce2322844b8c82b3ef28f20ca
+      internalID: -765090106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MiniWindWarrior-Sheet_35
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 98
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6570869869ff46440a4b4f2ca5d1a9ba
+      internalID: -560286030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MiniWindWarrior-Sheet_36
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 98
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc9105dd9c63cc0438575624ef5c0f43
+      internalID: -79443689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MiniWindWarrior-Sheet_37
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 98
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 511d42413cd3b8745b5d66c925f19d6f
+      internalID: -1606645823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MiniWindWarrior-Sheet_38
+      rect:
+        serializedVersion: 2
+        x: 369
+        y: 98
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f6ca51af5af7344eb1bab191602b28b
+      internalID: 774737789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MiniWindWarrior-Sheet_39
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 68
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 841990a95e56e714895ce526d8d51b89
+      internalID: -1201244368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MiniWindWarrior-Sheet_40
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 68
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5c6b4e36ab05e34299bf827ae11cdb7
+      internalID: 285597216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MiniWindWarrior-Sheet_41
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 68
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9427d3195da648642a9b18148b48f310
+      internalID: 619281762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MiniWindWarrior-Sheet_42
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 68
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be11455a367a75f4880becf1503dc2e7
+      internalID: -847412223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MiniWindWarrior-Sheet_43
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 68
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6694e12ad1969fe4b902bf997960941e
+      internalID: 560971915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MiniWindWarrior-Sheet_44
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 68
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d586ac51bb54fc94dbe1114d82571f82
+      internalID: -1555391149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MiniWindWarrior-Sheet_45
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 68
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3d4168ad45f59142a9beebe24595711
+      internalID: -11398303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MiniWindWarrior-Sheet_46
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 68
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e9c212fb3513734a9eae1cb4a9e9ac8
+      internalID: -696891093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MiniWindWarrior-Sheet_47
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 68
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a917aac1b8556534bb13557c89d951d5
+      internalID: -948703682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MiniWindWarrior-Sheet_48
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 68
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 577685c2515e3324ca6a175ecf035a3a
+      internalID: -2031177820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MiniWindWarrior-Sheet_49
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 68
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d331c66416ba16409696444a6073f9a
+      internalID: -1215737673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MiniWindWarrior-Sheet_50
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 68
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04011959d73422346a4407659bfe2801
+      internalID: -737162230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MiniWindWarrior-Sheet_51
+      rect:
+        serializedVersion: 2
+        x: 369
+        y: 68
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e738d411ba68044a9eb6b931896818b
+      internalID: -2044199088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MiniWindWarrior-Sheet_52
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 38
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd32c26cc22e1ec4db58bcb67d7ac924
+      internalID: -830050571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MiniWindWarrior-Sheet_53
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 38
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80130971809fcf74ebdeb38312bd30a4
+      internalID: -1923023385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MiniWindWarrior-Sheet_54
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 38
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4df71bf8a09f9bc46bc406ed9e4faa5e
+      internalID: 1252920873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MiniWindWarrior-Sheet_55
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 38
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c15565cda336fc44a54cef283f59b4f
+      internalID: -1437958031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MiniWindWarrior-Sheet_56
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 38
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57c40253ad29dc14882a755a385d9f05
+      internalID: 1342847352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MiniWindWarrior-Sheet_57
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 38
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc08e773d631c024393c55e1444038b7
+      internalID: -1448104641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MiniWindWarrior-Sheet_58
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 38
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2193c0b81a3b134289c105ad08547f4
+      internalID: -1522697672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MiniWindWarrior-Sheet_59
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 38
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63adb471c42046b4da3e823a6e8b3494
+      internalID: -477873187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MiniWindWarrior-Sheet_60
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 8
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebf510a2b09c3c747bdc7487db3af5a7
+      internalID: 955655515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MiniWindWarrior-Sheet_61
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 8
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 567bf2be3a9de524f8d411bc19bf65a4
+      internalID: -1553301376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MiniWindWarrior-Sheet_62
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 8
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d7df42d19c23d448ad7e72d431b65a7
+      internalID: 92376731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MiniWindWarrior-Sheet_63
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 8
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a33bb8fe18479a94baa4770d12400cc3
+      internalID: -2104310035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -132,7 +1489,71 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      MiniWindWarrior-Sheet_0: 382553491
+      MiniWindWarrior-Sheet_1: 1299310656
+      MiniWindWarrior-Sheet_10: -1237025420
+      MiniWindWarrior-Sheet_11: -1870026484
+      MiniWindWarrior-Sheet_12: -1338244324
+      MiniWindWarrior-Sheet_13: 130595942
+      MiniWindWarrior-Sheet_14: -1788443928
+      MiniWindWarrior-Sheet_15: 1344114434
+      MiniWindWarrior-Sheet_16: 2015494672
+      MiniWindWarrior-Sheet_17: 1432676077
+      MiniWindWarrior-Sheet_18: -1089269407
+      MiniWindWarrior-Sheet_19: 812033943
+      MiniWindWarrior-Sheet_2: 1400990335
+      MiniWindWarrior-Sheet_20: 1480686807
+      MiniWindWarrior-Sheet_21: 219409861
+      MiniWindWarrior-Sheet_22: -1995303563
+      MiniWindWarrior-Sheet_23: -1369617103
+      MiniWindWarrior-Sheet_24: 1598709231
+      MiniWindWarrior-Sheet_25: -1305993051
+      MiniWindWarrior-Sheet_26: 639004522
+      MiniWindWarrior-Sheet_27: 1503154419
+      MiniWindWarrior-Sheet_28: -1119659339
+      MiniWindWarrior-Sheet_29: -117175510
+      MiniWindWarrior-Sheet_3: -1493706949
+      MiniWindWarrior-Sheet_30: -1614354618
+      MiniWindWarrior-Sheet_31: 820533925
+      MiniWindWarrior-Sheet_32: 1713231245
+      MiniWindWarrior-Sheet_33: 75236728
+      MiniWindWarrior-Sheet_34: -765090106
+      MiniWindWarrior-Sheet_35: -560286030
+      MiniWindWarrior-Sheet_36: -79443689
+      MiniWindWarrior-Sheet_37: -1606645823
+      MiniWindWarrior-Sheet_38: 774737789
+      MiniWindWarrior-Sheet_39: -1201244368
+      MiniWindWarrior-Sheet_4: -1710965570
+      MiniWindWarrior-Sheet_40: 285597216
+      MiniWindWarrior-Sheet_41: 619281762
+      MiniWindWarrior-Sheet_42: -847412223
+      MiniWindWarrior-Sheet_43: 560971915
+      MiniWindWarrior-Sheet_44: -1555391149
+      MiniWindWarrior-Sheet_45: -11398303
+      MiniWindWarrior-Sheet_46: -696891093
+      MiniWindWarrior-Sheet_47: -948703682
+      MiniWindWarrior-Sheet_48: -2031177820
+      MiniWindWarrior-Sheet_49: -1215737673
+      MiniWindWarrior-Sheet_5: 679260513
+      MiniWindWarrior-Sheet_50: -737162230
+      MiniWindWarrior-Sheet_51: -2044199088
+      MiniWindWarrior-Sheet_52: -830050571
+      MiniWindWarrior-Sheet_53: -1923023385
+      MiniWindWarrior-Sheet_54: 1252920873
+      MiniWindWarrior-Sheet_55: -1437958031
+      MiniWindWarrior-Sheet_56: 1342847352
+      MiniWindWarrior-Sheet_57: -1448104641
+      MiniWindWarrior-Sheet_58: -1522697672
+      MiniWindWarrior-Sheet_59: -477873187
+      MiniWindWarrior-Sheet_6: -1823735822
+      MiniWindWarrior-Sheet_60: 955655515
+      MiniWindWarrior-Sheet_61: -1553301376
+      MiniWindWarrior-Sheet_62: 92376731
+      MiniWindWarrior-Sheet_63: -2104310035
+      MiniWindWarrior-Sheet_7: 381172284
+      MiniWindWarrior-Sheet_8: -1072189391
+      MiniWindWarrior-Sheet_9: -181566375
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

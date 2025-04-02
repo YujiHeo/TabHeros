@@ -1,0 +1,49 @@
+{
+  "achievements": [
+    {
+      "description": "클릭을 100번 해보자",
+      "targetValue": 100,
+      "rewardType": "upgradePoints",
+      "rewardValue": "30",
+      "achievementType": "Click",
+      "currentProgress": 0,
+      "isCompleted": false
+    },
+    {
+      "description": "골드를 1000G 모아보자",
+      "targetValue": 1000,
+      "rewardType": "upgradePoints",
+      "rewardValue": "30",
+      "achievementType": "Gold",
+      "currentProgress": 0,
+      "isCompleted": false
+    },
+    {
+      "description": "첫 영웅을 해금해보자",
+      "targetValue": 1,
+      "rewardType": "upgradePoints",
+      "rewardValue": "30",
+      "achievementType": "Hero",
+      "currentProgress": 0,
+      "isCompleted": false
+    },
+    {
+      "description": "첫 무기를 가져보자",
+      "targetValue": 1,
+      "rewardType": "upgradePoints",
+      "rewardValue": "30",
+      "achievementType": "Weapon",
+      "currentProgress": 0,
+      "isCompleted": false
+    },
+    {
+      "description": "보스를 2번 물리치자",
+      "targetValue": 2,
+      "rewardType": "upgradePoints",
+      "rewardValue": "30",
+      "achievementType": "Stage",
+      "currentProgress": 0,
+      "isCompleted": false
+    }
+  ]
+}

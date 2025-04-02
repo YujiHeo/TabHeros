@@ -43,12 +43,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 30
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -119,9 +119,232 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: WaterEffect-Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfbe6a80e5d51b94f9267951cfa4dbcc
+      internalID: 2090374536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WaterEffect-Sheet_23
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 0
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63504ddc6c861de4c9913854917d6333
+      internalID: -895285075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WaterEffect-Sheet_24
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 0
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5e1aa522bde77943b1dc3e84f442c9a
+      internalID: 1588177458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WaterEffect-Sheet_26
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 0
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f16dc1dc66c19e04fb437a1e3e9c3861
+      internalID: -2079086699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WaterEffect-Sheet_28
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 0
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d405007ae0eefb447a07b8ce7db5a4ed
+      internalID: 542704827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WaterEffect-Sheet_30
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 0
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed0d3153f1402e3438c56c842ee055e7
+      internalID: 1168633644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WaterEffect-Sheet_31
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 0
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abe2cc34d064ffa4b898c4112ee5ee5c
+      internalID: 1459457530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WaterEffect-Sheet_33
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 0
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96e9857ee5218b14c96823b40576c12a
+      internalID: 1570588455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WaterEffect-Sheet_34
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 0
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 478d74676a06f9a4f89ad92f10d703df
+      internalID: 1749044048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WaterEffect-Sheet_36
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 0
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73db6bff7ca0f3d4599a5fd4ce480471
+      internalID: 70569113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -132,7 +355,44 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      WaterEffect-Sheet_0: -1225392306
+      WaterEffect-Sheet_1: 1325284901
+      WaterEffect-Sheet_10: -607439760
+      WaterEffect-Sheet_11: -1822849545
+      WaterEffect-Sheet_12: -807228866
+      WaterEffect-Sheet_13: -235977130
+      WaterEffect-Sheet_14: -1458239250
+      WaterEffect-Sheet_15: 1097905766
+      WaterEffect-Sheet_16: 342451303
+      WaterEffect-Sheet_17: -1066625532
+      WaterEffect-Sheet_18: -153869480
+      WaterEffect-Sheet_19: -1811673413
+      WaterEffect-Sheet_2: 2118714593
+      WaterEffect-Sheet_20: 1680540553
+      WaterEffect-Sheet_21: 2090374536
+      WaterEffect-Sheet_22: -1539130683
+      WaterEffect-Sheet_23: -895285075
+      WaterEffect-Sheet_24: 1588177458
+      WaterEffect-Sheet_25: -892818771
+      WaterEffect-Sheet_26: -2079086699
+      WaterEffect-Sheet_27: 1582552750
+      WaterEffect-Sheet_28: 542704827
+      WaterEffect-Sheet_29: -1174021437
+      WaterEffect-Sheet_3: 966454726
+      WaterEffect-Sheet_30: 1168633644
+      WaterEffect-Sheet_31: 1459457530
+      WaterEffect-Sheet_32: -1788477048
+      WaterEffect-Sheet_33: 1570588455
+      WaterEffect-Sheet_34: 1749044048
+      WaterEffect-Sheet_35: -371812460
+      WaterEffect-Sheet_36: 70569113
+      WaterEffect-Sheet_4: 1063540949
+      WaterEffect-Sheet_5: -227143926
+      WaterEffect-Sheet_6: -1517965308
+      WaterEffect-Sheet_7: -717762322
+      WaterEffect-Sheet_8: -1345393712
+      WaterEffect-Sheet_9: 243274068
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

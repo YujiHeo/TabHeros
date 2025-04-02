@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8957b389d47bc6048949049e4fe4ae07, type: 3}
+  m_Name: Stage07
+  m_EditorClassIdentifier: 
+  stageBGM: {fileID: 8300000, guid: 90eae78e8ce85a849b5b0ca11b2de641, type: 3}
+  stageName: "\uC73C\uC2A4\uC2A4\uD55C \uC232 4"
+  killCountMax: 26
+  background: {fileID: 3808478336486071020, guid: ec2e7e4b7c64d8e4b98f37c25ed75fb3, type: 3}
+  enemyDatas:
+  - {fileID: 11400000, guid: 4c128287c9640434ca59984501123d99, type: 2}
+  - {fileID: 11400000, guid: 5ae637a7b635c4f4ebf4c67d46e40e55, type: 2}
+  - {fileID: 11400000, guid: d2e50ef5dab59da4c9b1012b71ef12cd, type: 2}
+  bossData: {fileID: 11400000, guid: 4c63759d095811442bced4937edf2e1d, type: 2}

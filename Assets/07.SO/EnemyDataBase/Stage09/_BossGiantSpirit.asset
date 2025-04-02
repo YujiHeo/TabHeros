@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99c25d08821ded04c8206237c1716e0b, type: 3}
+  m_Name: _BossGiantSpirit
+  m_EditorClassIdentifier: 
+  enemyName: "\uC232\uC758 \uC601\uD63C \uBCF4\uC2A4"
+  outfit: {fileID: 2090434249124287433, guid: e5125e912bc25734db328cb0d2e4d57e, type: 3}
+  hp: 120000000
+  gainGold: 64000000
+  upgradePoint: 64000000
+  isBoss: 1
+  clearTime: 10

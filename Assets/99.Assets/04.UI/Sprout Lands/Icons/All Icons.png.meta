@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -121,7 +121,112 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Click
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 34
+        width: 14
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfe3c8861b2434dd1816d2c27a634ab6
+      internalID: -987172641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 33
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c473bc9fa0694b088d0993631014e97
+      internalID: -67009703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Money
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 16
+        width: 12
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 334538a60e7f44888a605f788568f583
+      internalID: 422022047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 17
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08acef9d1513e4f4c8e523d2355d06b4
+      internalID: -1554497906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 1
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 708a39e027ec24484a3c415e787d4203
+      internalID: -441149190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -132,7 +237,70 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      All Icons_1: -1621785340
+      All Icons_10: -908234897
+      All Icons_11: 720436390
+      All Icons_12: 1463399984
+      All Icons_13: 1287300460
+      All Icons_14: 942051798
+      All Icons_15: 2005977121
+      All Icons_16: -1389305949
+      All Icons_17: -761445133
+      All Icons_18: 93513460
+      All Icons_19: -1326095285
+      All Icons_20: -1606389931
+      All Icons_21: 155925886
+      All Icons_23: 774302700
+      All Icons_24: -1077456373
+      All Icons_25: 671986508
+      All Icons_27: -1831316445
+      All Icons_28: 829045144
+      All Icons_29: -2062798659
+      All Icons_3: -205347878
+      All Icons_30: -939979766
+      All Icons_31: -916033748
+      All Icons_32: 366951854
+      All Icons_33: 474522982
+      All Icons_34: 52463220
+      All Icons_35: -1453849865
+      All Icons_36: 548159026
+      All Icons_37: -1929091185
+      All Icons_38: -1045286000
+      All Icons_39: 1377589890
+      All Icons_4: 1093506528
+      All Icons_40: 29785234
+      All Icons_41: 1283749654
+      All Icons_42: -827570828
+      All Icons_43: -1995042184
+      All Icons_45: 694456638
+      All Icons_46: -2135792059
+      All Icons_47: -71557257
+      All Icons_48: 1679743944
+      All Icons_49: -1447256159
+      All Icons_5: 1498268108
+      All Icons_50: 1756147727
+      All Icons_51: 634182407
+      All Icons_52: -2045934833
+      All Icons_53: 1601459095
+      All Icons_54: -1014315705
+      All Icons_55: 1003804846
+      All Icons_56: -24871261
+      All Icons_57: -1424713309
+      All Icons_58: 2013052962
+      All Icons_59: 17367094
+      All Icons_6: -1296441908
+      All Icons_60: 1330806761
+      All Icons_61: -2029953548
+      All Icons_62: -1534150542
+      All Icons_7: 1843120395
+      All Icons_8: -1688321564
+      All Icons_9: 596652689
+      Boss: -67009703
+      Click: -987172641
+      Hero: -441149190
+      Money: 422022047
+      Weapon: -1554497906
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

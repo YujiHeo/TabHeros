@@ -1,0 +1,24 @@
+{
+  "weaponLevel": [
+    1,
+    1,
+    1,
+    1,
+    1
+  ],
+  "weaponAbility": [
+    10,
+    30,
+    50,
+    70,
+    100
+  ],
+  "ownUpgradePoints": [
+    10,
+    25,
+    40,
+    60,
+    80
+  ],
+  "currentWeaponImageBase64": "iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAYAAADimHc4AAAAuUlEQVR4Ae3QMQEAAADCoPVPbQhfiEBhwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMvAMDkGAAAc3Ay+cAAAAASUVORK5CYII="
+}
