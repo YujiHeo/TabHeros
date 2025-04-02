@@ -29,7 +29,7 @@ public class UpgradeSystem : MonoBehaviour
         
         if (playerData.gold < upgradeCost)
         {
-            Debug.Log("Can't upgrade");
+            UiManager.instance.ShowGoldLackWarning();
             return;
         }
         

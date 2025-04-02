@@ -23,6 +23,16 @@ public class SaveLoadManager : Singleton<SaveLoadManager>
         LoadAllData();
     }
 
+    public void InitializeNewGame()
+    {
+        playerData = new PlayerSaveData();
+        stageData = new StageSaveData();
+        weaponData = new WeaponSaveData();
+        heroData = new HeroSaveData();
+
+        SaveAllData();
+    }
+
     public void SaveAllData()
     {
         HeroManager.instance.SaveHeroData();
@@ -114,15 +124,4 @@ public class SaveLoadManager : Singleton<SaveLoadManager>
             heroData = new HeroSaveData();
         }
     }
-
-    public void InitializeNewGame()
-    {
-        playerData = new PlayerSaveData();
-        stageData = new StageSaveData();
-        weaponData = new WeaponSaveData();
-        heroData = new HeroSaveData();
-
-        SaveAllData();
-    }
-
 }

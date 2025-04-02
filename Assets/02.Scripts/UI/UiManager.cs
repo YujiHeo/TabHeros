@@ -9,6 +9,8 @@ using UnityEngine.UI;
 public class UiManager : Singleton<UiManager>
 {
     [SerializeField] private TextMeshProUGUI GoldTxt;
+    [SerializeField] private GameObject goldLackPanel;
+    [SerializeField] private TMP_Text timeLimit;
 
     private void Update()
     {
@@ -28,9 +30,24 @@ public class UiManager : Singleton<UiManager>
         panel.SetActive(false);
     }
 
-    public void OpenErrorPanel(GameObject panel)
+    public void ShowGoldLackWarning()
     {
-        panel.SetActive(true);
+        StartCoroutine(GoldLackCountdown());
+    }
+
+    private IEnumerator GoldLackCountdown()
+    {
+        goldLackPanel.SetActive(true);
+
+        int time = 5;
+        while (time > 0)
+        {
+            timeLimit.text = time.ToString();
+            yield return new WaitForSeconds(1f);
+            time--;
+        }
+
+        goldLackPanel.SetActive(false);
     }
 
 }
