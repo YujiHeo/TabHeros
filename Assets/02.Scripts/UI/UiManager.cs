@@ -12,9 +12,12 @@ public class UiManager : Singleton<UiManager>
 
     private void Update()
     {
-        GoldTxt.text = $"{SaveLoadManager.instance.playerData.gold} G";
+        if (GoldTxt != null)
+        {
+            GoldTxt.text = $"<sprite=0>{SaveLoadManager.instance.playerData.gold} G";
+        }
     }
-    
+
     public void OpenPanel(GameObject panel)
     {
         panel.SetActive(true);
