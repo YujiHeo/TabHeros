@@ -105,6 +105,7 @@ public class StageManager : Singleton<StageManager>
     public void BossKill()
     {
         SetStage(currentStage + 1);
+        AchievementManager.instance.IncreaseAchievementProgress(AchievementType.Stage,1);
         // StartCoroutine(StartAction(() => SetStage(currentStage + 1), 0.5f));
     }
 

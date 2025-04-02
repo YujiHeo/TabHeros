@@ -2903,8 +2903,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 359, y: 114}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 363.5, y: 111}
+  m_SizeDelta: {x: 121.112, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &169358028
 MonoBehaviour:
@@ -2971,7 +2971,7 @@ MonoBehaviour:
   m_charWidthMaxAdj: 0
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
-  m_overflowMode: 0
+  m_overflowMode: 3
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
@@ -8337,7 +8337,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 266971649}
   - {fileID: 530128539}
@@ -8362,6 +8362,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c847467fbd92ae4479e4f3334161f869, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  warningTxt: {fileID: 0}
+  GoldTxt: {fileID: 627882602}
 --- !u!114 &532207550
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10852,6 +10854,13 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 5076f997683af8146a85c73487da2b71, type: 2}
   - {fileID: 11400000, guid: 779b1623ee81ae34193688b12b565411, type: 2}
   - {fileID: 11400000, guid: 987d038532764c94cb38bfd526e7b567, type: 2}
+  - {fileID: 11400000, guid: b5cbdc136a158f344ab767ca47f6b920, type: 2}
+  - {fileID: 11400000, guid: b38e7f5f3bff3594fb01dc2e129296e0, type: 2}
+  - {fileID: 11400000, guid: cc5b94a23d748cf4eafbb2eb186eca0a, type: 2}
+  - {fileID: 11400000, guid: 379747c5c9b866843bdff2c1a754444e, type: 2}
+  - {fileID: 11400000, guid: 9c5c062a5c1b07e409036cc5c44bdba2, type: 2}
+  - {fileID: 11400000, guid: cd71f4289c10d654494f82e7cd94ed9d, type: 2}
+  - {fileID: 11400000, guid: 81e1f228c15b7b84495484ceff6ae6d0, type: 2}
 --- !u!4 &682952474
 Transform:
   m_ObjectHideFlags: 0
@@ -12899,6 +12908,7 @@ GameObject:
   - component: {fileID: 793943128}
   - component: {fileID: 793943127}
   - component: {fileID: 793943126}
+  - component: {fileID: 793943129}
   m_Layer: 5
   m_Name: MonsterName
   m_TagString: Untagged
@@ -13019,9 +13029,23 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -166, y: 3.2}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: -141.44688, y: 3.2}
+  m_SizeDelta: {x: 249.105, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &793943129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 793943125}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HorizontalFit: 0
+  m_VerticalFit: 2
 --- !u!1001 &801300601
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19172,8 +19196,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 956338160}
   achievements:
-  - name: 
-    description: 
+  - description: 
     targetValue: 0
     rewardType: 
     rewardValue: 
@@ -28191,7 +28214,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 399362124}
   m_HandleRect: {fileID: 399362123}
   m_Direction: 2
-  m_Value: 0.99999976
+  m_Value: 0.9999999
   m_Size: 0.40816325
   m_NumberOfSteps: 0
   m_OnValueChanged:

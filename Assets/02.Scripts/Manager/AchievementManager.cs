@@ -6,7 +6,6 @@ using UnityEngine;
 [Serializable]
 public class Achievement
 {
-    public string name;
     public string description;
     public int targetValue;
     public string rewardType;
@@ -33,11 +32,6 @@ public class AchievementManager : Singleton<AchievementManager>
     {
         LoadAchievements();
         ConvertAchievementTypes();
-    }
-
-    private void Start()
-    {
-        Debug.Log(Application.persistentDataPath);
     }
 
     public void SaveAchievements()
@@ -95,19 +89,20 @@ public class AchievementManager : Singleton<AchievementManager>
     // 타입별 업적 조회 메서드 추가
     public List<Achievement> GetAchievementsByType(AchievementType type)
         => achievements.FindAll(a => a.Type == type);
-
-    public void CompleteAchievement(AchievementType type)
+    
+    private bool TryCompleteAchievement(Achievement achievement)
     {
-        List<Achievement> achievementsOfType = GetAchievementsByType(type);
-        
-        Achievement achievement = achievementsOfType.Find(a => !a.isCompleted);
-        if (achievement != null &&!achievement.isCompleted)
+        if (achievement.isCompleted)
+            return false;
+
+        if (achievement.currentProgress >= achievement.targetValue)
         {
             achievement.currentProgress = achievement.targetValue;
             achievement.isCompleted = true;
             GrantReward(achievement);
-            SaveAchievements();
+            return true;
         }
+        return false;
     }
     
     private void GrantReward(Achievement achievement)
@@ -119,30 +114,18 @@ public class AchievementManager : Singleton<AchievementManager>
     public bool ReachTargetValue(AchievementType achievementType)
     {
         List<Achievement> achievementsOfType = GetAchievementsByType(achievementType);
-
-        // 유효성 체크
         if (achievementsOfType == null || achievementsOfType.Count <= achievementIndex)
-        {
             return false;
-        }
 
-        Achievement achievement = achievementsOfType[achievementIndex];
-
-        // 업적이 이미 완료되었는지 확인
-        if (achievement.isCompleted)
+        Achievement achievement = achievementsOfType[achievementIndex]; 
+        if (TryCompleteAchievement(achievement))
         {
-            return false;
-        }
-
-        // 진행 상태 확인 후 목표 달성 여부 체크
-        if (achievement.currentProgress >= achievement.targetValue)
-        {
-            CompleteAchievement(achievementType);
-            achievement.isCompleted = true;
+            SaveAchievements();
             return true;
         }
         return false;
     }
+
     public void IncreaseAchievementProgress(AchievementType type, int amount)
     {
         // 해당 타입의 업적 목록 가져오기
@@ -153,18 +136,12 @@ public class AchievementManager : Singleton<AchievementManager>
         // 모든 업적에 대해 진행도 업데이트
         foreach (Achievement achievement in achievementsOfType)
         {
-            
             if (!achievement.isCompleted)
             {
                 achievement.currentProgress += amount;
-                
-                if (achievement.currentProgress >= achievement.targetValue)
-                {
-                    achievement.currentProgress = achievement.targetValue;
-                    GrantReward(achievement);
-                }
+                achievement.currentProgress = Math.Min(achievement.currentProgress, achievement.targetValue);
             }
         }
+        SaveAchievements();
     }
-
 }
