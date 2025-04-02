@@ -23,7 +23,7 @@ public class WeaponSlot : MonoBehaviour
     private Player player;
 
     [SerializeField]private PlayerSaveData playerData;
-    public void Start()
+    public void Awake()
     {
         if (player == null)
             player = FindObjectOfType<Player>();
@@ -39,6 +39,12 @@ public class WeaponSlot : MonoBehaviour
         playerData = SaveLoadManager.instance.playerData;
         UpdateText();
     }
+
+    public WeaponData GetWeaponData()
+    {
+        return weaponData;
+    }
+
 
     public void SetItem(WeaponData weapon)
     {
@@ -88,7 +94,9 @@ public class WeaponSlot : MonoBehaviour
 
         upgradeButton.transition = Selectable.Transition.None;
 
-        upgradeButton.image.color = SaveLoadManager.instance.playerData.upgradePoints >= upgradePoints ? activeColor : inactiveColor;
+        upgradeButton.image.color = playerData.upgradePoints >= upgradePoints ? activeColor : inactiveColor;
         upgradeText.color = playerData.upgradePoints >= upgradePoints ? inactiveColorForText : activeColor;
+
+        SaveLoadManager.instance.SaveAllData();
     }
 }
