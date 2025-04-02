@@ -134,71 +134,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1001 &129984248
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 8121458551636914640, guid: d95e5ea6fa478544a8203376078d1403, type: 3}
-      propertyPath: upgradePoints
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 8145266743788933570, guid: d95e5ea6fa478544a8203376078d1403, type: 3}
-      propertyPath: m_Name
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 8145266743788933570, guid: d95e5ea6fa478544a8203376078d1403, type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 9031175732770118871, guid: d95e5ea6fa478544a8203376078d1403, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.17816734
-      objectReference: {fileID: 0}
-    - target: {fileID: 9031175732770118871, guid: d95e5ea6fa478544a8203376078d1403, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 3.0122173
-      objectReference: {fileID: 0}
-    - target: {fileID: 9031175732770118871, guid: d95e5ea6fa478544a8203376078d1403, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.004500015
-      objectReference: {fileID: 0}
-    - target: {fileID: 9031175732770118871, guid: d95e5ea6fa478544a8203376078d1403, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9031175732770118871, guid: d95e5ea6fa478544a8203376078d1403, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9031175732770118871, guid: d95e5ea6fa478544a8203376078d1403, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9031175732770118871, guid: d95e5ea6fa478544a8203376078d1403, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9031175732770118871, guid: d95e5ea6fa478544a8203376078d1403, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9031175732770118871, guid: d95e5ea6fa478544a8203376078d1403, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9031175732770118871, guid: d95e5ea6fa478544a8203376078d1403, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: d95e5ea6fa478544a8203376078d1403, type: 3}
 --- !u!1 &346333935 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3619607728945074843, guid: 8b52cbeb83eec3643b2fd5407b92481a, type: 3}
@@ -678,17 +613,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1288010150 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8121458551636914640, guid: d95e5ea6fa478544a8203376078d1403, type: 3}
-  m_PrefabInstance: {fileID: 129984248}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c88960d5060584796ac6c234b7742b1f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1299527509
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -884,7 +808,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 877846be756075b478aa3cdc51420039, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1288010150}
+  player: {fileID: 0}
   playerData:
     gold: 0
     goldGainRate: 0
@@ -892,9 +816,6 @@ MonoBehaviour:
     atk: 0
     crit: 0
     critDamage: 0
-    currentStage: 0
-    clearStage: 0
-    weaponDataList: []
   weaponData: {fileID: 11400000, guid: 82ad00fffad0f5a41aeec66aa3f11e92, type: 2}
   weaponList: {fileID: 11400000, guid: 02833fbb0834c5345ad6b67fe5f374cd, type: 2}
 --- !u!4 &1392904082
@@ -2759,4 +2680,3 @@ SceneRoots:
   - {fileID: 932615209}
   - {fileID: 1351425213}
   - {fileID: 532207548}
-  - {fileID: 129984248}

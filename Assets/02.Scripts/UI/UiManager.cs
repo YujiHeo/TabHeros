@@ -8,7 +8,6 @@ using UnityEngine.UI;
 
 public class UiManager : Singleton<UiManager>
 {
-    [SerializeField] private TMP_Text warningTxt;
     [SerializeField] private TextMeshProUGUI GoldTxt;
 
     private void Update()
