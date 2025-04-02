@@ -1,5 +1,3 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -25,18 +23,12 @@ public class AchievementPanel : MonoBehaviour
     [SerializeField] private Button button;
     [SerializeField] private Image progressBar;
     
-    private void Start()
-    {
-        UpdateUI();
-    }
-
     private void Update()
     {
         UpdateUI();
         playerGoods.updateText();
     }
-
-
+    
     public void UpdateUI()
     {
         List<Achievement> achievementsOfType = AchievementManager.instance.GetAchievementsByType(achievementType);

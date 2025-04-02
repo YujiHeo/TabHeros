@@ -22,7 +22,7 @@ public class PlayerGoods : MonoBehaviour
 
     public void updateText()
     {
-        goldText.text = $"{playerData.gold}G";
-        pointText.text = playerData.upgradePoints.ToString();
+        goldText.text = $"{playerData.gold} G";
+        pointText.text = $"{playerData.upgradePoints} P";
     }
 }

@@ -1,17 +1,13 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
-using UnityEngine;
 
 public class StatManager : Singleton<StatManager>
 {
     public static event Action OnStatUpdated;
     private PlayerSaveData playerData;
+   
     private void Start()
     {
         playerData = SaveLoadManager.instance.playerData;
-        
     }
 
     // PlayerDataBase에 존재하는 Playerstat에서 스탯을 가져오고
@@ -34,10 +30,10 @@ public class StatManager : Singleton<StatManager>
 
         return statType switch
         {
-            PlayerStatType.Atk => (data.atkLevel- 1) * 10 + 10,
-            PlayerStatType.Crit => (data.critLevel - 1) * 0.1f + 5,
-            PlayerStatType.CritDamage => (data.critDamageLevel - 1) * 10 + 100,
-            PlayerStatType.GoldGain => (data.goldGainLevel - 1) * 10 + 100,
+            PlayerStatType.Atk => (level- 1) * 10 + 10,
+            PlayerStatType.Crit => (level - 1) * 0.1f + 5,
+            PlayerStatType.CritDamage => (level - 1) * 10 + 100,
+            PlayerStatType.GoldGain => (level - 1) * 10 + 100,
         };
     }
 
