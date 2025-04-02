@@ -80,6 +80,7 @@ public class HeroSlot : MonoBehaviour
                 heroData.isUnlocked = true;
                 heroData.level = 1;
                 HeroManager.instance.OnHeroUnlocked(heroData.id);
+                AchievementManager.instance.IncreaseAchievementProgress(AchievementType.Hero,1);
             }
         }
         else

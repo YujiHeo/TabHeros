@@ -6,7 +6,6 @@ using UnityEngine;
 [Serializable]
 public class Achievement
 {
-    public string name;
     public string description;
     public int targetValue;
     public string rewardType;
@@ -33,11 +32,6 @@ public class AchievementManager : Singleton<AchievementManager>
     {
         LoadAchievements();
         ConvertAchievementTypes();
-    }
-
-    private void Start()
-    {
-        Debug.Log(Application.persistentDataPath);
     }
 
     public void SaveAchievements()
