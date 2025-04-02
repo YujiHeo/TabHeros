@@ -99,6 +99,22 @@ public class SaveLoadManager : Singleton<SaveLoadManager>
             string json = File.ReadAllText(weaponSaveFilePath);
             weaponData = JsonConvert.DeserializeObject<WeaponSaveData>(json);
         }
+        else
+        {
+            // Resources 폴더에서 기본 파일 읽기
+            TextAsset resourceText = Resources.Load<TextAsset>("weaponData");
+            if (resourceText == null)
+            {
+                return;
+            }
+
+            string json = resourceText.text;
+
+            // 처음 로드 시 persistentDataPath로 복사하여 저장
+            File.WriteAllText(weaponSaveFilePath, json);
+            weaponData = JsonConvert.DeserializeObject<WeaponSaveData>(json);
+
+        }
     }
 
     public void SaveHeroData()
@@ -106,6 +122,7 @@ public class SaveLoadManager : Singleton<SaveLoadManager>
         heroData = HeroManager.instance.GetHeroSaveData(); 
         string json = JsonConvert.SerializeObject(heroData, Formatting.Indented);
         File.WriteAllText(heroSaveFilePath, json);
+        
     }
 
 
