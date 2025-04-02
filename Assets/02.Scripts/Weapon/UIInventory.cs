@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine.UI;
 using UnityEngine;
+using System;
 
 public class UIInventory : Singleton<UIInventory>
 {
@@ -14,6 +15,7 @@ public class UIInventory : Singleton<UIInventory>
     static Player player;
 
     private List<WeaponSlot> slotList = new List<WeaponSlot>();
+    public List<WeaponData> weaponDataList = new List<WeaponData>();
 
     private int slotIndex = 0;
 
@@ -21,6 +23,7 @@ public class UIInventory : Singleton<UIInventory>
     private WeaponSlot weaponSlot;
 
     private WeaponData currentEquippedWeapon;
+
 
 
     protected override void Awake()
@@ -32,13 +35,47 @@ public class UIInventory : Singleton<UIInventory>
         InitInventoryUI();
     }
 
+    public void Start()
+    {
+        InitWeaponDataList();
+        //save¸¦ ÀÏÈ¸¿ëÀ¸·Î »ç¿ëÇÏ´Â ¹æ¹ýµµ ÀÖ´Ù!!
+        WeaponSaveData save = SaveLoadManager.instance.weaponData;
+        if (save.weaponLevel[0] != 0)
+        {
+            LoadWeaponSaveData(save);
+
+        }
+
+        RefreshSlotUI();
+    }
+
+    private void RefreshSlotUI()
+    {
+        foreach (var slot in slotList)
+        {
+            slot.RefreshUI();
+        }
+    }
+
+
+
+    private void InitWeaponDataList()
+    {
+        foreach(var slot in slotList)
+        {
+            var weaponData = slot.GetWeaponData();
+
+            weaponDataList.Add(weaponData);
+        }
+    }
+
     public void InitInventoryUI()
     {
         int slotCount = 5;
 
-        for (int i = 0; i < slotCount; i++) // 5ï¿½ï¿½ ï¿½Ýºï¿½ï¿½ï¿½
+        for (int i = 0; i < slotCount; i++)
         {
-            GameObject newSlotObject = Instantiate(slotPrefab, slotParent); //prefabï¿½ï¿½ Instantiate 
+            GameObject newSlotObject = Instantiate(slotPrefab, slotParent);
             WeaponSlot weaponSlot = newSlotObject.GetComponent<WeaponSlot>();
             slotList.Add(weaponSlot);
         }
@@ -51,14 +88,9 @@ public class UIInventory : Singleton<UIInventory>
             slotList[slotIndex].SetItem(weaponData);
             slotIndex++;
         }
-
-        else
-        {
-            Debug.LogWarning("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ê°ï¿½ï¿½ß½ï¿½ï¿½Ï´ï¿½.");
-        }
     }
 
-    public void WeaponUpgrade(Player player, WeaponData newWeapon, WeaponSlot weaponSlot) //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½×·ï¿½ï¿½Ìµï¿½
+    public void WeaponUpgrade(Player player, WeaponData newWeapon, WeaponSlot weaponSlot)
     {
         if (SaveLoadManager.instance.playerData.upgradePoints >= newWeapon.ownUpgradePoint)
         {
@@ -69,22 +101,20 @@ public class UIInventory : Singleton<UIInventory>
 
             newWeapon.ownUpgradePoint *= 2;
 
+
+
             weaponSlot.RefreshUI();
             
             weaponSlot.UpdateText();
-        }
-        else
-        {
-            Debug.Log("ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½!");
+
+            SaveLoadManager.instance.SaveAllData();
         }
     }
 
 
 
-    public void WeaponEquipped(WeaponSlot weaponSlot, WeaponData selectedWeapon) //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+    public void WeaponEquipped(WeaponSlot weaponSlot, WeaponData selectedWeapon)
     {
-        //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ø´ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Æ° ï¿½ï¿½È°ï¿½ï¿½È­
-
         if (currentEquippedWeapon != null)
         {
             player.atk -= currentEquippedWeapon.ability;
@@ -93,7 +123,63 @@ public class UIInventory : Singleton<UIInventory>
         currentEquippedWeapon = selectedWeapon;
         CurrentWeapon.sprite = selectedWeapon.Icon;
         player.atk += selectedWeapon.ability;
-        
+
+        SaveLoadManager.instance.SaveAllData();
         AchievementManager.instance.IncreaseAchievementProgress(AchievementType.Weapon , 1);
+    }
+
+    public WeaponSaveData GetWeaponSaveData()
+    {
+        WeaponSaveData saveData = new WeaponSaveData();
+
+        for (int i = 0; i < weaponDataList.Count; i++)
+        {
+            saveData.weaponLevel[i] = weaponDataList[i].level;
+            saveData.weaponAbility[i] = weaponDataList[i].ability;
+            saveData.ownUpgradePoints[i] = weaponDataList[i].ownUpgradePoint;
+        }
+
+        if (CurrentWeapon.sprite != null)
+        {
+            Texture2D texture = CurrentWeapon.sprite.texture;
+            // PNG Çü½ÄÀÇ ¹ÙÀÌÆ® ¹è¿­·Î º¯È¯
+
+            byte[] imageBytes = texture.EncodeToPNG();
+            // Base64 ¹®ÀÚ¿­·Î ÀÎÄÚµù
+
+            saveData.currentWeaponImageBase64 = Convert.ToBase64String(imageBytes);
+        }
+        else
+        {
+            saveData.currentWeaponImageBase64 = string.Empty;
+        }
+
+        return saveData;
+    }
+
+    public void LoadWeaponSaveData(WeaponSaveData saveData)
+    {
+        for (int i = 0; i < weaponDataList.Count; i++)
+        {
+            weaponDataList[i].level = saveData.weaponLevel[i];
+            weaponDataList[i].ability = saveData.weaponAbility[i];
+            weaponDataList[i].ownUpgradePoint = saveData.ownUpgradePoints[i];
+        }
+
+        // Base64 ¹®ÀÚ¿­ÀÌ ÀúÀåµÇ¾î ÀÖÀ¸¸é ÀÌ¹ÌÁö ·Îµå
+        if (!string.IsNullOrEmpty(saveData.currentWeaponImageBase64))
+        {
+            byte[] imageBytes = Convert.FromBase64String(saveData.currentWeaponImageBase64);
+            Texture2D texture = new Texture2D(2, 2); // ÀÓ½Ã Å©±â, LoadImage()¿¡¼­ ÀÚµ¿À¸·Î Á¶Á¤µÊ
+            if (texture.LoadImage(imageBytes))
+            {
+                // »õ Sprite »ý¼º ÈÄ UI¿¡ Àû¿ë
+                texture.filterMode = FilterMode.Point;
+                Sprite loadedSprite = Sprite.Create(texture,
+                    new Rect(0, 0, texture.width, texture.height),
+                    new Vector2(0.5f, 0.5f));
+                CurrentWeapon.sprite = loadedSprite;
+            }
+        }
     }
 }

@@ -32,6 +32,7 @@ public class SoundManager : Singleton<SoundManager>
     private void Start()
     {
         SetMasterVolume(masterVolume);
+        PlayBGM("BGM_01");
     }
 
     private void Init()

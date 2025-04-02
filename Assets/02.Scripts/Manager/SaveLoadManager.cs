@@ -17,8 +17,9 @@ public class SaveLoadManager : Singleton<SaveLoadManager>
     private static string weaponSaveFilePath => Application.persistentDataPath + "/weaponData.json";
     private static string heroSaveFilePath => Application.persistentDataPath + "/heroData.json";
 
-    public void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         LoadAllData();
     }
 
@@ -79,6 +80,7 @@ public class SaveLoadManager : Singleton<SaveLoadManager>
 
     public void SaveWeaponData()
     {
+        weaponData = UIInventory.instance.GetWeaponSaveData();
         string json = JsonConvert.SerializeObject(weaponData, Formatting.Indented);
         File.WriteAllText(weaponSaveFilePath, json);
     }
@@ -89,10 +91,6 @@ public class SaveLoadManager : Singleton<SaveLoadManager>
         {
             string json = File.ReadAllText(weaponSaveFilePath);
             weaponData = JsonConvert.DeserializeObject<WeaponSaveData>(json);
-        }
-        else
-        {
-            weaponData = new WeaponSaveData();
         }
     }
 

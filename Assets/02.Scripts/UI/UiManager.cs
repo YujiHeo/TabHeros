@@ -8,14 +8,16 @@ using UnityEngine.UI;
 
 public class UiManager : Singleton<UiManager>
 {
-    [SerializeField] private TMP_Text warningTxt;
     [SerializeField] private TextMeshProUGUI GoldTxt;
 
     private void Update()
     {
-        GoldTxt.text = $"{SaveLoadManager.instance.playerData.gold} G";
+        if (GoldTxt != null)
+        {
+            GoldTxt.text = $"<sprite=0>{SaveLoadManager.instance.playerData.gold} G";
+        }
     }
-    
+
     public void OpenPanel(GameObject panel)
     {
         panel.SetActive(true);
@@ -26,6 +28,10 @@ public class UiManager : Singleton<UiManager>
         panel.SetActive(false);
     }
 
+    public void OpenErrorPanel(GameObject panel)
+    {
+        panel.SetActive(true);
+    }
 
 }
 
