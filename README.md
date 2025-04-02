@@ -24,8 +24,8 @@
 - Json
 - DoTween
 
-## 게임 영상
-[![동영상 설명](null)](null)
+## 게임 프리뷰
+[![](README/Preview.gif)]()  
 
 ## 주요 기능
 ### 시작 화면
