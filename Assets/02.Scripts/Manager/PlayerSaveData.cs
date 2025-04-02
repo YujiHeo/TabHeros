@@ -89,13 +89,11 @@ public class HeroSaveData
     public bool[] isUnlocked;
     public int[] heroLevel;
 
-    public HeroSaveData()
+    public HeroSaveData(int heroCount = 5)
     {
-        int heroCount = 5; 
         isUnlocked = new bool[heroCount];
         heroLevel = new int[heroCount];
 
-        
         for (int i = 0; i < heroCount; i++)
         {
             isUnlocked[i] = false;

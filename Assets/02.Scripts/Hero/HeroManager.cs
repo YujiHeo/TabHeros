@@ -13,7 +13,6 @@ public class HeroManager : Singleton<HeroManager>
 
     private void Awake()
     {
-        // StartScene에서는 HeroManager가 비활성화되도록 설정
         if (SceneManager.GetActiveScene().name == "StartScene")
         {
             Debug.Log("[HeroManager] StartScene에서는 활성화되지 않습니다.");
@@ -21,8 +20,12 @@ public class HeroManager : Singleton<HeroManager>
             return;
         }
 
-        // 기존 초기화 코드 유지
-        InitializeHeroList();
+        // heroList가 null이면 초기화
+        if (heroList == null)
+        {
+            heroList = new List<HeroData>();
+            InitializeHeroList();
+        }
     }
 
     private void InitializeHeroList()
@@ -116,7 +119,8 @@ public class HeroManager : Singleton<HeroManager>
             return null;
         }
 
-        HeroSaveData saveData = new HeroSaveData();
+        int heroCount = heroList.Count; // heroList 크기 기반으로 저장 데이터 배열 크기 설정
+        HeroSaveData saveData = new HeroSaveData(heroCount);
 
         for (int i = 0; i < heroList.Count; i++)
         {
@@ -126,6 +130,7 @@ public class HeroManager : Singleton<HeroManager>
 
         return saveData;
     }
+
     public void LoadHeroSaveData(HeroSaveData saveData)
     {
         for (int i = 0; i < heroList.Count; i++)

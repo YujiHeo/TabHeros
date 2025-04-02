@@ -127,10 +127,24 @@ public class SaveLoadManager : Singleton<SaveLoadManager>
         {
             string json = File.ReadAllText(heroSaveFilePath);
             heroData = JsonConvert.DeserializeObject<HeroSaveData>(json);
+
+            int heroCount = (HeroManager.instance != null && HeroManager.instance.heroList != null)
+            ? HeroManager.instance.heroList.Count
+            : 5; // heroList가 null이면 기본값 5 사용
+
+            if (heroData.isUnlocked == null || heroData.heroLevel == null || heroData.isUnlocked.Length != heroCount)
+            {
+                Debug.LogWarning("[HeroManager] 저장된 데이터 크기가 heroList와 맞지 않아 기본값으로 보정합니다.");
+                heroData = new HeroSaveData(heroCount);
+            }
         }
         else
         {
-            heroData = new HeroSaveData();
+            int heroCount = (HeroManager.instance != null && HeroManager.instance.heroList != null)
+            ? HeroManager.instance.heroList.Count
+            : 5;
+            Debug.Log("[HeroManager] 저장된 데이터가 없어 기본값으로 초기화합니다.");
+            heroData = new HeroSaveData(heroCount);
         }
     }
 }
