@@ -1,5 +1,4 @@
 using System;
-using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -65,7 +64,7 @@ public class SceneTransition : Singleton<SceneTransition>
         fadeImage.color = new Color(0, 0, 0, 1);
         fadeImage.DOFade(0, 1f).SetEase(Ease.InOutQuad).OnComplete(() =>
         {
-            fadeCanvas.SetActive(false); // FadeInÀÌ ³¡³ª¸é Äµ¹ö½º ºñÈ°¼ºÈ­
+            fadeCanvas.SetActive(false); // FadeInï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Äµï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È°ï¿½ï¿½È­
         });
     }
 

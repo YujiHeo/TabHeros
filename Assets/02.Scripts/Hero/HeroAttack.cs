@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class HeroAttack : MonoBehaviour
@@ -35,40 +33,39 @@ public class HeroAttack : MonoBehaviour
         if (target != null)
         {
             target.TakeDamage(damage);
-            Debug.Log($"{heroData.heroName}°¡ ÀÚµ¿ °ø°Ý! µ¥¹ÌÁö: {damage}");
 
             
             string tag = "DefaultEffect";
             switch (heroData.heroName)
             {
-                case "5ÅæÅë³ª¹«ÀÌ°Ç¿ì":
+                case "5ï¿½ï¿½ï¿½ë³ªï¿½ï¿½ï¿½Ì°Ç¿ï¿½":
                     tag = "GWEffect"; break;
-                case "¾È°æÆÄ±«ÀÚ±è»óÇö":
+                case "ï¿½È°ï¿½ï¿½Ä±ï¿½ï¿½Ú±ï¿½ï¿½ï¿½ï¿½":
                     tag = "SHEffect"; break;
-                case "¿ÕÃÊº¸ÆÀÀåÇãÀ¯Áö":
+                case "ï¿½ï¿½ï¿½Êºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½":
                     tag = "YJEffect"; break;
-                case "½´ÆÛÃ§¸°Àú¹ÚÁø¿ì":
+                case "ï¿½ï¿½ï¿½ï¿½Ã§ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½":
                     tag = "JWEffect"; break;
-                case "ºê·ÐÁîÀÇ¿Õ±èÇÐ¿µ":
+                case "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç¿Õ±ï¿½ï¿½Ð¿ï¿½":
                     tag = "HYEffect"; break;
             }
 
-            // ÀÌÆåÆ® »ý¼º À§Ä¡ °áÁ¤ (¿µ¿õÀÌ ¹Ù¶óº¸´Â ¹æÇâ¿¡ µû¶ó »ý¼º À§Ä¡ Á¶Á¤)
+            // ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ ï¿½ï¿½ï¿½ï¿½ (ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ù¶óº¸´ï¿½ ï¿½ï¿½ï¿½â¿¡ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ ï¿½ï¿½ï¿½ï¿½)
             float offsetX = heroData.isFlipped ? -1f : 1f;
             Vector3 spawnPos = transform.position + new Vector3(offsetX, 0f, 0f);
             Quaternion rot = transform.rotation;
 
-           // ÀÌÆåÆ® ¼³Á¤
+           // ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½
             GameObject effect = ObjectPoolManager.instance.SpawnFromPool(tag, spawnPos, rot, 1.5f);
 
             if (effect != null)
             {
-                //ÀÌÆåÆ® ÁÂ¿ì ¹ÝÀü (½ºÇÁ¶óÀÌÆ® ±âÁØ)
+                //ï¿½ï¿½ï¿½ï¿½Æ® ï¿½Â¿ï¿½ ï¿½ï¿½ï¿½ï¿½ (ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½)
                 Vector3 scale = effect.transform.localScale;
                 scale.x = heroData.isFlipped ? -Mathf.Abs(scale.x) : Mathf.Abs(scale.x);
                 effect.transform.localScale = scale;
 
-                // ÀÌÆåÆ® ÀÌµ¿ ¹æÇâ ¼³Á¤
+                // ï¿½ï¿½ï¿½ï¿½Æ® ï¿½Ìµï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
                 EffectMove moveScript = effect.GetComponent<EffectMove>();
                 if (moveScript != null)
                 {

@@ -1,4 +1,3 @@
-using System.Collections;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using System.Collections.Generic;
@@ -43,13 +42,11 @@ public class ClickEffectManager : MonoBehaviour
             if (isCritical)
             {
                 damage = Mathf.RoundToInt(damage * (player.critDamage / 100f));
-                Debug.Log($"치명타! 데미지: {damage}");                
                 ObjectPoolManager.instance.SpawnFromPool(critEffectTag, particlePos, Quaternion.identity, critEffectLife);        
                 SoundManager.instance.PlaySFX("Jump");
             }
             else
             {
-                Debug.Log($"타격! 데미지: {damage}");             
                 ObjectPoolManager.instance.SpawnFromPool(particleEffectTag, particlePos, Quaternion.identity, particleEffectLife);               
                 SoundManager.instance.PlaySFX("Jump3");
             }

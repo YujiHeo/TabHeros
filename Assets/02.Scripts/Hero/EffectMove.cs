@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EffectMove : MonoBehaviour
@@ -7,7 +5,7 @@ public class EffectMove : MonoBehaviour
     public float speed = 2f;
     public float lifeTime = 0.7f;
 
-    private int direction = 1; //1: ¿À¸¥ÂÊ -1: ¿ÞÂÊ
+    private int direction = 1; //1: ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ -1: ï¿½ï¿½ï¿½ï¿½
 
     private void OnEnable()
     {
@@ -16,7 +14,7 @@ public class EffectMove : MonoBehaviour
 
     private void Update()
     {
-        //¹æÇâ¿¡ µû¶ó ¿À¸¥ÂÊ ¶Ç´Â ¿ÞÂÊÀ¸·Î ÀÌµ¿
+        //ï¿½ï¿½ï¿½â¿¡ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ç´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½
         transform.Translate(Vector3.right * direction * speed * Time.deltaTime);
     }
 

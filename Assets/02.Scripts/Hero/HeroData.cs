@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "HeroData", menuName = "Hero System/Hero Data")]
@@ -12,7 +10,7 @@ public class HeroData : ScriptableObject
     public int unlockPrice;
     public GameObject heroPrefab;
     public float attackInterval;
-    public bool isFlipped; //ÁÂ¿ì¹ÝÀüµÈ È÷¾î·Î
+    public bool isFlipped; //ï¿½Â¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½
 
    
     [HideInInspector] public bool isUnlocked;

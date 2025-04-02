@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,13 +6,13 @@ public class ObjectPoolManager : Singleton<ObjectPoolManager>
     [System.Serializable]
     public class Pool
     {
-        public string tag; //¿ÀºêÁ§Æ® ±¸ºÐ¿ë Å°
-        public GameObject prefab; //»ý¼ºÇÒ ÇÁ¸®Æé ex)ÀÌÆåÆ®
-        public int size; //¹Ì¸® ¸¸µé¾îµÑ °³¼ö
+        public string tag; //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½Ð¿ï¿½ Å°
+        public GameObject prefab; //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ex)ï¿½ï¿½ï¿½ï¿½Æ®
+        public int size; //ï¿½Ì¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
     }
 
     public List<Pool> pools; 
-    private Dictionary<string, Queue<GameObject>> poolDictionary; //ÅÂ±×º°·Î ÀúÀåÇÏ´Â µñ¼Å³Ê¸®
+    private Dictionary<string, Queue<GameObject>> poolDictionary; //ï¿½Â±×ºï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½Å³Ê¸ï¿½
 
     void Start()
     {
@@ -38,7 +37,6 @@ public class ObjectPoolManager : Singleton<ObjectPoolManager>
     {
         if (!poolDictionary.ContainsKey(tag))
         {
-            Debug.LogWarning($"ÅÂ±×°¡ {tag}ÀÎÇ®ÀÌ ¾ø½À´Ï´Ù.");
             return null;
         }
 
@@ -51,7 +49,7 @@ public class ObjectPoolManager : Singleton<ObjectPoolManager>
             Pool poolConfig = pools.Find(p => p.tag == tag);
             if (poolConfig == null)
             {
-                Debug.LogWarning($"{tag}¿¡ Ç®ÀÌ ¾ø½À´Ï´Ù.");
+                Debug.LogWarning($"{tag}ï¿½ï¿½ Ç®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
                 return null;
             }
 

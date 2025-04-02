@@ -1,6 +1,5 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyController : MonoBehaviour
@@ -73,7 +72,6 @@ public class EnemyController : MonoBehaviour
     {
         if (currentHP <= 0)
         {
-            Debug.Log("이미 사망했습니다.");
             return;
         }
 

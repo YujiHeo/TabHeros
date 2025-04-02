@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public enum WeaponType
@@ -7,18 +5,18 @@ public enum WeaponType
     ATKUP
 }
 
-// ¸®ÅÏ ¹¹¹¹ ¸Þ¼­µå¸¦ ¸¸µé°í levelÀº º°µµ·Î ÀúÀå , level¿¡ µû¶ó¼­ ¾îºô¸®Æ¼³ª ¾÷±×·¹ÀÌµå Æ÷ÀÎÆ® °»½Å
+// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½å¸¦ ï¿½ï¿½ï¿½ï¿½ï¿½ levelï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ , levelï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Æ¼ï¿½ï¿½ ï¿½ï¿½ï¿½×·ï¿½ï¿½Ìµï¿½ ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½
 
 [CreateAssetMenu(fileName = "Weapon", menuName = "ScriptableObjects/Weapon")]
 public class WeaponData : ScriptableObject
-//º¯µ¿°ªÀÌ ÀÖÀ» ¶© SO¸¦ ¾È¾²´Â°ÍÀÌ ÁÁ´Ù.
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ SOï¿½ï¿½ ï¿½È¾ï¿½ï¿½Â°ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½.
 {
     [Header("Info")]
     public string name;
 
     public Sprite Icon;
 
-    public int level;  // º¯ÇÏ´Â ³à¼®¿¡¼­ °¡Á®¿Í¾ß µÊ 
+    public int level;  // ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½à¼®ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Í¾ï¿½ ï¿½ï¿½ 
     public int ability;
 
     public int ownUpgradePoint;

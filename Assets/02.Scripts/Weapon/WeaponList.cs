@@ -1,6 +1,4 @@
-using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 
@@ -10,11 +8,11 @@ public class WeaponList : ScriptableObject
 {
     private WeaponData weaponData;
 
-    public List<WeaponData> weaponList = new List<WeaponData>(); //Slot¿¡ ¼ø¼­´ë·Î ÇÒ´çÇÒ ¿ëµµ·Î List »ý¼º.
+    public List<WeaponData> weaponList = new List<WeaponData>(); //Slotï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ò´ï¿½ï¿½ï¿½ ï¿½ëµµï¿½ï¿½ List ï¿½ï¿½ï¿½ï¿½.
 
     public void GetWeapon()
     {
-        for (int i = 1; i < 6; i++) //ÀÎµ¦½º ³Ñ¹ö´Â 1001ºÎÅÍ ½ÃÀÛ.
+        for (int i = 1; i < 6; i++) //ï¿½Îµï¿½ï¿½ï¿½ ï¿½Ñ¹ï¿½ï¿½ï¿½ 1001ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½.
         {
             WeaponData weaponData100n = GetWeaponData(1000 + i);
 
@@ -25,7 +23,7 @@ public class WeaponList : ScriptableObject
     public WeaponData GetWeaponData(int id)
     {
         WeaponData weaponData = weaponList.Find(Data => Data.id == id);
-        WeaponData cloneData = Instantiate(weaponData); //¿øº»À» º¹»ç
+        WeaponData cloneData = Instantiate(weaponData); //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
         return cloneData;
     }
