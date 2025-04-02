@@ -4,6 +4,7 @@ using UnityEngine;
 using System.IO;
 using UnityEditor.U2D.Aseprite;
 using Newtonsoft.Json;
+using UnityEngine.SceneManagement;
 
 public class SaveLoadManager : Singleton<SaveLoadManager>
 {
@@ -47,6 +48,15 @@ public class SaveLoadManager : Singleton<SaveLoadManager>
         LoadPlayerData();
         LoadStageData();
         LoadWeaponData();
+
+        if (SceneManager.GetActiveScene().name != "GameScene")
+        {
+            Debug.Log("[SaveLoadManager] GameScene이 아니라서 HeroData 로드를 건너뜁니다.");
+            return;
+        }
+
+        LoadHeroData(); // GameScene에서만 실행
+
         LoadHeroData();
     }
 
@@ -110,7 +120,6 @@ public class SaveLoadManager : Singleton<SaveLoadManager>
         string json = JsonConvert.SerializeObject(heroData, Formatting.Indented);
         File.WriteAllText(heroSaveFilePath, json);
     }
-
 
     public void LoadHeroData()
     {

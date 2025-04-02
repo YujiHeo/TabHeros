@@ -14,12 +14,11 @@ public class StartScene : MonoBehaviour
     {
         playButton.onClick.AddListener(() =>
         {
-            SaveLoadManager.instance.InitializeNewGame(); // 데이터 초기화
-            SceneTransition.instance.OnPlayButtonClicked(nextSceneName); // 씬 전환
+            SceneTransition.instance.OnPlayButtonClicked(nextSceneName);
         });
         continueButton.onClick.AddListener(() =>
         {
-            SceneTransition.instance.OnPlayButtonClicked(nextSceneName);
+            SceneTransition.instance.OnContinueButtonClicked(nextSceneName);
         });
     }
 }

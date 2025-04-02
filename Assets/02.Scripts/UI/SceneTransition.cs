@@ -47,6 +47,13 @@ public class SceneTransition : Singleton<SceneTransition>
 
     public void OnPlayButtonClicked(string sceneName)
     {
+        SaveLoadManager.instance.InitializeNewGame();
+        fadeCanvas.gameObject.SetActive(true);
+        FadeOutAndLoadScene(sceneName);
+    }
+
+    public void OnContinueButtonClicked(string sceneName)
+    {
         fadeCanvas.gameObject.SetActive(true);
         FadeOutAndLoadScene(sceneName);
     }
