@@ -115,4 +115,14 @@ public class SaveLoadManager : Singleton<SaveLoadManager>
         }
     }
 
+    public void InitializeNewGame()
+    {
+        playerData = new PlayerSaveData();
+        stageData = new StageSaveData();
+        weaponData = new WeaponSaveData();
+        heroData = new HeroSaveData();
+
+        SaveAllData();
+    }
+
 }

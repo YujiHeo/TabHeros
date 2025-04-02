@@ -675,6 +675,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playButton: {fileID: 1209211075}
+  continueButton: {fileID: 1221688922}
   nextSceneName: GameScene
   sceneTransition: {fileID: 1446141419}
 --- !u!1 &717650518 stripped
