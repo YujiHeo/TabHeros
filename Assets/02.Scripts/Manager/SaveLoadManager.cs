@@ -1,8 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using System.IO;
-using UnityEditor.U2D.Aseprite;
 using Newtonsoft.Json;
 
 public class SaveLoadManager : Singleton<SaveLoadManager>

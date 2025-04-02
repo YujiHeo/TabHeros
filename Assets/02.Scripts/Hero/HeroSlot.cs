@@ -83,6 +83,10 @@ public class HeroSlot : MonoBehaviour
                 AchievementManager.instance.IncreaseAchievementProgress(AchievementType.Hero,1);
                 SaveLoadManager.instance.SaveAllData();
             }
+            else
+            {
+                UiManager.instance.ShowGoldLackWarning();
+            }
         }
         else
         {
@@ -94,6 +98,10 @@ public class HeroSlot : MonoBehaviour
                 Debug.Log($"[������] {heroData.heroName} �� Lv.{heroData.level}");
 
                 SaveLoadManager.instance.SaveAllData();
+            }
+            else
+            {
+                UiManager.instance.ShowGoldLackWarning();
             }
         }
 

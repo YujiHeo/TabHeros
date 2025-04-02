@@ -109,6 +109,10 @@ public class UIInventory : Singleton<UIInventory>
 
             SaveLoadManager.instance.SaveAllData();
         }
+        else
+        {
+            UiManager.instance.ShowGoldLackWarning();
+        }
     }
 
 

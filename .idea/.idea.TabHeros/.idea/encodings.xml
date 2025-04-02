@@ -2,5 +2,6 @@
 <project version="4">
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/Assets/02.Scripts/Manager/SaveData.cs" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Assets/02.Scripts/Weapon/UIInventory.cs" charset="EUC-KR" />
   </component>
 </project>
