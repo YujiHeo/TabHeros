@@ -13,7 +13,7 @@ public class UiManager : Singleton<UiManager>
 
     private void Update()
     {
-        GoldTxt.text = SaveLoadManager.instance.playerData.gold.ToString();
+        GoldTxt.text = $"{SaveLoadManager.instance.playerData.gold} G";
     }
     
     public void OpenPanel(GameObject panel)

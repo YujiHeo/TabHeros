@@ -37,10 +37,10 @@ public class StatManager : Singleton<StatManager>
         };
     }
 
+   
     // 스탯 최신화
     public void UpdateStat(PlayerStatType statType, int newLevel)
     {
-        // SaveLoadManager.instance.playerData가 PlayerSaveData 객체라고 가정
         PlayerSaveData data = SaveLoadManager.instance.playerData;
 
         switch (statType)
