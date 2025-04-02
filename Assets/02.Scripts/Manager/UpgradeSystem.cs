@@ -1,17 +1,12 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Events;
 
 public class UpgradeSystem : MonoBehaviour
 {
     private int target;
     [SerializeField] private Player player;
-    [SerializeField] private PlayerSaveData playerData;
     [SerializeField] private PlayerGoods playerGoods;
 
+    private PlayerSaveData playerData;
     private void Start()
     {
         playerData = SaveLoadManager.instance.playerData;

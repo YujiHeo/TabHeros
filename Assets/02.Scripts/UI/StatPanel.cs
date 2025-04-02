@@ -21,7 +21,6 @@ public class StatPanel  : MonoBehaviour
     [SerializeField]private PlayerSaveData playerData;
     [SerializeField]private Player player;
     [SerializeField]private UpgradeSystem upgradeSystem;
-    public PlayerSaveData saveData;
     [Header("UI")]
     [SerializeField]private TextMeshProUGUI buttonText;
     [SerializeField]private TextMeshProUGUI infoText;
