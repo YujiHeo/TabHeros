@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ATKUP 3
   m_EditorClassIdentifier: 
   name: "\uBCF4\uD1B5 \uAC804"
-  Icon: {fileID: -116235703, guid: c14838f64ba1b8b4691b21510aab6000, type: 3}
+  Icon: {fileID: 21300000, guid: ad6aa0f3853c7c04fafaef6a0d6f836f, type: 3}
   level: 1
   ability: 70
   ownUpgradePoint: 60

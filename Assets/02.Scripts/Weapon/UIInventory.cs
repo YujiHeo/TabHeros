@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine.UI;
 using UnityEngine;
+using System;
 
 public class UIInventory : Singleton<UIInventory>
 {
@@ -34,32 +35,16 @@ public class UIInventory : Singleton<UIInventory>
         InitInventoryUI();
     }
 
-
-
-
     public void Start()
     {
         InitWeaponDataList();
-
+        //save를 일회용으로 사용하는 방법도 있다!!
         WeaponSaveData save = SaveLoadManager.instance.weaponData;
         if (save.weaponLevel[0] != 0)
         {
             LoadWeaponSaveData(save);
 
         }
-
-        /*
-        else
-        {
-
-            foreach (var weaponData in weaponDataList)
-            {
-                weaponData.level = 0;
-                weaponData.ability = 0;
-                weaponData.ownUpgradePoint = 0;
-            }
-        }
-        */
 
         RefreshSlotUI();
     }
@@ -143,12 +128,6 @@ public class UIInventory : Singleton<UIInventory>
         AchievementManager.instance.IncreaseAchievementProgress(AchievementType.Weapon , 1);
     }
 
-
-
-
-
-
-
     public WeaponSaveData GetWeaponSaveData()
     {
         WeaponSaveData saveData = new WeaponSaveData();
@@ -158,6 +137,21 @@ public class UIInventory : Singleton<UIInventory>
             saveData.weaponLevel[i] = weaponDataList[i].level;
             saveData.weaponAbility[i] = weaponDataList[i].ability;
             saveData.ownUpgradePoints[i] = weaponDataList[i].ownUpgradePoint;
+        }
+
+        if (CurrentWeapon.sprite != null)
+        {
+            Texture2D texture = CurrentWeapon.sprite.texture;
+            // PNG 형식의 바이트 배열로 변환
+
+            byte[] imageBytes = texture.EncodeToPNG();
+            // Base64 문자열로 인코딩
+
+            saveData.currentWeaponImageBase64 = Convert.ToBase64String(imageBytes);
+        }
+        else
+        {
+            saveData.currentWeaponImageBase64 = string.Empty;
         }
 
         return saveData;
@@ -170,6 +164,22 @@ public class UIInventory : Singleton<UIInventory>
             weaponDataList[i].level = saveData.weaponLevel[i];
             weaponDataList[i].ability = saveData.weaponAbility[i];
             weaponDataList[i].ownUpgradePoint = saveData.ownUpgradePoints[i];
+        }
+
+        // Base64 문자열이 저장되어 있으면 이미지 로드
+        if (!string.IsNullOrEmpty(saveData.currentWeaponImageBase64))
+        {
+            byte[] imageBytes = Convert.FromBase64String(saveData.currentWeaponImageBase64);
+            Texture2D texture = new Texture2D(2, 2); // 임시 크기, LoadImage()에서 자동으로 조정됨
+            if (texture.LoadImage(imageBytes))
+            {
+                // 새 Sprite 생성 후 UI에 적용
+                texture.filterMode = FilterMode.Point;
+                Sprite loadedSprite = Sprite.Create(texture,
+                    new Rect(0, 0, texture.width, texture.height),
+                    new Vector2(0.5f, 0.5f));
+                CurrentWeapon.sprite = loadedSprite;
+            }
         }
     }
 }

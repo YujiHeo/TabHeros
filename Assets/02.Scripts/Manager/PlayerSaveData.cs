@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using JetBrains.Annotations;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 // 전체 게임 데이터 관리 클래스
 public class SaveData
@@ -69,33 +70,16 @@ public class WeaponSaveData
     public int[] weaponAbility;
     public int[] ownUpgradePoints;
 
-    /*public void SaveFromWeaponData(WeaponData weaponData)
-    {
-        weaponLevel[] = weaponData.level;
-        weaponAbility[] = weaponData.ability;
-        ownUpgradePoints[] = weaponData.ownUpgradePoint; 
-    }
-    */
+    public string currentWeaponImageBase64;
 
     public WeaponSaveData()
     {
         int weaponcount = 5;
+
         weaponLevel = new int[weaponcount];
         weaponAbility = new int[weaponcount];
         ownUpgradePoints = new int[weaponcount];
     }
-
-    /*
-     * for (int i = 0; i < weaponcount; i++)
-        {
-            var weaponData = UIInventory.instance.weaponDataList[i];
-
-            weaponLevel[i] = weaponData.level;
-            weaponAbility[i] = weaponData.ability;
-            ownUpgradePoints[i] = weaponData.ownUpgradePoint;
-
-        }
-    */
 }
 
 [System.Serializable]
