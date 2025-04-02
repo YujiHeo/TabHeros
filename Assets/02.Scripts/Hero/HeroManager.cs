@@ -66,7 +66,7 @@ public class HeroManager : Singleton<HeroManager>
         int index = heroList.IndexOf(data);
         if (index < 0 || index >= heroSpawnPositions.Count)
         {
-            Debug.LogWarning($"[HeroManager] À¯È¿ÇÏÁö ¾ÊÀº ¿µ¿õ ½ºÆù À§Ä¡ - id:{data.id}");
+            Debug.LogWarning($"[HeroManager] ï¿½ï¿½È¿ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ - id:{data.id}");
             return;
         }
 
@@ -78,7 +78,7 @@ public class HeroManager : Singleton<HeroManager>
             attack.Init(data);
         }
 
-        Debug.Log($"[HeroManager] {data.heroName} ½ºÆù ¿Ï·á");
+        Debug.Log($"[HeroManager] {data.heroName} ï¿½ï¿½ï¿½ï¿½ ï¿½Ï·ï¿½");
     }
     public HeroSaveData GetHeroSaveData()
     {

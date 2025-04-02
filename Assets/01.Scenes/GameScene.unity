@@ -906,13 +906,6 @@ MonoBehaviour:
     goldGainLevel: 1
   player: {fileID: 956338160}
   upgradeSystem: {fileID: 59015799}
-  saveData:
-    gold: 0
-    upgradePoints: 0
-    atkLevel: 1
-    critLevel: 0
-    critDamageLevel: 0
-    goldGainLevel: 0
   buttonText: {fileID: 1309989177}
   infoText: {fileID: 404791966}
   statText: {fileID: 1662500459}
@@ -930,13 +923,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 956338160}
-  playerData:
-    gold: 0
-    upgradePoints: 0
-    atkLevel: 1
-    critLevel: 1
-    critDamageLevel: 1
-    goldGainLevel: 1
   playerGoods: {fileID: 692362034}
 --- !u!114 &59015800
 MonoBehaviour:
@@ -1187,13 +1173,6 @@ MonoBehaviour:
     goldGainLevel: 1
   player: {fileID: 956338160}
   upgradeSystem: {fileID: 71526759}
-  saveData:
-    gold: 0
-    upgradePoints: 0
-    atkLevel: 0
-    critLevel: 0
-    critDamageLevel: 0
-    goldGainLevel: 0
   buttonText: {fileID: 6311088}
   infoText: {fileID: 1865059374}
   statText: {fileID: 1782574003}
@@ -1211,13 +1190,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 956338160}
-  playerData:
-    gold: 0
-    upgradePoints: 0
-    atkLevel: 1
-    critLevel: 1
-    critDamageLevel: 1
-    goldGainLevel: 1
   playerGoods: {fileID: 692362034}
 --- !u!114 &71526760
 MonoBehaviour:
@@ -2122,17 +2094,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 127451451}
   m_CullTransparentMesh: 1
---- !u!114 &128773364 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4940219999838804664, guid: 8b7b4d4859fcebb4e8e7ef904aa1e0d9, type: 3}
-  m_PrefabInstance: {fileID: 250790596098787065}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &137959306
 GameObject:
   m_ObjectHideFlags: 0
@@ -6400,11 +6361,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 326176631}
   m_CullTransparentMesh: 1
---- !u!1 &346430390 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 23073732589505383, guid: 8b7b4d4859fcebb4e8e7ef904aa1e0d9, type: 3}
-  m_PrefabInstance: {fileID: 250790596098787065}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &346638539
 GameObject:
   m_ObjectHideFlags: 0
@@ -7863,13 +7819,6 @@ MonoBehaviour:
     goldGainLevel: 1
   player: {fileID: 956338160}
   upgradeSystem: {fileID: 480980577}
-  saveData:
-    gold: 0
-    upgradePoints: 0
-    atkLevel: 0
-    critLevel: 0
-    critDamageLevel: 0
-    goldGainLevel: 0
   buttonText: {fileID: 1578423330}
   infoText: {fileID: 1955456181}
   statText: {fileID: 721354982}
@@ -7887,13 +7836,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 956338160}
-  playerData:
-    gold: 0
-    upgradePoints: 0
-    atkLevel: 1
-    critLevel: 1
-    critDamageLevel: 1
-    goldGainLevel: 1
   playerGoods: {fileID: 692362034}
 --- !u!114 &480980578
 MonoBehaviour:
@@ -8377,8 +8319,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GoldTxt: {fileID: 627882602}
-  goldLackPanel: {fileID: 346430390}
-  timeLimit: {fileID: 128773364}
+  goldLackPanel: {fileID: 2035332127}
+  timeLimit: {fileID: 589003104}
 --- !u!114 &532207550
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8738,6 +8680,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 569726538}
   m_CullTransparentMesh: 1
+--- !u!114 &589003104 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4940219999838804664, guid: 8b7b4d4859fcebb4e8e7ef904aa1e0d9, type: 3}
+  m_PrefabInstance: {fileID: 250790596098787065}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &594987117
 GameObject:
   m_ObjectHideFlags: 0
@@ -8870,7 +8823,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -1554497906, guid: 1bb99e5373c1a3640acfc38d8a13e870, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -10691,7 +10644,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -987172641, guid: 1bb99e5373c1a3640acfc38d8a13e870, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -11463,13 +11416,6 @@ MonoBehaviour:
     goldGainLevel: 1
   player: {fileID: 956338160}
   upgradeSystem: {fileID: 712485661}
-  saveData:
-    gold: 0
-    upgradePoints: 0
-    atkLevel: 0
-    critLevel: 0
-    critDamageLevel: 0
-    goldGainLevel: 0
   buttonText: {fileID: 1339907546}
   infoText: {fileID: 29179296}
   statText: {fileID: 1955932356}
@@ -11487,13 +11433,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 956338160}
-  playerData:
-    gold: 0
-    upgradePoints: 0
-    atkLevel: 1
-    critLevel: 1
-    critDamageLevel: 1
-    goldGainLevel: 1
   playerGoods: {fileID: 692362034}
 --- !u!114 &712485662
 MonoBehaviour:
@@ -13870,7 +13809,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -441149190, guid: 1bb99e5373c1a3640acfc38d8a13e870, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -19227,7 +19166,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 422022047, guid: 1bb99e5373c1a3640acfc38d8a13e870, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -21685,7 +21624,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -67009703, guid: 1bb99e5373c1a3640acfc38d8a13e870, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -28260,6 +28199,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2027607531}
   m_CullTransparentMesh: 1
+--- !u!1 &2035332127 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 23073732589505383, guid: 8b7b4d4859fcebb4e8e7ef904aa1e0d9, type: 3}
+  m_PrefabInstance: {fileID: 250790596098787065}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2058621159
 GameObject:
   m_ObjectHideFlags: 0
@@ -29063,9 +29007,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: QuestPanel
       objectReference: {fileID: 0}
-    - target: {fileID: 2092881781267721635, guid: 8b7b4d4859fcebb4e8e7ef904aa1e0d9, type: 3}
-      propertyPath: m_Name
-      value: TimeLimitTxt
+    - target: {fileID: 23073732589505383, guid: 8b7b4d4859fcebb4e8e7ef904aa1e0d9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6226244903523621178, guid: 8b7b4d4859fcebb4e8e7ef904aa1e0d9, type: 3}
       propertyPath: m_Pivot.x
@@ -29147,7 +29091,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3082337106573776264, guid: 8b7b4d4859fcebb4e8e7ef904aa1e0d9, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
